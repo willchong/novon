@@ -1,0 +1,181 @@
+/*
+ * Author: William Chong
+ * Compiler: Gulp
+ */
+
+@import "libs/normalize",
+        "libs/breakpoints",
+        "partials/variables";
+
+*, *:before, *:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+     visibility: hidden;
+     display: block;
+     font-size: 0;
+     content: " ";
+     clear: both;
+     height: 0;
+}
+
+.clearfix { display: inline-block; clear:none !important;}
+
+/* start commented backslash hack \*/
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+/* close commented backslash hack */
+
+html,
+body{
+  font-family: $barlow;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight:normal;
+  font-size:14px;
+  line-height:1;
+  height:100%;
+  width: 100%;
+  margin: 0 auto;
+  &.overlay {
+    overflow: hidden;
+  }
+}
+
+h1,h2,h3,h4,h5,h6 {
+  font-family: $playfair;
+  font-weight: bold;
+  margin:0;
+  padding: 0;
+  line-height: 1.2;
+}
+
+h1 {
+  font-size: 3.6rem;
+}
+
+h2 {
+  font-size: 3rem;
+}
+
+h3 {
+  font-size: 2.25rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+}
+
+p {
+  font-size: 1.5rem;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  &.body-text {
+    font-size: 1rem;
+  }
+  a {
+    font-weight: 700;
+    text-decoration: none;
+  }
+}
+
+img{
+  max-width:100%;
+}
+
+.container{
+  padding:0;
+  margin:0 auto;
+  position: relative;
+}
+
+ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+iframe {
+  border: none;
+}
+
+strong {
+  font-weight: 700;
+}
+
+section {
+  width: 100%;
+  display: block;
+  position: relative;
+  font-size:0;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+a {
+  color: inherit;
+  transition: all 0.35s;
+  &:visited {
+    color: inherit;
+  }
+  &:hover {
+    background-color: $cyan;
+    text-decoration: underline;
+  }
+  &.cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    text-align: center;
+    color: inherit;
+    background-color: $black;
+    border-radius: 6px;
+    text-transform: uppercase;
+    color: $white;
+    font-size: 1rem;
+    padding: 0.5rem 3rem;
+    cursor: pointer;
+    // border: 2px solid $black;
+    &:hover {
+      background-color: $cyan;
+      color: $grey;
+    }
+    &.inverse {
+      border: 1px solid $white;
+    }
+    &.bigger {
+      border-width: 2px;
+      font-size: 1.5rem;
+    }
+    &.transparent {
+      background-color: transparent;
+      &:hover {
+        color: $black;
+        background-color: $cyan;
+      }
+    }
+    &.blue {
+      background-color: $cyan;
+      // font-weight: 700;
+      color: $black;
+    }
+    &.add {
+      border-radius: 0;
+      width: 100%;
+      text-transform: none;
+    }
+  }
+}
+
+@import "partials/header",
+        "partials/homepage",
+        "partials/shop",
+        "partials/footer";
+  

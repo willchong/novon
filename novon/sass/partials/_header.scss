@@ -1,0 +1,32 @@
+header {
+  height: 84px;
+  width: 100%;
+  border-bottom: 1px solid $light-grey;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9001;
+  background-color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem;
+  aside {
+    display: flex;
+    text-align: right;
+    .icons {
+      margin-left: 1rem;
+      padding-left: 1rem;
+      border-left: 1px solid $black;
+      a {
+        margin-left: 1rem;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:hover {
+          background-color: inherit;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+{
+  "name": "novon-2017",
+  "version": "1.0.0",
+  "author(s)": [
+    "William Chong <me@willchong.com>"
+  ],
+  "description": "Novon Collection Website",
+  "dependencies": {
+    "gulp": "latest",
+    "gulp-watch": "latest",
+    "gulp-sass": "latest",
+    "gulp-autoprefixer": "latest",
+    "gulp-postcss": "latest",
+    "gulp-sourcemaps": "latest",
+    "autoprefixer": "latest",
+    "gulp-rename": "latest",
+    "merge-stream": "latest",
+    "del": "latest"
+  },
+  "devDependencies": {
+    "merge-stream": "^1.0.1"
+  }
+}

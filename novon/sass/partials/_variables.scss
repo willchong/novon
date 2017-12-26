@@ -1,0 +1,23 @@
+//FONTS
+$barlow: 'Barlow Semi Condensed', sans-serif;
+$playfair: 'Playfair Display', serif;
+
+//COLOURS
+$black: #000000;
+$grey: #696969;
+$light-grey: #D1D1D1;
+$cyan: #BBF1F1;
+$white: #ffffff;
+
+$t-black: rgba(0,0,0,0.65);
+$t-cyan: rgba(187,271,271,0.5);
+
+@mixin dropshadow($type) {
+  @if $type == heavy {
+    box-shadow: 0 0 12px 0 rgba(0,0,0,0.50);
+  } @else if $type == medium {
+    box-shadow: 0 0 8px 0 rgba(0,0,0,0.50);
+  } @else {
+    box-shadow: 0 0 4px 0 rgba(0,0,0,0.50);
+  }
+}

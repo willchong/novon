@@ -1,0 +1,33 @@
+footer {
+  height: 124px;
+  width: 100%;
+  border-top: 1px solid $light-grey;
+  background-color: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 4rem;
+  ul {
+    width: 33.3333%;
+    li {
+      display: inline-block;
+      margin-right: 1rem;
+      color: $grey;
+      &:last-child {
+        margin-right: 0;
+      }
+      a {
+        text-decoration: none;
+        &:hover {
+          text-decoration: inherit;
+        }
+      }
+    }
+    &:nth-child(2) {
+      text-align: center;
+    }
+    &:last-child {
+      text-align: right;
+    }
+  }
+}

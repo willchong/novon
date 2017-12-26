@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="30px" height="32px" viewBox="0 0 30 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.1 (47250) - http://www.bohemiancoding.com/sketch -->
+    <title>Magnifying Glass</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="NAV" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-1383.000000, -24.000000)">
+        <g id="Magnifying-Glass" transform="translate(1399.636452, 41.025995) rotate(-43.000000) translate(-1399.636452, -41.025995) translate(1389.551426, 23.048341)" stroke="#696969" stroke-width="2">
+            <ellipse id="Oval" cx="10" cy="10.097561" rx="10" ry="10.097561"></ellipse>
+            <path d="M9.56521739,20.6341463 L9.56521739,35.5867783" id="Line-2" stroke-linecap="square"></path>
+        </g>
+    </g>
+</svg>

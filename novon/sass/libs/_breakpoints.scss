@@ -1,0 +1,7 @@
+@mixin breakpoint($min, $point) {
+  @if $min == min-width {
+    @media (min-width: $point) { @content; }
+  } @else {
+    @media (max-width: $point) { @content; }
+  }
+}
