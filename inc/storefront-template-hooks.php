@@ -22,11 +22,13 @@ add_action( 'storefront_sidebar',        'storefront_get_sidebar',          10 )
  * @see  storefront_site_branding()
  * @see  storefront_primary_navigation()
  */
-add_action( 'storefront_header', 'storefront_skip_links',                       0 );
-add_action( 'storefront_header', 'storefront_site_branding',                    20 );
-add_action( 'storefront_header', 'storefront_secondary_navigation',             30 );
+// add_action( 'storefront_header', 'storefront_skip_links',                       0 );
+add_action( 'storefront_header', 'storefront_site_branding',                    10 );
+// add_action( 'storefront_header', 'storefront_secondary_navigation',             30 );
 add_action( 'storefront_header', 'storefront_primary_navigation_wrapper',       42 );
 add_action( 'storefront_header', 'storefront_primary_navigation',               50 );
+add_action( 'storefront_header', 'storefront_header_cart',              		55 );
+add_action( 'storefront_header', 'storefront_product_search',             		60 );
 add_action( 'storefront_header', 'storefront_primary_navigation_wrapper_close', 68 );
 
 /**
@@ -35,8 +37,8 @@ add_action( 'storefront_header', 'storefront_primary_navigation_wrapper_close', 
  * @see  storefront_footer_widgets()
  * @see  storefront_credit()
  */
-add_action( 'storefront_footer', 'storefront_footer_widgets', 10 );
-add_action( 'storefront_footer', 'storefront_credit',         20 );
+// add_action( 'storefront_footer', 'storefront_footer_widgets', 10 );
+// add_action( 'storefront_footer', 'storefront_credit',         20 );
 
 /**
  * Homepage
@@ -49,13 +51,14 @@ add_action( 'storefront_footer', 'storefront_credit',         20 );
  * @see  storefront_on_sale_products()
  * @see  storefront_best_selling_products()
  */
-add_action( 'homepage', 'storefront_homepage_content',      10 );
-add_action( 'homepage', 'storefront_product_categories',    20 );
-add_action( 'homepage', 'storefront_recent_products',       30 );
-add_action( 'homepage', 'storefront_featured_products',     40 );
-add_action( 'homepage', 'storefront_popular_products',      50 );
-add_action( 'homepage', 'storefront_on_sale_products',      60 );
-add_action( 'homepage', 'storefront_best_selling_products', 70 );
+add_action( 'homepage', 'novon_homepage_content',      10 );
+// add_action( 'homepage', 'storefront_homepage_content',      10 );
+// add_action( 'homepage', 'storefront_product_categories',    20 );
+// add_action( 'homepage', 'storefront_recent_products',       30 );
+// add_action( 'homepage', 'storefront_featured_products',     40 );
+// add_action( 'homepage', 'storefront_popular_products',      50 );
+// add_action( 'homepage', 'storefront_on_sale_products',      60 );
+// add_action( 'homepage', 'storefront_best_selling_products', 70 );
 
 /**
  * Posts

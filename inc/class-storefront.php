@@ -224,12 +224,13 @@ if ( ! class_exists( 'Storefront' ) ) :
 			/**
 			 * Styles
 			 */
-			wp_enqueue_style( 'storefront-style', get_template_directory_uri() . '/style.css', '', $storefront_version );
+			// wp_enqueue_style( 'storefront-style', get_template_directory_uri() . '/style.css', '', $storefront_version );
 			wp_style_add_data( 'storefront-style', 'rtl', 'replace' );
 
 			wp_enqueue_style( 'storefront-icons', get_template_directory_uri() . '/assets/sass/base/icons.css', '', $storefront_version );
 
-			wp_enqueue_style( 'novon-style', get_template_directory_uri() . '/novon/style.css', '', $storefront_version );
+			wp_enqueue_style( 'slick-style', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css', '', $storefront_version );
+			wp_enqueue_style( 'novon-style', get_template_directory_uri() . '/novon/css/styles.css', '', $storefront_version );
 			
 			/**
 			 * Scripts
@@ -247,6 +248,15 @@ if ( ! class_exists( 'Storefront' ) ) :
 			if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 				wp_enqueue_script( 'comment-reply' );
 			}
+
+			wp_enqueue_script( 'jquery-3.2.1', 'https://code.jquery.com/jquery-3.2.1.min.js', array( 'jquery' ), '20120206', true );
+			wp_enqueue_script( 'tweenmax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TweenMax.min.js', array( 'jquery' ), '20120206', true );
+			wp_enqueue_script( 'timelinemax', 'https://cdnjs.cloudflare.com/ajax/libs/gsap/1.20.3/TimelineMax.min.js', array( 'jquery' ), '20120206', true );
+			wp_enqueue_script( 'scrollmagic', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js', array( 'jquery' ), '20120206', true );
+			wp_enqueue_script( 'scrollmagic-bridge', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js', array( 'jquery' ), '20120206', true );
+			wp_enqueue_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array( 'jquery' ), '20120206', true );
+			wp_enqueue_script( 'novon-script', get_template_directory_uri() . '/novon/js/script.js', array( 'jquery' ), '20120206', true );
+
 		}
 
 		/**

@@ -522,7 +522,7 @@ a {
       width: 100%;
       text-transform: none; }
 
-header {
+header.novon {
   height: 84px;
   width: 100%;
   border-bottom: 1px solid #D1D1D1;
@@ -541,20 +541,42 @@ header {
       -ms-flex-align: center;
           align-items: center;
   padding: 1.5rem; }
-  header aside {
+  header.novon .site-branding {
+    float: none; }
+  header.novon .storefront-primary-navigation {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
     text-align: right; }
-    header aside .icons {
+    header.novon .storefront-primary-navigation .site-header-cart {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center; }
+      header.novon .storefront-primary-navigation .site-header-cart .cart-contents {
+        text-decoration: none;
+        padding: 0; }
+        header.novon .storefront-primary-navigation .site-header-cart .cart-contents .amount {
+          display: none; }
+        header.novon .storefront-primary-navigation .site-header-cart .cart-contents .count {
+          opacity: 1; }
+    header.novon .storefront-primary-navigation .woocommerce-product-search {
+      position: relative; }
+      header.novon .storefront-primary-navigation .woocommerce-product-search label.screen-reader-text {
+        display: none; }
+      header.novon .storefront-primary-navigation .woocommerce-product-search input[type="submit"] {
+        display: none; }
+    header.novon .storefront-primary-navigation .icons {
       margin-left: 1rem;
       padding-left: 1rem;
       border-left: 1px solid #000000; }
-      header aside .icons a {
+      header.novon .storefront-primary-navigation .icons a {
         margin-left: 1rem; }
-        header aside .icons a:first-child {
+        header.novon .storefront-primary-navigation .icons a:first-child {
           margin-left: 0; }
-        header aside .icons a:hover {
+        header.novon .storefront-primary-navigation .icons a:hover {
           background-color: inherit; }
 
 .novon-wrap {

@@ -1,20 +1,5 @@
 $(function(){
 
-	// var mySwiper = new Swiper('.swiper-container', {
-	//     loop: true,
-	//     initialSlide: 2,
-	//     centeredSlides: true,
-	//     spaceBetween: 30,
-	//     pagination: {
-	//         el: '.swiper-pagination',
-	//         type: 'bullets',
-	//     },
-	//     navigation: {
-	//         nextEl: '.swiper-button-next',
-	//         prevEl: '.swiper-button-prev',
-	//     }
-	// });
-
 	$('.swiper-wrapper').slick({
 	  centerMode: true,
 	  centerPadding: '25%',
@@ -46,8 +31,6 @@ $(function(){
 	var controller = new ScrollMagic.Controller(),
 	        tween1a = TweenMax.from($('#earrings-top'), 1, {y: "-60", opacity: 0}),
 	        tween1b = TweenMax.from($('#earrings-bottom'), 1, {y: "+60", opacity: 0}),
-	        // tween1c = TweenMax.to($('#earrings-bottom'), 1, {opacity: 0, delay: 1}),
-	        // tween1d = TweenMax.from($('#earrings-change'), 1, {y: "+60", opacity: 0}),
 	        scene = new ScrollMagic.Scene({triggerElement: "#modular", duration: "45%"});
 
 	scene.setTween([tween1a, tween1b]).addTo(controller);

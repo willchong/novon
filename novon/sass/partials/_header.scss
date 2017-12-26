@@ -1,4 +1,4 @@
-header {
+header.novon {
   height: 84px;
   width: 100%;
   border-bottom: 1px solid $light-grey;
@@ -11,9 +11,38 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
-  aside {
+  .site-branding {
+    float: none;
+  }
+  .storefront-primary-navigation {
     display: flex;
     text-align: right;
+    .site-header-cart {
+      display: flex;
+      align-items: center;
+      .cart-contents {
+        text-decoration: none;
+        padding: 0;
+        .amount {
+          display: none;
+        }
+        .count {
+          opacity: 1;
+        }
+        &:after {
+
+        }
+      }
+    }
+    .woocommerce-product-search {
+      position: relative;
+      label.screen-reader-text {
+        display: none;
+      }
+      input[type="submit"] {
+        display: none;
+      }
+    }
     .icons {
       margin-left: 1rem;
       padding-left: 1rem;
