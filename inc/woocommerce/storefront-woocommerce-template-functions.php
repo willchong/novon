@@ -21,6 +21,21 @@ if ( ! function_exists( 'storefront_before_content' ) ) {
 	}
 }
 
+if ( ! function_exists( 'storefront_category_content' ) ) {
+	/**
+	 * Before Content
+	 * Wraps all WooCommerce content in wrappers which match the theme markup
+	 *
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	function storefront_category_content() {
+		get_template_part('content', 'shop');
+	}
+}
+
+
+
 if ( ! function_exists( 'storefront_after_content' ) ) {
 	/**
 	 * After Content
@@ -34,7 +49,7 @@ if ( ! function_exists( 'storefront_after_content' ) ) {
 			</main><!-- #main -->
 		</div><!-- #primary -->
 
-		<?php do_action( 'storefront_sidebar' );
+		<?php //do_action( 'storefront_sidebar' );
 	}
 }
 
@@ -89,7 +104,10 @@ if ( ! function_exists( 'storefront_product_search' ) ) {
 	 */
 	function storefront_product_search() {
 		if ( storefront_is_woocommerce_activated() ) { ?>
-			<div class="site-search">
+			<div class="placeholder-search js-placeholder-search js-active">
+				<img src="<?php echo get_template_directory_uri(); ?>/novon/images/search.svg" alt="">
+			</div>
+			<div class="site-search js-novon-search">
 				<?php the_widget( 'WC_Widget_Product_Search', 'title=' ); ?>
 			</div>
 		<?php
@@ -161,6 +179,30 @@ if ( ! function_exists( 'storefront_sorting_wrapper_close' ) ) {
 	 * @return  void
 	 */
 	function storefront_sorting_wrapper_close() {
+		echo '</div>';
+	}
+}
+
+if ( ! function_exists( 'storefront_novon_wrapper' ) ) {
+	/**
+	 * novon wrapper
+	 *
+	 * @since   1.4.3
+	 * @return  void
+	 */
+	function storefront_novon_wrapper() {
+		echo '<div class="novon-wrapper">';
+	}
+}
+
+if ( ! function_exists( 'storefront_novon_wrapper_close' ) ) {
+	/**
+	 * novon wrapper close
+	 *
+	 * @since   1.4.3
+	 * @return  void
+	 */
+	function storefront_novon_wrapper_close() {
 		echo '</div>';
 	}
 }
@@ -364,5 +406,16 @@ if ( ! function_exists( 'storefront_handheld_footer_bar_account_link' ) ) {
 	 */
 	function storefront_handheld_footer_bar_account_link() {
 		echo '<a href="' . esc_url( get_permalink( get_option( 'woocommerce_myaccount_page_id' ) ) ) . '">' . esc_attr__( 'My Account', 'storefront' ) . '</a>';
+	}
+}
+
+if ( ! function_exists( 'woo_hide_page_title' ) ) {
+	/**
+	 * The account callback function for the handheld footer bar
+	 *
+	 * @since 2.0.0
+	 */
+	function woo_hide_page_title() {
+		return false;
 	}
 }

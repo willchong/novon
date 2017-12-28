@@ -48,4 +48,9 @@ $(function(){
 
 		scene3.setTween([tween3]).addTo(controller3);
 
+	$('.js-placeholder-search').on('click', function(event) {
+		$(this).toggleClass('js-active');
+		$('.site-search').addClass('js-active');
+	});
+
 });

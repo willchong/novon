@@ -1,5 +1,4 @@
 section.originals {
-	margin-top: 84px;
 	.category {
 		position: relative;
 		img {
@@ -35,6 +34,11 @@ section.originals {
 			}
 		}
 	}
+}
+
+.novon-wrapper {
+	max-width: 960px;
+	margin: 0 auto;
 }
 
 section.products {
@@ -81,6 +85,7 @@ section.products {
 			// height: 100px;
 			margin: 0 auto;
 			display: flex;
+			margin-bottom: 1.5rem;
 			.icon {
 				width: 33.33%;
 				padding: 0.5rem;
@@ -110,16 +115,48 @@ section.products {
 			.product {
 				width: 28%;
 				margin-bottom: 2rem;
+				a {
+					text-decoration: none;
+				}
 				img {
 					width: 100%;
+					height: auto;
 				}
-				h4 {
-					margin-bottom: 1rem;
+				h2 {
+					font-size: 1.5rem;
+					margin-bottom: 1.5rem;
 				}
 				p {
 					color: $grey;
 					text-align: left;
 					margin-bottom: 1.5rem;
+				}
+				.price {
+					font-weight: 700;
+					font-size: 1rem;
+					color: $grey;
+					margin-bottom: 1.5rem;
+					display: block;
+				}
+				.add_to_cart_button {
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					text-decoration: none;
+					text-align: center;
+					color: inherit;
+					background-color: $black;
+					border-radius: 0;
+					width: 100%;
+					text-transform: none;
+					color: $white;
+					font-size: 1rem;
+					padding: 0.5rem 3rem;
+					cursor: pointer;
+					&:hover {
+						background-color: $cyan;
+						color: $black;
+					}
 				}
 			}
 		}

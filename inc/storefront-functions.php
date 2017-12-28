@@ -312,3 +312,35 @@ function storefront_categorized_blog() {
 		return false;
 	}
 }
+
+/**
+ * @snippet       Remove loop @ WooCommerce shop page only
+ * @how-to        Watch tutorial @ https://businessbloomer.com/?p=19055
+ * @sourcecode    https://businessbloomer.com/?p=17372
+ * @author        Rodolfo Melogli
+ * @testedwith    WooCommerce 2.5.5
+ */
+ 
+add_action( 'pre_get_posts', 'bbloomer_remove_products_from_shop_page' );
+ 
+function bbloomer_remove_products_from_shop_page( $q ) {
+ 
+    if ( ! $q->is_main_query() ) return;
+    if ( ! $q->is_post_type_archive() ) return;
+     
+    if ( ! is_admin() && is_shop() ) {
+ 
+        $q->set( 'tax_query', array(array(
+            'taxonomy' => 'product_cat',
+            'field' => 'slug',
+            'terms' => array( 'null' ),
+            'operator' => 'IN'
+        )));
+     
+    }
+ 
+    remove_action( 'pre_get_posts', 'bbloomer_remove_products_from_shop_page' );
+ 
+}
+
+remove_action( 'woocommerce_no_products_found', 'wc_no_products_found' );
