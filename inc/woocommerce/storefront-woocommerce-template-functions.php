@@ -30,7 +30,9 @@ if ( ! function_exists( 'storefront_category_content' ) ) {
 	 * @return  void
 	 */
 	function storefront_category_content() {
-		get_template_part('content', 'shop');
+		if (is_shop()) {
+			get_template_part('content', 'shop');
+		}
 	}
 }
 
@@ -416,6 +418,92 @@ if ( ! function_exists( 'woo_hide_page_title' ) ) {
 	 * @since 2.0.0
 	 */
 	function woo_hide_page_title() {
-		return false;
+		if (is_shop()) {
+			return false;
+		} else {
+			return true;
+		}
+	}
+}
+
+if ( ! function_exists( 'storefront_novon_product_wrapper' ) ) {
+	/**
+	 * Default loop columns on product archives
+	 *
+	 * @return integer products per row
+	 * @since  1.0.0
+	 */
+	function storefront_novon_product_wrapper() {
+		echo '<div class="novon-product-wrapper">';
+		echo '<div class="cta-wrapper"><a href="/shop/" class="cta">Back to Collection</a></div>';
+	}
+}
+
+if ( ! function_exists( 'storefront_novon_product_wrapper_close' ) ) {
+	/**
+	 * Product columns wrapper close
+	 *
+	 * @since   2.2.0
+	 * @return  void
+	 */
+	function storefront_novon_product_wrapper_close() {
+		echo '</div>';
+	}
+}
+
+if (!function_exists('obox_woocommerce_product_excerpt'))  
+{ 
+     function obox_woocommerce_product_excerpt()  
+     { 
+     echo '<span class="excerpt">'; 
+     the_excerpt(); 
+     echo '</span>'; 
+     } 
+}
+
+if (!function_exists('hide_sidebar'))  
+{ 
+     function hide_sidebar(){
+     	if(is_cart() || is_checkout()){
+	     	?>
+	     	<style type="text/css">#secondary { display: none; }</style>
+	     	<?php
+     	}
+     }
+}
+
+if ( ! function_exists( 'storefront_before_category_content' ) ) {
+	/**
+	 * before Content
+	 * Closes the wrapping divs
+	 *
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	function storefront_before_category_content() {
+		if (is_product_category()) {
+		?>
+		<div class="novon-category">
+			<div class="cta-wrapper"><a href="/shop/" class="cta">Back to Collection</a></div>
+
+		<?php 
+		}
+	}
+}
+if ( ! function_exists( 'storefront_after_category_content' ) ) {
+	/**
+	 * After Content
+	 * Closes the wrapping divs
+	 *
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	function storefront_after_category_content() {
+		if (is_product_category()) {
+		?>
+		</div><!-- novon-category -->
+
+		<?php
+		}
 	}
 }

@@ -1,0 +1,322 @@
+.entry-title {
+	padding-top: 2rem;
+	text-align: center;
+}
+
+.entry-content {
+	.woocommerce {
+		max-width: 1200px;
+		margin: 0 auto;
+		margin-top: 2rem;
+		.woocommerce-message {
+		  background-color: $cyan;
+		  color: $black;
+		  a {
+		  	color: $black;
+		  	&:hover {
+		  		color: $black;
+		  	}
+		  }
+		}
+		.woocommerce-cart-form {
+			padding-bottom: 2rem;
+			border-bottom: 1px solid $light-grey;
+			.woocommerce-cart-form__contents {
+				width: 100%;
+				margin: 0 auto;
+				a.remove {
+					&:before {
+						font: normal normal normal 16px/1 FontAwesome;
+						color: $black;
+						content: '\f00d';
+						padding-top: 6px;
+						border: 1px solid $light-grey;
+					}
+					&:hover {
+						background-color: inherit;
+					}
+				}
+				.product-name {
+					text-align: center;
+				}
+				.product-price, .product-quantity, .product-subtotal {
+					text-align: right;
+				}
+				.woocommerce-cart-form__cart-item {
+					.product-thumbnail {
+						a {
+							&:hover {
+								background-color: inherit;
+							}
+						}
+					}
+				}
+				.actions {
+					.coupon {
+						input[name="coupon_code"] {
+							padding: 0.75rem;
+							border: 1px solid $light-grey;
+						}
+						input[name="apply_coupon"] {
+							padding: 0.75rem 1.25rem;
+							appearance: none;
+							background-color: $black;
+							border: 1px solid $black;
+							color: $white;
+							font-size: 1rem;
+							padding: 0.75rem 1.5rem;
+							cursor: pointer;
+							transition: all 0.35s;
+							&:hover {
+								color: $black;
+								background-color: $cyan;
+								border: 1px solid $cyan;
+							}
+						}
+					}
+					input[name="update_cart"] {
+						padding: 0.75rem 1.25rem;
+						appearance: none;
+						background-color: $black;
+						border: 1px solid $black;
+						color: $white;
+						font-size: 1rem;
+						padding: 0.75rem 1.5rem;
+						cursor: pointer;
+						transition: all 0.35s;
+						&:hover {
+							color: $black;
+							background-color: $cyan;
+							border: 1px solid $cyan;
+						}
+					}
+				}
+			}
+		}
+		.cart-collaterals {
+			display: flex;
+			justify-content: flex-end;
+			margin-top: 2rem;
+			.cart_totals {
+				width: 50%;
+				float:none;
+				text-align: right;
+				display: flex;
+				justify-content: flex-end;
+				flex-wrap: wrap;
+				font-size: 1.25rem;
+				h2 {
+					width: 100%;
+					margin-bottom: 1rem;
+				}
+				table {
+					width: 40%;
+					margin-bottom: 1rem;
+					border-top: 1px solid $light-grey;
+					border-bottom: 1px solid $light-grey;
+					tr {
+						height: 2.25rem;
+					}
+				}
+				.wc-proceed-to-checkout {
+					width: 100%;
+					.button {
+						display: inline-block;
+						font-size: 1.25rem;
+						text-decoration: none;
+						margin-top: 1rem;
+						background-color: $black;
+						padding: 0.75rem 1.25rem;
+						color: $white;
+						transition: all 0.35s;
+						&:hover {
+							color: $black;
+							background-color: $cyan;
+							// border: 1px solid $cyan;
+						}
+					}
+				}
+			}
+		}
+		.woocommerce-info {
+			background-color: $cyan;
+			color: $black;
+			margin-bottom: 1rem;
+			a {
+				color: $black;
+				&:hover {
+					color: inherit;
+				}
+			}
+		}
+		.woocommerce-form-login {
+			margin-bottom: 1rem;
+			p {
+				font-size: 1.25rem;
+				&.lost_password {
+					margin-top: 1rem;
+				}
+				&:first-child {
+					margin-bottom: 1rem;
+				}
+			}
+			input[type="submit"] {
+				display: inline-block;
+				font-size: 1.25rem;
+				text-decoration: none;
+				margin-top: 1rem;
+				border: none;
+				appearance: none;
+				background-color: $black;
+				padding: 0.75rem 1.25rem;
+				color: $white;
+				transition: all 0.35s;
+				&:hover {
+					color: $black;
+					background-color: $cyan;
+					// border: 1px solid $cyan;
+				}
+			}
+			a {
+				&:hover {
+					text-decoration: none;
+				}
+			}
+		}
+		.checkout_coupon {
+			p {
+				font-size: 1.25rem;
+			}
+			input[type="text"] {
+				padding: 0.75rem 1.25rem;
+			}
+			input[type="submit"] {
+				display: inline-block;
+				font-size: 1.25rem;
+				text-decoration: none;
+				margin-top: 1rem;
+				border: none;
+				appearance: none;
+				background-color: $black;
+				padding: 0.75rem 1.25rem;
+				color: $white;
+				transition: all 0.35s;
+				&:hover {
+					color: $black;
+					background-color: $cyan;
+					// border: 1px solid $cyan;
+				}
+			}
+			.form-row-first {
+				width: 25%;
+				float:none;
+				display:inline-block;
+				margin-right: 1rem;
+			}
+			.form-row-last {
+				width: 25%;
+				float:none;
+				display:inline-block;
+			}
+		}
+		.woocommerce-checkout {
+			padding-top: 1rem;
+			.woocommerce-billing-fields {
+				h3 {
+					margin-bottom: 1rem;
+				}
+				p {
+					font-size: 1.25rem;
+				}
+				input, select, span.select2 {
+					margin-bottom: 1rem;
+					padding: 0.5rem;
+				}
+				select, span.select2 {
+					padding: 0;
+				}
+			}
+			.woocommerce-account-fields {
+				.woocommerce-form__label {
+					font-size: 1.25rem;
+				}
+				.create-account {
+					p {
+						margin-top: 0.5rem;
+						font-size: 1.25rem;
+					}
+				}
+			}
+			.woocommerce-additional-fields {
+				h3 {
+					margin-bottom: 0.5rem;
+				}
+				p {
+					font-size: 1.25rem;
+				}
+				textarea {
+					padding: 0.5rem;
+				}
+			}
+			.woocommerce-checkout-review-order {
+				table {
+					font-size: 1.25rem;
+					width: 100%;
+					line-height: 1.8;
+					tr {
+						td {
+							padding-bottom: 0.5rem;
+						}
+					}
+					.product-total {
+						text-align: right;
+					}
+					tfoot {
+						border-top: 1px solid $light-grey;
+						text-align: right;
+						tr {
+							td {
+								padding: 0;
+							}
+							&.cart-subtotal {
+								th {
+									display: block;
+									padding-top: 1rem;
+								}
+								td {
+									padding-top: 1rem;
+								}
+							}
+						}
+					}
+				}
+			}
+			.woocommerce-checkout-payment {
+				.wc_payment_methods {
+					p {
+						font-size: 1.25rem;
+					}
+				}
+				.place-order {
+					input[type="submit"] {
+						display: inline-block;
+						font-size: 1.25rem;
+						text-decoration: none;
+						border: none;
+						appearance: none;
+						background-color: $black;
+						padding: 0.75rem 1.25rem;
+						color: $white;
+						transition: all 0.35s;
+						&:hover {
+							color: $black;
+							background-color: $cyan;
+							// border: 1px solid $cyan;
+						}
+					}
+				}
+			}
+		}
+	}
+	
+}

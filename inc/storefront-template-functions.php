@@ -231,7 +231,14 @@ if ( ! function_exists( 'storefront_primary_navigation' ) ) {
 		?>
 
 		<nav id="site-navigation" class="main-navigation" role="navigation" aria-label="<?php esc_html_e( 'Primary Navigation', 'storefront' ); ?>">
-			<a href="/shop" class="cta">Shop the collection</a>
+			<?php if (is_product() || is_product_category() || is_shop()) {
+				echo '<a href="/cart/" class="cta blue">View Cart</a>';
+			} else {
+				echo '<a href="/shop/" class="cta">Shop the collection</a>';
+			}
+
+			?>
+			
 		<!-- <button class="menu-toggle" aria-controls="site-navigation" aria-expanded="false"><span><?php echo esc_attr( apply_filters( 'storefront_menu_toggle_text', __( 'Menu', 'storefront' ) ) ); ?></span></button> -->
 			<?php
 			// wp_nav_menu(

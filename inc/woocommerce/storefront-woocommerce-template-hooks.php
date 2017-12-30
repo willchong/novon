@@ -26,8 +26,11 @@ remove_action( 'woocommerce_sidebar',             'woocommerce_get_sidebar',    
 remove_action( 'woocommerce_after_shop_loop',     'woocommerce_pagination',                   10 );
 remove_action( 'woocommerce_before_shop_loop',    'woocommerce_result_count',                 20 );
 remove_action( 'woocommerce_before_shop_loop',    'woocommerce_catalog_ordering',             30 );
+
 add_action( 'woocommerce_before_main_content',    'storefront_before_content',                10 );
+add_action( 'woocommerce_before_main_content',    'storefront_before_category_content',       10 );
 add_action( 'woocommerce_before_main_content',    'storefront_category_content',              10 );
+add_action( 'woocommerce_after_main_content',     'storefront_after_category_content',        10 );
 add_action( 'woocommerce_after_main_content',     'storefront_after_content',                 10 );
 add_action( 'storefront_content_top',             'storefront_shop_messages',                 15 );
 add_action( 'storefront_content_top',             'woocommerce_breadcrumb',                   10 );
@@ -35,13 +38,14 @@ add_action( 'storefront_content_top',             'woocommerce_breadcrumb',     
 // add_action( 'woocommerce_after_shop_loop',        'storefront_sorting_wrapper',               9 );
 // add_action( 'woocommerce_after_shop_loop',        'woocommerce_catalog_ordering',             10 );
 // add_action( 'woocommerce_after_shop_loop',        'woocommerce_result_count',                 20 );
-// add_action( 'woocommerce_after_shop_loop',        'woocommerce_pagination',                   30 );
+add_action( 'woocommerce_after_shop_loop',        'woocommerce_pagination',                   30 );
 // add_action( 'woocommerce_after_shop_loop',        'storefront_sorting_wrapper_close',         31 );
 // add_action( 'woocommerce_after_shop_loop',        'storefront_product_columns_wrapper_close', 40 );
 // add_action( 'woocommerce_after_shop_loop',        'storefront_novon_wrapper_close', 		  50 );
 
 // add_filter( 'loop_shop_columns',                  'storefront_loop_columns' );
 add_filter( 'woocommerce_show_page_title' , 	  'woo_hide_page_title' );
+add_action('wp_head', 'hide_sidebar' );
 
 // add_action( 'woocommerce_before_shop_loop',       'storefront_novon_wrapper',       		  9 );
 // add_action( 'woocommerce_before_shop_loop',       'storefront_sorting_wrapper',               9 );
@@ -52,12 +56,27 @@ add_filter( 'woocommerce_show_page_title' , 	  'woo_hide_page_title' );
 // add_action( 'woocommerce_before_shop_loop',       'storefront_product_columns_wrapper',       40 );
 
 add_action( 'storefront_footer',                  'storefront_handheld_footer_bar',           999 );
-
+add_action( 'woocommerce_after_shop_loop_item_title', 'obox_woocommerce_product_excerpt', 15); 
 /**
  * Products
  *
  * @see  storefront_upsell_display()
  */
+
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 10 );
+remove_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_after_shop_loop_item_title', 10 );
+add_action( 'woocommerce_after_shop_loop_item_title', 'woocommerce_template_loop_price', 20 );
+
+add_action( 'woocommerce_before_single_product', 'storefront_novon_product_wrapper', 9);
+add_action( 'woocommerce_after_single_product', 'storefront_novon_product_wrapper_close', 20);
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 10 );
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 10 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_price', 20 );
+
+
+remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_product_data_tabs', 10 );
+// remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_output_related_products', 20 );
 remove_action( 'woocommerce_after_single_product_summary', 'woocommerce_upsell_display',               15 );
 add_action( 'woocommerce_after_single_product_summary',    'storefront_upsell_display',                15 );
 remove_action( 'woocommerce_before_shop_loop_item_title',  'woocommerce_show_product_loop_sale_flash', 10 );

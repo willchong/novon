@@ -120,6 +120,7 @@ select::-ms-expand {
 
 #primary {
   margin-top: 84px;
+  outline: none;
 }
 
 a {
@@ -178,8 +179,15 @@ a {
   }
 }
 
+.woocommerce-cart-tab-container {
+  display: none;
+}
+
 @import "partials/header",
         "partials/homepage",
         "partials/shop",
+        "partials/product",
+        "partials/cart",
+        "partials/category",
         "partials/footer";
   

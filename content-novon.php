@@ -12,7 +12,7 @@
         <img src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-intro.jpg" alt="">
         <div class="description">
             <h4>Custom jewelry made by you.</h4>
-            <a href="#shop" class="cta inverse">Shop the collection</a>
+            <a href="/shop/" class="cta inverse">Shop the collection</a>
         </div>
     </section>
 
@@ -128,7 +128,7 @@
 
     <section class="shop">
         <h1>Shop the collection</h1>
-        <a href="#shop" class="cta inverse bigger transparent">See Products</a>
+        <a href="/shop/" class="cta inverse bigger transparent">See Products</a>
     </section>
 
 </section>
