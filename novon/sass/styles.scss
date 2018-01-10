@@ -85,6 +85,9 @@ p {
 
 img{
   max-width:100%;
+  height: auto;
+  align-self: center;
+  flex-basis: auto;
 }
 
 .container{
@@ -180,6 +183,10 @@ a {
 }
 
 .woocommerce-cart-tab-container {
+  display: none;
+}
+
+.storefront-handheld-footer-bar {
   display: none;
 }
 

@@ -63,6 +63,15 @@
 				position: relative;
 				float: none;
 				margin: 0 2% 2rem;
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+					@include white-gradient();
+				}
 				&.last {
 					margin-right: 2% !important;
 				}
@@ -161,4 +170,27 @@
 		}
 	}
 	
+}
+
+@include breakpoint(max-width, 640px) {
+	.site-main {
+		.novon-category {
+			.cta-wrapper {
+				padding: 2rem 2rem 0 2rem;
+			}
+			.woocommerce-products-header {
+				h1 {
+					width: 65%;
+					padding: 0 1rem;
+					font-size: 3rem;
+				}
+			}
+			.products {
+				padding: 2rem;
+				.product {
+					width: 100%;
+				}
+			}
+		}
+	}
 }

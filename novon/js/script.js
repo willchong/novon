@@ -4,27 +4,28 @@ $(function(){
 	  centerMode: true,
 	  centerPadding: '25%',
 	  dots: true,
-	  slidesToShow: 1
-	  // responsive: [
-	  //   {
-	  //     breakpoint: 768,
-	  //     settings: {
-	  //       arrows: false,
-	  //       centerMode: true,
-	  //       centerPadding: '40px',
-	  //       slidesToShow: 3
-	  //     }
-	  //   },
-	  //   {
-	  //     breakpoint: 480,
-	  //     settings: {
-	  //       arrows: false,
-	  //       centerMode: true,
-	  //       centerPadding: '40px',
-	  //       slidesToShow: 1
-	  //     }
-	  //   }
-	  // ]
+	  slidesToShow: 1,
+	  responsive: [
+	      {
+	        breakpoint: 1024,
+	        settings: {
+	          centerPadding: '15%'
+	        }
+	      },
+	      {
+	        breakpoint: 768,
+	        settings: {
+	          centerPadding: '5%'
+	        }
+	      },
+	      {
+	        breakpoint: 640,
+	        settings: {
+	          centerPadding: '0',
+	          arrows: false
+	        }
+	      }
+	    ]
 	});
 
 
@@ -54,21 +55,36 @@ $(function(){
 	});
 
 	$('.js-tops').slick({
-	  centerMode: true,
-	  centerPadding: 0,
+	  centerMode: false,
 	  // dots: true,
-	  slidesToShow: 3
+	  slidesToShow: 3,
+	  responsive: [
+	      {
+	        breakpoint: 640,
+	        settings: {
+	          slidesToShow: 1
+	        }
+	      }
+	    ]
 	});
 
 	$('.js-attachments').slick({
-	  centerMode: true,
-	  centerPadding: 0,
+	  centerMode: false,
 	  // dots: true,
-	  slidesToShow: 3
+	  slidesToShow: 3,
+	  responsive: [
+	      {
+	        breakpoint: 640,
+	        settings: {
+	          slidesToShow: 1
+	        }
+	      }
+	    ]
 	});
 
 	$('.tops .js-icon').on('click', function(event) {
 		$('.js-tops').slick('slickUnfilter');
+		$('.js-tops').slick('slickSetOption', 'slidesToShow', 3, true);
 		$(this).toggleClass('js-active');
 		var filter = [];
 		$('.tops .js-icon').each(function(index) {
@@ -78,11 +94,13 @@ $(function(){
 		});
 		if (filter.length != 0) {
 			$('.js-tops').slick('slickFilter', String(filter));
-		}
+			// $('.js-tops').slick('slickSetOption', 'slidesToShow', 3, true);
+		} 
 	});
 
 	$('.attachments .js-icon').on('click', function(event) {
 		$('.js-attachments').slick('slickUnfilter');
+		$('.js-tops').slick('slickSetOption', 'slidesToShow', 3, true);
 		$(this).toggleClass('js-active');
 		var filter = [];
 		$('.attachments .js-icon').each(function(index) {
@@ -92,6 +110,7 @@ $(function(){
 		});
 		if (filter.length != 0) {
 			$('.js-attachments').slick('slickFilter', String(filter));
+			// $('.js-tops').slick('slickSetOption', 'slidesToShow', 3, true);
 		}
 
 	});

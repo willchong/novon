@@ -31,7 +31,7 @@
                 <p id="earrings">Our modular design lets you create your own unique earrings, necklaces or bracelets to suit your style or mood.</p>
                 <ol >
                     <li>Choose an earring or necklace top.</li>
-                    <li>Choose a stone or coin.</li>
+                    <li>Add a stone, crystal or coin.</li>
                     <li>Add something else to create a totally new piece of jewelry.</li>
                 </ol>
             </div>
@@ -46,7 +46,7 @@
     <section class="c-link" id="c-link">
         <div class="grey">
             <h1>C-Link</h1>
-            <p>Bring it all together with our C-Link. Mix and match coin and stone charms for a stunning look in any situation.</p>
+            <p>Bring it all together with our C-Link. Mix and match coins, crystals and stone charms for a stunning look in any situation.</p>
         </div>
         <div class="image">
             <img src="<?php echo get_template_directory_uri(); ?>/novon/images/c-link.jpg" alt="">
@@ -56,7 +56,7 @@
     <section class="stones">
         <div class="inset">
             <h1>Stones</h1>
-            <p>Find your balance with natural stones including Amethyst, Black Onyx, Rose Quartz, Lapis Lazuli and Rose Pearl.</p>
+            <p>Find your balance with natural stones and crystals including Amethyst, Black Onyx, Swarovski Rose Quartz, Lapis Lazuli and Swarovski Rose Pearl.</p>
             <div class="swiper-container carousel">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">

@@ -34,9 +34,9 @@
             <div class="fancy-header">
                 <h2>TOPS</h2>
             </div>
-            <p>Start with one of our earring or pendant tops and let inspiration be your guide. Select from a variety of C-Link attachments to create a magnificent bracelet.</p>
+            <p>Start with one of our earring or pendant tops and let inspiration be your guide. Select from a variety of C-Link attachments to create a magnificent bracelet. All pendants come with an 18” sterling silver chain.</p>
             <div class="icons">
-                <div class="icon js-icon" data-filter="product_cat-bracelet">
+                <div class="icon js-icon" data-filter="product_cat-bracelets">
                     <img src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-bracelet.svg" alt="">
                     <p>Bracelets</p>
                 </div>
@@ -44,7 +44,7 @@
                     <img src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-earrings.svg" alt="">
                     <p>Earrings</p>
                 </div>
-                <div class="icon js-icon" data-filter="product_cat-necklace">
+                <div class="icon js-icon" data-filter="product_cat-necklaces">
                     <img src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-necklace.svg" alt="">
                     <p>Necklaces</p>
                 </div>

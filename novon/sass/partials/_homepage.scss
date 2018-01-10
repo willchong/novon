@@ -77,7 +77,7 @@ section.modular {
 				width: 100%;
 				margin-bottom: 2rem;
 			}
-			width: 50%;
+			width: 52%;
 			// max-width: 380px;
 			p {
 				color: $grey;
@@ -95,12 +95,12 @@ section.modular {
 				li {
 					padding-left: 1rem;
 					line-height: 1.4;
-					margin-bottom: 1.5rem;
+					margin-bottom: 1rem;
 				}
 			}
 		}
 		.earrings {
-			width: 50%;
+			width: 48%;
 			position: relative;
 			overflow: hidden;
 			.top {
@@ -328,4 +328,148 @@ section.shop {
 		max-width: 240px;
 		margin: 0 auto;
 	}
+}
+
+@include breakpoint(max-width, 1200px) {
+
+	section.modular {
+		.panel {
+			width: 85%;
+			transform: translateX(-50%);
+			left: 50%;
+			right: auto;
+		}
+	}
+
+}
+
+@include breakpoint(max-width, 1024px) {
+
+	section.modular {
+		.panel {
+			width: 95%;
+			margin-top: -2rem;
+			position: relative;
+			right: auto;
+			top: auto;
+			max-width: none;
+		}
+	}
+
+	section.c-link {
+		margin-top: -2rem;
+		.grey, .image {
+			min-height: 480px;
+			// padding-top: 10%;
+			p {
+				width: auto;
+				padding-right: 1rem;
+			}
+		}
+	}
+
+	section.stones {
+		.inset {
+			width: 90%;
+			margin-top: -2rem;
+			p {
+				width: 75%;
+			}
+		}
+	}
+
+}
+
+@include breakpoint(max-width, 640px) {
+
+	section.bio {
+		p {
+			padding: 0 1rem;
+		}
+	}
+
+	section.modular {
+		.panel {
+			flex-direction: column;
+			.steps {
+				padding: 4rem 4rem 0rem 4rem;
+				order: 1;
+			}
+			.steps, .earrings {
+				width: 100%;
+			}
+			.earrings {
+				order: 2;
+				padding-bottom: 75%;
+				&:before {
+					content: '';
+					position: absolute;
+					top: 0;
+					left: 0;
+					z-index: 1;
+					width: 100%;
+					height: 100%;
+					@include white-gradient();
+				}
+			}
+		}
+
+	}
+
+	section.c-link {
+		flex-direction: column;
+		.grey, .image {
+			width: 100%;
+			min-height: 0;
+			p {
+				width: auto;
+				padding-right: 0;
+			}
+		}
+		.grey {
+			padding: 6rem 4rem 4rem;
+		}
+	}
+
+	section.stones {
+		.inset {
+			.carousel {
+				.swiper-wrapper {
+					.swiper-slide {
+						padding-bottom: 2rem;
+						flex-direction: column;
+						align-items: center;
+						.image {
+							width: 50%;
+						}
+						.description {
+							width: 100%;
+							padding: 0;
+							margin: 0;
+						}
+					}
+				}
+			}
+		}
+	}
+
+	section.silver {
+		.inset {
+			flex-direction: column;
+			.image {
+				width: 100%;
+			}
+			.description {
+				width: 100%;
+				.wrapper {
+					padding: 3rem;
+				}
+			}
+		}
+	}
+
+	section.shop {
+		padding: 7rem 2rem;
+	}
+
 }

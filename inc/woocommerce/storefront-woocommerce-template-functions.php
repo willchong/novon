@@ -461,6 +461,17 @@ if (!function_exists('obox_woocommerce_product_excerpt'))
      } 
 }
 
+if (!function_exists('woocommerce_paragraph_tag'))  
+{ 
+     function woocommerce_paragraph_tag()  
+     { 
+     echo '<span class="full_description">'; 
+     the_content();
+     echo '</span>'; 
+     } 
+}
+
+
 if (!function_exists('hide_sidebar'))  
 { 
      function hide_sidebar(){

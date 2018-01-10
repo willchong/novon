@@ -8,6 +8,8 @@
 		max-width: 1200px;
 		margin: 0 auto;
 		margin-top: 2rem;
+		margin-bottom: 2rem;
+		padding: 0 2rem;
 		.woocommerce-message {
 		  background-color: $cyan;
 		  color: $black;
@@ -319,4 +321,43 @@
 		}
 	}
 	
+}
+
+@include breakpoint(max-width, 768px) {
+
+	.entry-content {
+		.woocommerce {
+			.woocommerce-cart-form {
+				.woocommerce-cart-form__contents {
+					.woocommerce-cart-form__cart-item {
+						border: 1px solid $light-grey;
+						position: relative;
+						.product-remove {
+							border: none;
+							a.remove {
+								top: 0rem;
+								right: 0rem;
+								&:before {
+									border: 1px solid $light-grey;
+									border-top: 0;
+									border-right: 0;	
+								}
+							}
+						}
+						.product-thumbnail {
+							text-align: left;
+						}
+					}
+				}
+			}
+			.cart-collaterals {
+				.cart_totals {
+					width: 100%;
+					table{
+						width: 70%;
+					}
+				}
+			}
+		}
+	}
 }

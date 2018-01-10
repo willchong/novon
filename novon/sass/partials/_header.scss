@@ -42,6 +42,9 @@ header.novon {
         width: 38px;
         height: 32px;
         position: relative;
+        &:hover {
+          background-color: inherit;
+        }
         .amount {
           display: none;
         }
@@ -164,6 +167,9 @@ header.novon {
       cursor: pointer;
       &.js-active {
         display: block;
+        min-width: 30px;
+        display: flex;
+        align-items: center;
       }
     }
     .site-search {

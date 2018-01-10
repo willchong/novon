@@ -14,8 +14,8 @@
 
 	<?php do_action( 'storefront_before_footer' ); ?>
 
-	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="col-full">
+	<!-- <footer id="colophon" class="site-footer" role="contentinfo"> -->
+		<!-- <div class="col-full"> -->
 
 			<?php
 			/**
@@ -24,10 +24,26 @@
 			 * @hooked storefront_footer_widgets - 10
 			 * @hooked storefront_credit         - 20
 			 */
-			do_action( 'storefront_footer' ); ?>
+			// do_action( 'storefront_footer' ); ?>
 
-		</div><!-- .col-full -->
-	</footer><!-- #colophon -->
+		<!-- </div>.col-full -->
+	<!-- </footer>#colophon -->
+
+	<footer>
+	    <ul>
+	        <li><a href="/">About</a></li>
+	        <li><a href="/shop/">Shop</a></li>
+	        <li><a href="/contact/">Contact</a></li>
+	    </ul>
+	    <ul>
+	        <li>© 2017 Novon Collection</li>
+	    </ul>
+	    <ul>
+	        <!-- <li>&nbsp;</li> -->
+	        <li><a href="#">Facebook</a></li>
+	        <li><a href="#">Instagram</a></li>
+	    </ul>
+	</footer>
 
 	<?php do_action( 'storefront_after_footer' ); ?>
 
