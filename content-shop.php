@@ -36,16 +36,14 @@
             </div>
             <p>Start with one of our earring or pendant tops and let inspiration be your guide. Select from a variety of C-Link attachments to create a magnificent bracelet. All pendants come with an 18” sterling silver chain.</p>
             <div class="icons">
-                <div class="icon js-icon" data-filter="product_cat-bracelets">
-                    <img src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-bracelet.svg" alt="">
-                    <p>Bracelets</p>
-                </div>
                 <div class="icon js-icon" data-filter="product_cat-earrings">
-                    <img src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-earrings.svg" alt="">
+                    <img class="white" src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-earrings.svg" alt="">
+                    <img class="cyan" src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-cyan-earrings.svg" alt="">
                     <p>Earrings</p>
                 </div>
                 <div class="icon js-icon" data-filter="product_cat-necklaces">
-                    <img src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-necklace.svg" alt="">
+                    <img class="white" src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-necklace.svg" alt="">
+                    <img class="cyan" src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-cyan-necklace.svg" alt="">
                     <p>Necklaces</p>
                 </div>
             </div>
@@ -58,16 +56,12 @@
                             array(
                                 'taxonomy' => 'product_cat',
                                 'field' => 'slug',
-                                'terms' => 'tops'
+                                'terms' => ['earrings','necklaces']
                             )
-                            // array(
-                            //     'taxonomy' => 'product_cat',
-                            //     'field' => 'slug',
-                            //     'terms' => 'bracelets'
-                            // )
                         ),
                         'post_type' => 'product',
-                        'orderby' => 'title'
+                        'orderby' => 'category',
+                        'order' => 'DESC'
             			);
             		$loop = new WP_Query( $args );
             		if ( $loop->have_posts() ) {
@@ -88,15 +82,18 @@
       	    <p>Choose from our selection of natural stone drops and sterling silver coins to create your next bracelet, earring or pendant masterpiece.</p>
       	    <div class="icons">
       	        <div class="icon js-icon" data-filter="product_cat-sphere">
-      	            <img src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-sphere.svg" alt="">
+                    <img class="white" src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-sphere.svg" alt="">
+      	            <img class="cyan" src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-cyan-sphere.svg" alt="">
       	            <p>Sphere</p>
       	        </div>
       	        <div class="icon js-icon" data-filter="product_cat-oval">
-      	            <img src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-oval.svg" alt="">
+                    <img class="white" src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-oval.svg" alt="">
+      	            <img class="cyan" src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-cyan-oval.svg" alt="">
       	            <p>Oval</p>
       	        </div>
       	        <div class="icon js-icon" data-filter="product_cat-coin">
-      	            <img src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-coin.svg" alt="">
+                    <img class="white" src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-coin.svg" alt="">
+      	            <img class="cyan" src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-cyan-coin.svg" alt="">
       	            <p>Coin</p>
       	        </div>
       	    </div>
@@ -105,15 +102,16 @@
       	    		$args = array(
       	    			'posts_per_page' => -1,
       	                'tax_query' => array(
-      	                    'relation' => 'AND',
-      	                    array(
-      	                        'taxonomy' => 'product_cat',
-      	                        'field' => 'slug',
-      	                        'terms' => 'attachments'
-      	                    )
-      	                ),
-      	                'post_type' => 'product',
-      	                'orderby' => 'title'
+                            'relation' => 'AND',
+                            array(
+                                'taxonomy' => 'product_cat',
+                                'field' => 'slug',
+                                'terms' => ['sphere','oval', 'coin']
+                            )
+                        ),
+                        'post_type' => 'product',
+                        'orderby' => 'category',
+                        'order' => 'ASC'
       	    			);
       	    		$loop = new WP_Query( $args );
       	    		if ( $loop->have_posts() ) {

@@ -55,8 +55,8 @@
 
     <section class="stones">
         <div class="inset">
-            <h1>Stones</h1>
-            <p>Find your balance with natural stones and crystals including Amethyst, Black Onyx, Swarovski Rose Quartz, Lapis Lazuli and Swarovski Rose Pearl.</p>
+            <h1>Stones and Crystals</h1>
+            <p>Find your balance with natural stones and crystals including Amethyst, Black Onyx, Rose Quartz, Lapis Lazuli and Swarovski Rose Pearl.</p>
             <div class="swiper-container carousel">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -100,7 +100,7 @@
                             <img src="<?php echo get_template_directory_uri(); ?>/novon/images/stones-rose-pearl.jpg" alt="">
                         </div>
                         <div class="description">
-                                <h3>Rose Pearl</h3>
+                                <h3>Swarovski Rose Pearl</h3>
                                 <p>A stone that can raise your self-esteem, restore confidence and balance emotions.</p>
                         </div>
                     </div>

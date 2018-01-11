@@ -1210,7 +1210,10 @@ section.products {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
-      margin-bottom: 1.5rem; }
+      margin-bottom: 1.5rem;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center; }
       section.products .tops .icons .icon, section.products .attachments .icons .icon {
         width: 29%;
         margin: 0 2%;
@@ -1224,6 +1227,8 @@ section.products {
           width: auto;
           height: 70px;
           margin-bottom: 0.5rem; }
+          section.products .tops .icons .icon img.cyan, section.products .attachments .icons .icon img.cyan {
+            display: none; }
         section.products .tops .icons .icon p, section.products .attachments .icons .icon p {
           color: #696969;
           font-size: 1rem;
@@ -1232,6 +1237,10 @@ section.products {
           border: 4px solid #BBF1F1; }
         section.products .tops .icons .icon.js-active, section.products .attachments .icons .icon.js-active {
           border: 4px solid #BBF1F1; }
+          section.products .tops .icons .icon.js-active img.white, section.products .attachments .icons .icon.js-active img.white {
+            display: none; }
+          section.products .tops .icons .icon.js-active img.cyan, section.products .attachments .icons .icon.js-active img.cyan {
+            display: inline-block; }
     section.products .tops .list, section.products .attachments .list {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -1254,10 +1263,10 @@ section.products {
         border: none;
         font-family: "fontawesome"; }
       section.products .tops .list .slick-prev, section.products .attachments .list .slick-prev {
-        left: -2rem; }
+        left: -2.5rem; }
         section.products .tops .list .slick-prev:after, section.products .attachments .list .slick-prev:after {
           content: '\f104';
-          font-size: 2.5rem;
+          font-size: 4.5rem;
           color: #000000;
           position: absolute;
           top: 0;
@@ -1266,7 +1275,7 @@ section.products {
         right: -2rem; }
         section.products .tops .list .slick-next:after, section.products .attachments .list .slick-next:after {
           content: '\f105';
-          font-size: 2.5rem;
+          font-size: 4.5rem;
           color: #000000;
           position: absolute;
           top: 0;
@@ -1278,7 +1287,7 @@ section.products {
         margin-right: 1rem;
         padding-bottom: 2.5rem;
         position: relative;
-        min-height: 500px; }
+        min-height: 520px; }
         section.products .tops .list .product:before, section.products .attachments .list .product:before {
           content: '';
           position: absolute;
