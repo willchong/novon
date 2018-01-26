@@ -18,12 +18,12 @@
 
     <section class="bio">
         <h3>The NOVON Collection</h3>
-        <p>Novon is a Canadian owned and operated company. Inspired by nature’s elements, our passion is to make you look and feel exceptional.</p>
+        <p>Novon is a jewellery company inspired by nature’s elements. Our passion is to make you look and feel exceptional.</p>
     </section>
 
     <section class="modular" id="modular">
         <div class="overlay">
-            <img src="<?php echo get_template_directory_uri(); ?>/novon/images/modular-design-bg.jpg" alt="">
+            <img src="<?php echo get_template_directory_uri(); ?>/novon/images/modular-design-bg-2.jpg" alt="">
         </div>
         <div class="panel">
             <div class="steps">
@@ -60,49 +60,59 @@
             <div class="swiper-container carousel">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
-                        <div class="image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/novon/images/stones-amethyst.jpg" alt="">
-                        </div>
-                        <div class="description">
-                            <h3>Amethyst</h3>
-                            <p>This beautiful violet stone is known for its ability to heal physical ailments and to help with emotional issues.</p>
-                        </div>
+                        <a class="no-visual" href="<?php echo get_site_url(); ?>/product/amethyst-c-link-sphere-drop/">
+                            <div class="image">
+                                <img src="<?php echo get_template_directory_uri(); ?>/novon/images/stones-amethyst.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h3>Amethyst</h3>
+                                <p>This beautiful violet stone is known for its ability to heal physical ailments and promote tranquility.</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <div class="image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/novon/images/stones-black-onyx.jpg" alt="">
-                        </div>
-                        <div class="description">
-                            <h3>Black Onyx</h3>
-                            <p>This dark stone has powerful, protective properties and helps maintain your personal energy.</p>
-                        </div>
+                        <a class="no-visual" href="<?php echo get_site_url(); ?>/product/925-sterling-silver-onyx-with-one-c-clasp/">
+                            <div class="image">
+                                <img src="<?php echo get_template_directory_uri(); ?>/novon/images/stones-black-onyx.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                <h3>Black Onyx</h3>
+                                <p>This dark stone has powerful, protective properties and helps maintain your personal energy.</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <div class="image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/novon/images/stones-rose-quartz.jpg" alt="">
-                        </div>
-                        <div class="description">
-                                <h3>Rose Quartz</h3>
-                                <p>Representing universal love, this pink stone helps promote harmony in relationships.</p>
-                        </div>
+                        <a class="no-visual" href="<?php echo get_site_url(); ?>/product/rose-quartz-c-link-sphere-drop/">
+                            <div class="image">
+                                <img src="<?php echo get_template_directory_uri(); ?>/novon/images/stones-rose-quartz.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                    <h3>Rose Quartz</h3>
+                                    <p>Representing universal love, this pink stone helps promote harmony in relationships.</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <div class="image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/novon/images/stones-lapis-lazuli.jpg" alt="">
-                        </div>
-                        <div class="description">
-                                <h3>Lapis Lazuli</h3>
-                                <p>This striking stone is known to release stress, and is often worn as a form of protection.</p>
-                        </div>
+                        <a class="no-visual" href="<?php echo get_site_url(); ?>/product/lapis-lazuli-c-link-oval-drop/">
+                            <div class="image">
+                                <img src="<?php echo get_template_directory_uri(); ?>/novon/images/stones-lapis-lazuli.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                    <h3>Lapis Lazuli</h3>
+                                    <p>This striking stone is known to release stress, and is often worn as a form of protection.</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="swiper-slide">
-                        <div class="image">
-                            <img src="<?php echo get_template_directory_uri(); ?>/novon/images/stones-rose-pearl.jpg" alt="">
-                        </div>
-                        <div class="description">
-                                <h3>Swarovski Rose Pearl</h3>
-                                <p>A stone that can raise your self-esteem, restore confidence and balance emotions.</p>
-                        </div>
+                        <a class="no-visual" href="<?php echo get_site_url(); ?>/product/swarovski-crystal-pink-c-link-sphere-drop/">
+                            <div class="image">
+                                <img src="<?php echo get_template_directory_uri(); ?>/novon/images/stones-rose-pearl.jpg" alt="">
+                            </div>
+                            <div class="description">
+                                    <h3>Swarovski Rose Pearl</h3>
+                                    <p>This pink crystal can raise your self-esteem, restore confidence and balance emotions.</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="swiper-pagination"></div>

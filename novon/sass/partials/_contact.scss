@@ -1,0 +1,80 @@
+.woo-contact-form {
+	max-width: 960px;
+	width: 100%;
+	display: flex;
+	padding: 1rem;
+	margin: 0 auto;
+	margin-top: 30px;
+	font-size: 16px;
+	padding-bottom: 10rem;
+	.info {
+		width: 30%;
+		padding: 1rem 0.5rem;
+		font-size: 16px;
+		line-height: 1.6;
+		a {
+			font-size: 16px;
+		}
+	}
+	#contact-form-99 {
+		width: 70%;
+		padding: 1rem 0.5rem;
+		font-size: 16px;
+		input {
+			height: 40px;
+			width: 100%;
+			max-width: 100%;
+			margin-bottom: 20px;
+			padding: 1rem;
+		}
+		textarea {
+			width: 100%;
+			padding: 1rem;
+		}
+		input[type="submit"] {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+			text-decoration: none;
+			text-align: center;
+			color: inherit;
+			background-color: $black;
+			border-radius: 6px;
+			text-transform: uppercase;
+			color: $white;
+			max-width: 240px;
+			font-size: 1rem;
+			padding: 0.5rem 3rem;
+			cursor: pointer;
+			transition: all 0.35s;
+			// border: 2px solid $black;
+			&:hover {
+			  background-color: $cyan;
+			  color: $grey;
+			}
+		}
+	}
+	.contact-form-submission {
+		margin-bottom: 4em;
+		padding: 0;
+		margin: 0;
+		margin-top: 20px;
+		p {
+			font-size: 16px;
+		}
+	}
+}
+
+@include breakpoint(max-width, 640px) {
+	.woo-contact-form {
+		flex-direction: column;
+		.info {
+			padding: 1rem;
+			width: 100%;
+		}
+		#contact-form-99 {
+			padding: 1rem;
+			width: 100%;
+		}
+	}
+}

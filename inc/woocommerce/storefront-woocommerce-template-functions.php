@@ -518,3 +518,29 @@ if ( ! function_exists( 'storefront_after_category_content' ) ) {
 		}
 	}
 }
+
+if ( ! function_exists( 'novon_add_product_link' ) ) {
+	/**
+	 * After Content
+	 * Closes the wrapping divs
+	 *
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	function novon_add_product_link() {
+		echo "<a href='#'>";
+	}
+}
+
+if ( ! function_exists( 'novon_add_product_link_close' ) ) {
+	/**
+	 * After Content
+	 * Closes the wrapping divs
+	 *
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	function novon_add_product_link_close() {
+		echo "</a>";
+	}
+}

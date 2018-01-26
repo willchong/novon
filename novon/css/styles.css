@@ -530,6 +530,27 @@ a {
       border-radius: 0;
       width: 100%;
       text-transform: none; }
+  a.no-highlight:hover {
+    background-color: inherit; }
+  a.no-visual {
+    text-decoration: none; }
+    a.no-visual:hover {
+      background-color: inherit;
+      text-decoration: none;
+      cursor: pointer; }
+
+.entry-content {
+  max-width: 960px;
+  padding: 1rem;
+  margin: 0 auto; }
+  .entry-content p {
+    font-size: 1rem;
+    margin-bottom: 1rem; }
+  .entry-content ul li, .entry-content ol li {
+    font-size: 1rem; }
+
+#secondary.widget-area {
+  display: none; }
 
 .woocommerce-cart-tab-container {
   display: none; }
@@ -756,8 +777,8 @@ section.modular .overlay {
     height: 100%;
     left: 0;
     top: 0;
-    background: -webkit-gradient(linear, left top, left bottom, from(rgba(187, 255, 255, 0.25)), to(rgba(187, 255, 255, 0.25)));
-    background: linear-gradient(rgba(187, 255, 255, 0.25), rgba(187, 255, 255, 0.25)); }
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(100, 255, 255, 0.15)), to(rgba(100, 255, 255, 0.15)));
+    background: linear-gradient(rgba(100, 255, 255, 0.15), rgba(100, 255, 255, 0.15)); }
   section.modular .overlay img {
     width: 100%; }
 
@@ -885,7 +906,7 @@ section.stones {
       overflow: visible;
       margin: 2rem auto;
       width: 100%; }
-      section.stones .inset .carousel .swiper-wrapper .swiper-slide {
+      section.stones .inset .carousel .swiper-wrapper .swiper-slide a {
         border: 6px solid #D1D1D1;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -896,12 +917,12 @@ section.stones {
                 align-items: stretch;
         padding: 0 2rem;
         min-height: 380px; }
-        section.stones .inset .carousel .swiper-wrapper .swiper-slide .image img {
+        section.stones .inset .carousel .swiper-wrapper .swiper-slide a .image img {
           width: auto;
           -ms-flex-item-align: center;
               align-self: center;
           vertical-align: top; }
-        section.stones .inset .carousel .swiper-wrapper .swiper-slide .description {
+        section.stones .inset .carousel .swiper-wrapper .swiper-slide a .description {
           display: -webkit-box;
           display: -ms-flexbox;
           display: flex;
@@ -913,9 +934,9 @@ section.stones {
               -ms-flex-direction: column;
                   flex-direction: column;
           margin-left: 4rem; }
-          section.stones .inset .carousel .swiper-wrapper .swiper-slide .description h3 {
+          section.stones .inset .carousel .swiper-wrapper .swiper-slide a .description h3 {
             margin-bottom: 1.5rem; }
-          section.stones .inset .carousel .swiper-wrapper .swiper-slide .description p {
+          section.stones .inset .carousel .swiper-wrapper .swiper-slide a .description p {
             text-align: left;
             width: 100%; }
     section.stones .inset .slick-next {
@@ -1013,8 +1034,8 @@ section.silver {
           margin-bottom: 1.5rem; }
 
 section.shop {
-  padding: 7rem;
-  background: url("../images/shop-bg.jpg") center center no-repeat;
+  padding: 12rem 7rem;
+  background: url("../images/shop-bg-6.jpg") center center no-repeat;
   background-size: cover;
   text-align: center; }
   section.shop h1 {
@@ -1171,14 +1192,14 @@ section.originals .category {
 section.products {
   max-width: 960px;
   margin: 0 auto; }
-  section.products .tops, section.products .attachments {
+  section.products .tops, section.products .attachments, section.products .chains {
     padding: 3rem; }
-    section.products .tops .fancy-header, section.products .attachments .fancy-header {
+    section.products .tops .fancy-header, section.products .attachments .fancy-header, section.products .chains .fancy-header {
       width: 100%;
       position: relative;
       text-align: center;
       margin-bottom: 1rem; }
-      section.products .tops .fancy-header h2, section.products .attachments .fancy-header h2 {
+      section.products .tops .fancy-header h2, section.products .attachments .fancy-header h2, section.products .chains .fancy-header h2 {
         width: auto;
         display: inline-block;
         padding: 0 3.5rem;
@@ -1186,7 +1207,7 @@ section.products {
         letter-spacing: 2px;
         text-align: center;
         z-index: 1001; }
-        section.products .tops .fancy-header h2:before, section.products .attachments .fancy-header h2:before {
+        section.products .tops .fancy-header h2:before, section.products .attachments .fancy-header h2:before, section.products .chains .fancy-header h2:before {
           z-index: -1;
           content: '';
           position: absolute;
@@ -1197,14 +1218,14 @@ section.products {
           -webkit-transform: translateY(-50%);
                   transform: translateY(-50%);
           left: 0; }
-    section.products .tops p, section.products .attachments p {
+    section.products .tops p, section.products .attachments p, section.products .chains p {
       font-size: 1rem;
       text-align: center;
       margin: 0 auto;
       margin-bottom: 1rem;
       max-width: 600px;
       color: #696969; }
-    section.products .tops .icons, section.products .attachments .icons {
+    section.products .tops .icons, section.products .attachments .icons, section.products .chains .icons {
       width: 300px;
       margin: 0 auto;
       display: -webkit-box;
@@ -1214,7 +1235,7 @@ section.products {
       -webkit-box-pack: center;
           -ms-flex-pack: center;
               justify-content: center; }
-      section.products .tops .icons .icon, section.products .attachments .icons .icon {
+      section.products .tops .icons .icon, section.products .attachments .icons .icon, section.products .chains .icons .icon {
         width: 29%;
         margin: 0 2%;
         padding: 0.5rem;
@@ -1223,25 +1244,25 @@ section.products {
         cursor: pointer;
         -webkit-transition: all 0.35s;
         transition: all 0.35s; }
-        section.products .tops .icons .icon img, section.products .attachments .icons .icon img {
+        section.products .tops .icons .icon img, section.products .attachments .icons .icon img, section.products .chains .icons .icon img {
           width: auto;
           height: 70px;
           margin-bottom: 0.5rem; }
-          section.products .tops .icons .icon img.cyan, section.products .attachments .icons .icon img.cyan {
+          section.products .tops .icons .icon img.cyan, section.products .attachments .icons .icon img.cyan, section.products .chains .icons .icon img.cyan {
             display: none; }
-        section.products .tops .icons .icon p, section.products .attachments .icons .icon p {
+        section.products .tops .icons .icon p, section.products .attachments .icons .icon p, section.products .chains .icons .icon p {
           color: #696969;
           font-size: 1rem;
           margin-bottom: 0; }
-        section.products .tops .icons .icon:hover, section.products .attachments .icons .icon:hover {
+        section.products .tops .icons .icon:hover, section.products .attachments .icons .icon:hover, section.products .chains .icons .icon:hover {
           border: 4px solid #BBF1F1; }
-        section.products .tops .icons .icon.js-active, section.products .attachments .icons .icon.js-active {
+        section.products .tops .icons .icon.js-active, section.products .attachments .icons .icon.js-active, section.products .chains .icons .icon.js-active {
           border: 4px solid #BBF1F1; }
-          section.products .tops .icons .icon.js-active img.white, section.products .attachments .icons .icon.js-active img.white {
+          section.products .tops .icons .icon.js-active img.white, section.products .attachments .icons .icon.js-active img.white, section.products .chains .icons .icon.js-active img.white {
             display: none; }
-          section.products .tops .icons .icon.js-active img.cyan, section.products .attachments .icons .icon.js-active img.cyan {
+          section.products .tops .icons .icon.js-active img.cyan, section.products .attachments .icons .icon.js-active img.cyan, section.products .chains .icons .icon.js-active img.cyan {
             display: inline-block; }
-    section.products .tops .list, section.products .attachments .list {
+    section.products .tops .list, section.products .attachments .list, section.products .chains .list {
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -1252,7 +1273,7 @@ section.products {
       -webkit-box-align: stretch;
           -ms-flex-align: stretch;
               align-items: stretch; }
-      section.products .tops .list .slick-arrow, section.products .attachments .list .slick-arrow {
+      section.products .tops .list .slick-arrow, section.products .attachments .list .slick-arrow, section.products .chains .list .slick-arrow {
         position: absolute;
         top: 50%;
         -webkit-transform: translateY(-50%);
@@ -1262,25 +1283,25 @@ section.products {
                 appearance: none;
         border: none;
         font-family: "fontawesome"; }
-      section.products .tops .list .slick-prev, section.products .attachments .list .slick-prev {
+      section.products .tops .list .slick-prev, section.products .attachments .list .slick-prev, section.products .chains .list .slick-prev {
         left: -2.5rem; }
-        section.products .tops .list .slick-prev:after, section.products .attachments .list .slick-prev:after {
+        section.products .tops .list .slick-prev:after, section.products .attachments .list .slick-prev:after, section.products .chains .list .slick-prev:after {
           content: '\f104';
           font-size: 4.5rem;
           color: #000000;
           position: absolute;
           top: 0;
           left: 0; }
-      section.products .tops .list .slick-next, section.products .attachments .list .slick-next {
+      section.products .tops .list .slick-next, section.products .attachments .list .slick-next, section.products .chains .list .slick-next {
         right: -2rem; }
-        section.products .tops .list .slick-next:after, section.products .attachments .list .slick-next:after {
+        section.products .tops .list .slick-next:after, section.products .attachments .list .slick-next:after, section.products .chains .list .slick-next:after {
           content: '\f105';
           font-size: 4.5rem;
           color: #000000;
           position: absolute;
           top: 0;
           left: 0; }
-      section.products .tops .list .product, section.products .attachments .list .product {
+      section.products .tops .list .product, section.products .attachments .list .product, section.products .chains .list .product {
         width: 28%;
         margin-bottom: 2rem;
         margin-left: 1rem;
@@ -1288,7 +1309,7 @@ section.products {
         padding-bottom: 2.5rem;
         position: relative;
         min-height: 520px; }
-        section.products .tops .list .product:before, section.products .attachments .list .product:before {
+        section.products .tops .list .product:before, section.products .attachments .list .product:before, section.products .chains .list .product:before {
           content: '';
           position: absolute;
           top: 0;
@@ -1301,33 +1322,33 @@ section.products {
           background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(3%, rgba(255, 255, 255, 0.8)), color-stop(6%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
           background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0.8) 3%, rgba(255, 255, 255, 0) 6%, rgba(255, 255, 255, 0) 100%);
           filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 ); }
-        section.products .tops .list .product *:focus, section.products .attachments .list .product *:focus {
+        section.products .tops .list .product *:focus, section.products .attachments .list .product *:focus, section.products .chains .list .product *:focus {
           outline: none; }
-        section.products .tops .list .product a, section.products .attachments .list .product a {
+        section.products .tops .list .product a, section.products .attachments .list .product a, section.products .chains .list .product a {
           text-decoration: none;
           font-size: 1rem; }
-          section.products .tops .list .product a:hover, section.products .attachments .list .product a:hover {
+          section.products .tops .list .product a:hover, section.products .attachments .list .product a:hover, section.products .chains .list .product a:hover {
             background-color: inherit; }
-        section.products .tops .list .product img, section.products .attachments .list .product img {
+        section.products .tops .list .product img, section.products .attachments .list .product img, section.products .chains .list .product img {
           width: 100%;
           height: auto; }
-        section.products .tops .list .product h2, section.products .attachments .list .product h2 {
+        section.products .tops .list .product h2, section.products .attachments .list .product h2, section.products .chains .list .product h2 {
           font-size: 1.5rem;
           padding: 0 1rem 0 0;
           margin-top: 1rem;
           margin-bottom: 1.5rem; }
-        section.products .tops .list .product p, section.products .attachments .list .product p {
+        section.products .tops .list .product p, section.products .attachments .list .product p, section.products .chains .list .product p {
           color: #696969;
           text-align: left;
           margin-bottom: 1.5rem;
           font-size: 1rem; }
-        section.products .tops .list .product .price, section.products .attachments .list .product .price {
+        section.products .tops .list .product .price, section.products .attachments .list .product .price, section.products .chains .list .product .price {
           font-weight: 700;
           font-size: 1rem;
           color: #696969;
           margin-bottom: 1.5rem;
           display: block; }
-        section.products .tops .list .product .add_to_cart_button, section.products .attachments .list .product .add_to_cart_button {
+        section.products .tops .list .product .add_to_cart_button, section.products .attachments .list .product .add_to_cart_button, section.products .chains .list .product .add_to_cart_button {
           position: absolute;
           bottom: 0;
           display: -webkit-box;
@@ -1350,17 +1371,169 @@ section.products {
           font-size: 1rem;
           padding: 0.5rem 3rem;
           cursor: pointer; }
-          section.products .tops .list .product .add_to_cart_button:hover, section.products .attachments .list .product .add_to_cart_button:hover {
+          section.products .tops .list .product .add_to_cart_button:hover, section.products .attachments .list .product .add_to_cart_button:hover, section.products .chains .list .product .add_to_cart_button:hover {
             background-color: #BBF1F1;
             color: #000000; }
-        section.products .tops .list .product .added_to_cart, section.products .attachments .list .product .added_to_cart {
+        section.products .tops .list .product .added_to_cart, section.products .attachments .list .product .added_to_cart, section.products .chains .list .product .added_to_cart {
           position: absolute;
           bottom: 0;
           width: 100%;
           text-align: center;
           background: #BBF1F1;
           padding: 0.5rem; }
-          section.products .tops .list .product .added_to_cart:hover, section.products .attachments .list .product .added_to_cart:hover {
+          section.products .tops .list .product .added_to_cart:hover, section.products .attachments .list .product .added_to_cart:hover, section.products .chains .list .product .added_to_cart:hover {
+            background: #BBF1F1; }
+
+.novon-search {
+  max-width: 960px;
+  margin: 0 auto;
+  padding-bottom: 5rem; }
+  .novon-search .cta-wrapper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    padding-top: 2rem;
+    padding-left: 2rem;
+    margin-bottom: 2rem; }
+    .novon-search .cta-wrapper .cta {
+      max-width: 220px;
+      font-size: 1.25rem;
+      padding: 0.75rem 1.5rem 0.9rem;
+      border-radius: 0;
+      background: transparent;
+      color: #000000;
+      border: 1px solid #000000; }
+      .novon-search .cta-wrapper .cta:hover {
+        background: #000000;
+        color: #ffffff; }
+  .novon-search .products {
+    padding: 3rem; }
+    .novon-search .products .fancy-header {
+      width: 100%;
+      position: relative;
+      text-align: center;
+      margin-bottom: 1rem; }
+      .novon-search .products .fancy-header h2 {
+        width: auto;
+        display: inline-block;
+        padding: 0 3.5rem;
+        background-color: #ffffff;
+        letter-spacing: 2px;
+        text-align: center;
+        z-index: 1001; }
+        .novon-search .products .fancy-header h2:before {
+          z-index: -1;
+          content: '';
+          position: absolute;
+          width: 100%;
+          height: 4px;
+          background-color: #BBF1F1;
+          top: 54%;
+          -webkit-transform: translateY(-50%);
+                  transform: translateY(-50%);
+          left: 0; }
+    .novon-search .products p {
+      font-size: 1rem;
+      text-align: center;
+      margin: 0 auto;
+      margin-bottom: 1rem;
+      max-width: 600px;
+      color: #696969; }
+    .novon-search .products .results {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -ms-flex-pack: distribute;
+          justify-content: space-around;
+      -webkit-box-align: stretch;
+          -ms-flex-align: stretch;
+              align-items: stretch; }
+      .novon-search .products .results .product {
+        width: 28%;
+        margin-bottom: 2rem;
+        margin-left: 1rem;
+        margin-right: 1rem;
+        padding-bottom: 2.5rem;
+        position: relative;
+        min-height: 520px; }
+        .novon-search .products .results .product:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          pointer-events: none;
+          width: 100%;
+          height: 100%;
+          background: white;
+          background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(3%, rgba(255, 255, 255, 0.8)), color-stop(6%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+          background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(3%, rgba(255, 255, 255, 0.8)), color-stop(6%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+          background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0.8) 3%, rgba(255, 255, 255, 0) 6%, rgba(255, 255, 255, 0) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 ); }
+        .novon-search .products .results .product *:focus {
+          outline: none; }
+        .novon-search .products .results .product a {
+          text-decoration: none;
+          font-size: 1rem; }
+          .novon-search .products .results .product a:hover {
+            background-color: inherit; }
+        .novon-search .products .results .product img {
+          width: 100%;
+          height: auto; }
+        .novon-search .products .results .product h2 {
+          font-size: 1.5rem;
+          padding: 0 1rem 0 0;
+          margin-top: 1rem;
+          margin-bottom: 1.5rem; }
+        .novon-search .products .results .product p {
+          color: #696969;
+          text-align: left;
+          margin-bottom: 1.5rem;
+          font-size: 1rem; }
+        .novon-search .products .results .product .price {
+          font-weight: 700;
+          font-size: 1rem;
+          color: #696969;
+          margin-bottom: 1.5rem;
+          display: block; }
+        .novon-search .products .results .product .add_to_cart_button {
+          position: absolute;
+          bottom: 0;
+          display: -webkit-box;
+          display: -ms-flexbox;
+          display: flex;
+          -webkit-box-align: center;
+              -ms-flex-align: center;
+                  align-items: center;
+          -webkit-box-pack: center;
+              -ms-flex-pack: center;
+                  justify-content: center;
+          text-decoration: none;
+          text-align: center;
+          color: inherit;
+          background-color: #000000;
+          border-radius: 0;
+          width: 100%;
+          text-transform: none;
+          color: #ffffff;
+          font-size: 1rem;
+          padding: 0.5rem 3rem;
+          cursor: pointer; }
+          .novon-search .products .results .product .add_to_cart_button:hover {
+            background-color: #BBF1F1;
+            color: #000000; }
+        .novon-search .products .results .product .added_to_cart {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          text-align: center;
+          background: #BBF1F1;
+          padding: 0.5rem; }
+          .novon-search .products .results .product .added_to_cart:hover {
             background: #BBF1F1; }
 
 @media (max-width: 640px) {
@@ -1368,16 +1541,18 @@ section.products {
     width: 100%;
     text-align: center;
     font-size: 2rem; }
-  section.products .tops .list .product h2, section.products .attachments .list .product h2 {
+  section.products .tops .list .product h2, section.products .attachments .list .product h2, section.products .chains .list .product h2 {
     font-size: 2rem; }
-  section.products .tops .list .product p, section.products .attachments .list .product p {
+  section.products .tops .list .product p, section.products .attachments .list .product p, section.products .chains .list .product p {
     font-size: 1.25rem; }
-  section.products .tops .list .product .price, section.products .attachments .list .product .price {
+  section.products .tops .list .product .price, section.products .attachments .list .product .price, section.products .chains .list .product .price {
     font-size: 1.25rem; }
-  section.products .tops .list .product .add_to_cart_button, section.products .attachments .list .product .add_to_cart_button {
+  section.products .tops .list .product .add_to_cart_button, section.products .attachments .list .product .add_to_cart_button, section.products .chains .list .product .add_to_cart_button {
     font-size: 1.25rem; }
-  section.products .tops .list .product .added_to_cart, section.products .attachments .list .product .added_to_cart {
-    font-size: 1.25rem; } }
+  section.products .tops .list .product .added_to_cart, section.products .attachments .list .product .added_to_cart, section.products .chains .list .product .added_to_cart {
+    font-size: 1.25rem; }
+  .novon-search section.products .results .product {
+    width: 100%; } }
 
 .single-product .novon-product-wrapper {
   max-width: 1200px;
@@ -1431,6 +1606,7 @@ section.products {
             left: 0;
             width: 100%;
             height: 100%;
+            pointer-events: none;
             background: white;
             background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(3%, rgba(255, 255, 255, 0.8)), color-stop(6%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
             background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(3%, rgba(255, 255, 255, 0.8)), color-stop(6%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
@@ -1544,6 +1720,7 @@ section.products {
         left: 50%;
         -webkit-transform: translate(-50%);
                 transform: translate(-50%);
+        pointer-events: none;
         background-color: #D1D1D1; }
       .single-product .novon-product-wrapper div.product .related h2 {
         font-size: 2rem;
@@ -1636,6 +1813,7 @@ section.products {
               left: 0;
               width: 100%;
               height: 100%;
+              pointer-events: none;
               background: white;
               background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(3%, rgba(255, 255, 255, 0.8)), color-stop(6%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
               background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(3%, rgba(255, 255, 255, 0.8)), color-stop(6%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
@@ -1934,6 +2112,9 @@ section.products {
         color: #000000;
         background-color: #BBF1F1; }
 
+#payment .payment_methods {
+  font-size: 16px; }
+
 @media (max-width: 768px) {
   .entry-content .woocommerce .woocommerce-cart-form .woocommerce-cart-form__contents .woocommerce-cart-form__cart-item {
     border: 1px solid #D1D1D1;
@@ -2031,6 +2212,7 @@ section.products {
         left: 0;
         width: 100%;
         height: 100%;
+        pointer-events: none;
         background: white;
         background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(3%, rgba(255, 255, 255, 0.8)), color-stop(6%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
         background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(3%, rgba(255, 255, 255, 0.8)), color-stop(6%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
@@ -2130,6 +2312,84 @@ section.products {
     .site-main .novon-category .products .product {
       width: 100%; } }
 
+.woo-contact-form {
+  max-width: 960px;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 1rem;
+  margin: 0 auto;
+  margin-top: 30px;
+  font-size: 16px;
+  padding-bottom: 10rem; }
+  .woo-contact-form .info {
+    width: 30%;
+    padding: 1rem 0.5rem;
+    font-size: 16px;
+    line-height: 1.6; }
+    .woo-contact-form .info a {
+      font-size: 16px; }
+  .woo-contact-form #contact-form-99 {
+    width: 70%;
+    padding: 1rem 0.5rem;
+    font-size: 16px; }
+    .woo-contact-form #contact-form-99 input {
+      height: 40px;
+      width: 100%;
+      max-width: 100%;
+      margin-bottom: 20px;
+      padding: 1rem; }
+    .woo-contact-form #contact-form-99 textarea {
+      width: 100%;
+      padding: 1rem; }
+    .woo-contact-form #contact-form-99 input[type="submit"] {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-pack: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      text-decoration: none;
+      text-align: center;
+      color: inherit;
+      background-color: #000000;
+      border-radius: 6px;
+      text-transform: uppercase;
+      color: #ffffff;
+      max-width: 240px;
+      font-size: 1rem;
+      padding: 0.5rem 3rem;
+      cursor: pointer;
+      -webkit-transition: all 0.35s;
+      transition: all 0.35s; }
+      .woo-contact-form #contact-form-99 input[type="submit"]:hover {
+        background-color: #BBF1F1;
+        color: #696969; }
+  .woo-contact-form .contact-form-submission {
+    margin-bottom: 4em;
+    padding: 0;
+    margin: 0;
+    margin-top: 20px; }
+    .woo-contact-form .contact-form-submission p {
+      font-size: 16px; }
+
+@media (max-width: 640px) {
+  .woo-contact-form {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .woo-contact-form .info {
+      padding: 1rem;
+      width: 100%; }
+    .woo-contact-form #contact-form-99 {
+      padding: 1rem;
+      width: 100%; } }
+
 footer {
   height: 124px;
   width: 100%;
@@ -2155,8 +2415,12 @@ footer {
         margin-right: 0; }
       footer ul li a {
         text-decoration: none; }
+        footer ul li a img {
+          opacity: 0.5; }
         footer ul li a:hover {
           text-decoration: inherit; }
+          footer ul li a:hover img {
+            opacity: 0.75; }
     footer ul:nth-child(2) {
       text-align: center; }
     footer ul:last-child {

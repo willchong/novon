@@ -939,3 +939,21 @@ if ( ! function_exists( 'storefront_primary_navigation_wrapper_close' ) ) {
 		echo '</div>';
 	}
 }
+
+if ( ! function_exists( 'storefront_post_wrapper' ) ) {
+	/**
+	 * The primary navigation wrapper close
+	 */
+	function storefront_post_wrapper() {
+		echo '<div class="test-post">';
+	}
+}
+
+if ( ! function_exists( 'storefront_post_wrapper_close' ) ) {
+	/**
+	 * The primary navigation wrapper close
+	 */
+	function storefront_post_wrapper_close() {
+		echo '</div>';
+	}
+}

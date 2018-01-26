@@ -180,6 +180,38 @@ a {
       text-transform: none;
     }
   }
+  &.no-highlight {
+    &:hover {
+      background-color: inherit;
+    }
+  }
+  &.no-visual {
+    text-decoration: none;
+    &:hover {
+      background-color: inherit;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  }
+}
+
+.entry-content {
+    max-width: 960px;
+    padding: 1rem;
+    margin: 0 auto;
+    p {
+      font-size: 1rem;
+      margin-bottom: 1rem;
+    }
+    ul, ol {
+      li {
+        font-size: 1rem;
+      }
+    }
+}
+
+#secondary.widget-area {
+  display: none;
 }
 
 .woocommerce-cart-tab-container {
@@ -196,5 +228,6 @@ a {
         "partials/product",
         "partials/cart",
         "partials/category",
+        "partials/contact",
         "partials/footer";
   

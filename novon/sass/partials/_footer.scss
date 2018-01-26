@@ -18,8 +18,14 @@ footer {
       }
       a {
         text-decoration: none;
+        img {
+          opacity: 0.5;
+        }
         &:hover {
           text-decoration: inherit;
+          img {
+            opacity: 0.75;
+          }
         }
       }
     }

@@ -31,17 +31,17 @@
 
 	<footer>
 	    <ul>
-	        <li><a href="/">About</a></li>
 	        <li><a href="/shop/">Shop</a></li>
 	        <li><a href="/contact/">Contact</a></li>
+	        <li><a href="/privacy-policy/">Privacy Policy</a></li>
+	        <li><a href="/return-warranty-policy/">Return &amp; Warranty Policy</a></li>
 	    </ul>
 	    <ul>
 	        <li>© 2017 Novon Collection</li>
 	    </ul>
 	    <ul>
-	        <!-- <li>&nbsp;</li> -->
-	        <li><a href="#">Facebook</a></li>
-	        <li><a href="#">Instagram</a></li>
+	        <li><a class="no-highlight" href="#"><img src="<?php echo get_template_directory_uri(); ?>/novon/images/icon-facebook-4.svg" alt=""></a></li>
+	        <li><a class="no-highlight" href="#"><img src="<?php echo get_template_directory_uri(); ?>/novon/images/icon-instagram-14.svg" alt=""></a></li>
 	    </ul>
 	</footer>
 
