@@ -330,6 +330,17 @@
 
 } 
 
+.woocommerce-checkout ul#shipping_method {
+	width: 180px;
+	display: flex;
+	flex-direction: column;
+	justify-content: flex-end;
+	li {
+		text-align: right;
+		font-size: 1.2rem;
+	}
+}
+
 @include breakpoint(max-width, 768px) {
 
 	.entry-content {
@@ -366,5 +377,8 @@
 				}
 			}
 		}
+	}
+	.woocommerce-checkout ul#shipping_method {
+	    width: 100%;
 	}
 }

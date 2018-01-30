@@ -1715,7 +1715,7 @@ section.products {
         content: '';
         position: absolute;
         width: 70%;
-        height: 4px;
+        height: 2px;
         top: 0;
         left: 50%;
         -webkit-transform: translate(-50%);
@@ -1840,6 +1840,121 @@ section.products {
       right: 1rem;
       color: #000000; }
 
+.site-main .up-sells {
+  max-width: none;
+  width: 100%;
+  position: relative;
+  padding-top: 4rem; }
+  .site-main .up-sells:before {
+    content: '';
+    position: absolute;
+    width: 70%;
+    height: 2px;
+    top: 0;
+    left: 50%;
+    -webkit-transform: translate(-50%);
+    transform: translate(-50%);
+    pointer-events: none;
+    background-color: #D1D1D1; }
+  .site-main .up-sells > h2:first-child {
+    font-size: 2rem;
+    text-align: center; }
+  .site-main .up-sells ul.products {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: stretch;
+        -ms-flex-align: stretch;
+            align-items: stretch; }
+    .site-main .up-sells ul.products li.product {
+      width: 28%;
+      margin: 0;
+      float: none;
+      margin-bottom: 2rem;
+      float: none;
+      text-align: left;
+      padding-bottom: 2.5rem; }
+      .site-main .up-sells ul.products li.product a {
+        text-decoration: none;
+        font-size: 1rem; }
+        .site-main .up-sells ul.products li.product a:hover {
+          background-color: inherit; }
+      .site-main .up-sells ul.products li.product img {
+        width: 100%;
+        height: auto; }
+      .site-main .up-sells ul.products li.product h2 {
+        font-size: 1.5rem;
+        padding: 0 1rem 0 0;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        text-align: left; }
+      .site-main .up-sells ul.products li.product p {
+        color: #696969;
+        text-align: left;
+        margin-bottom: 1.5rem;
+        font-size: 1rem; }
+      .site-main .up-sells ul.products li.product .price {
+        font-weight: 700;
+        font-size: 1rem;
+        color: #696969;
+        margin-bottom: 1.5rem;
+        display: block; }
+      .site-main .up-sells ul.products li.product .add_to_cart_button {
+        position: absolute;
+        bottom: 0;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        text-decoration: none;
+        text-align: center;
+        color: inherit;
+        background-color: #000000;
+        border-radius: 0;
+        width: 100%;
+        text-transform: none;
+        color: #ffffff;
+        font-size: 1rem;
+        padding: 0.75rem 3rem;
+        cursor: pointer; }
+        .site-main .up-sells ul.products li.product .add_to_cart_button:hover {
+          background-color: #BBF1F1;
+          color: #000000; }
+      .site-main .up-sells ul.products li.product .added_to_cart {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        text-align: center;
+        background: #BBF1F1;
+        padding: 0.5rem; }
+        .site-main .up-sells ul.products li.product .added_to_cart:hover {
+          background: #BBF1F1; }
+      .site-main .up-sells ul.products li.product .woocommerce-loop-product__link {
+        position: relative; }
+        .site-main .up-sells ul.products li.product .woocommerce-loop-product__link:before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          pointer-events: none;
+          background: white;
+          background: -webkit-gradient(left top, left bottom, color-stop(0%, white), color-stop(3%, rgba(255, 255, 255, 0.8)), color-stop(6%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0)));
+          background: -webkit-gradient(linear, left top, left bottom, from(white), color-stop(3%, rgba(255, 255, 255, 0.8)), color-stop(6%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0)));
+          background: linear-gradient(to bottom, white 0%, rgba(255, 255, 255, 0.8) 3%, rgba(255, 255, 255, 0) 6%, rgba(255, 255, 255, 0) 100%);
+          filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 ); }
+
 @media (max-width: 640px) {
   .single-product .novon-product-wrapper div.product {
     -webkit-box-orient: vertical;
@@ -1854,18 +1969,18 @@ section.products {
       padding: 2rem; }
       .single-product .novon-product-wrapper div.product .summary h1 {
         padding: 0; }
-    .single-product .novon-product-wrapper div.product .related .products {
+    .single-product .novon-product-wrapper div.product .related .products, .single-product .novon-product-wrapper div.product .up-sells .products {
       padding: 0 2rem; }
-      .single-product .novon-product-wrapper div.product .related .products .product {
+      .single-product .novon-product-wrapper div.product .related .products .product, .single-product .novon-product-wrapper div.product .up-sells .products .product {
         width: 100%;
         padding-bottom: 3rem; }
-        .single-product .novon-product-wrapper div.product .related .products .product .excerpt p {
+        .single-product .novon-product-wrapper div.product .related .products .product .excerpt p, .single-product .novon-product-wrapper div.product .up-sells .products .product .excerpt p {
           font-size: 1.25rem; }
-        .single-product .novon-product-wrapper div.product .related .products .product .price {
+        .single-product .novon-product-wrapper div.product .related .products .product .price, .single-product .novon-product-wrapper div.product .up-sells .products .product .price {
           font-size: 1.25rem; }
-        .single-product .novon-product-wrapper div.product .related .products .product .add_to_cart_button {
+        .single-product .novon-product-wrapper div.product .related .products .product .add_to_cart_button, .single-product .novon-product-wrapper div.product .up-sells .products .product .add_to_cart_button {
           font-size: 1.25rem; }
-        .single-product .novon-product-wrapper div.product .related .products .product .added_to_cart {
+        .single-product .novon-product-wrapper div.product .related .products .product .added_to_cart, .single-product .novon-product-wrapper div.product .up-sells .products .product .added_to_cart {
           font-size: 1.25rem; } }
 
 .entry-title {
@@ -2115,6 +2230,22 @@ section.products {
 #payment .payment_methods {
   font-size: 16px; }
 
+.woocommerce-checkout ul#shipping_method {
+  width: 180px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+  .woocommerce-checkout ul#shipping_method li {
+    text-align: right;
+    font-size: 1.2rem; }
+
 @media (max-width: 768px) {
   .entry-content .woocommerce .woocommerce-cart-form .woocommerce-cart-form__contents .woocommerce-cart-form__cart-item {
     border: 1px solid #D1D1D1;
@@ -2133,7 +2264,9 @@ section.products {
   .entry-content .woocommerce .cart-collaterals .cart_totals {
     width: 100%; }
     .entry-content .woocommerce .cart-collaterals .cart_totals table {
-      width: 70%; } }
+      width: 70%; }
+  .woocommerce-checkout ul#shipping_method {
+    width: 100%; } }
 
 .site-main .novon-category {
   max-width: 960px;
