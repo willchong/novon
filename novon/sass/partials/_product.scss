@@ -282,8 +282,9 @@
 }
 
 .site-main .up-sells {
-	max-width: none;
+	max-width: 1200px;
 	width: 100%;
+	margin: 0 auto;
 	position: relative;
 	padding-top: 4rem;
 	&:before {
@@ -306,12 +307,13 @@
 	}
 	ul.products {
 		display: flex;
+		flex-direction: row;
 		flex-wrap: wrap;
-		justify-content: space-between;
+		justify-content: center;
 		align-items: stretch;
 		li.product {
 			width: 28%;
-			margin: 0;
+			margin: 1%;
 			float: none;
 			margin-bottom: 2rem;
 			float: none;

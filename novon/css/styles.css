@@ -1841,8 +1841,9 @@ section.products {
       color: #000000; }
 
 .site-main .up-sells {
-  max-width: none;
+  max-width: 1200px;
   width: 100%;
+  margin: 0 auto;
   position: relative;
   padding-top: 4rem; }
   .site-main .up-sells:before {
@@ -1863,17 +1864,21 @@ section.products {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    -webkit-box-pack: justify;
-        -ms-flex-pack: justify;
-            justify-content: space-between;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
     -webkit-box-align: stretch;
         -ms-flex-align: stretch;
             align-items: stretch; }
     .site-main .up-sells ul.products li.product {
       width: 28%;
-      margin: 0;
+      margin: 1%;
       float: none;
       margin-bottom: 2rem;
       float: none;
