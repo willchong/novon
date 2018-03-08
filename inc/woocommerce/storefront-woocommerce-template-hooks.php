@@ -99,6 +99,9 @@ add_action( 'woocommerce_after_shop_loop_item_title',      'woocommerce_show_pro
  *
  * @see storefront_cart_link_fragment()
  */
+add_action( 'woocommerce_proceed_to_checkout', 'woocommerce_secure_checkout', 15 );
+
+
 if ( defined( 'WC_VERSION' ) && version_compare( WC_VERSION, '2.3', '>=' ) ) {
 	add_filter( 'woocommerce_add_to_cart_fragments', 'storefront_cart_link_fragment' );
 } else {

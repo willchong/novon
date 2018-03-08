@@ -75,7 +75,7 @@
             <div class="fancy-header">
                 <h2>TOPS AND CHAINS</h2>
             </div>
-            <p>Start with one of our earring or pendant tops and let inspiration be your guide. Customize your creation with a sterling silver chain in optional lengths. Note: All pendant tops come with an 18” sterling silver chain. </p>
+            <p>Start with one of our earring or pendant tops and let inspiration be your guide. Customize your creation with a sterling silver chain in optional lengths.</p>
             <div class="icons">
                 <div class="icon js-icon" data-filter="product_cat-earrings">
                     <img class="white" src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-icons-earrings.svg" alt="">

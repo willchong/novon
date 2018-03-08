@@ -1284,7 +1284,10 @@ section.products {
         border: none;
         font-family: "fontawesome"; }
       section.products .tops .list .slick-prev, section.products .attachments .list .slick-prev, section.products .chains .list .slick-prev {
-        left: -2.5rem; }
+        left: -2.5rem;
+        width: 22px;
+        height: 62px;
+        background: transparent; }
         section.products .tops .list .slick-prev:after, section.products .attachments .list .slick-prev:after, section.products .chains .list .slick-prev:after {
           content: '\f104';
           font-size: 4.5rem;
@@ -1293,7 +1296,10 @@ section.products {
           top: 0;
           left: 0; }
       section.products .tops .list .slick-next, section.products .attachments .list .slick-next, section.products .chains .list .slick-next {
-        right: -2rem; }
+        right: -2rem;
+        width: 22px;
+        height: 62px;
+        background: transparent; }
         section.products .tops .list .slick-next:after, section.products .attachments .list .slick-next:after, section.products .chains .list .slick-next:after {
           content: '\f105';
           font-size: 4.5rem;

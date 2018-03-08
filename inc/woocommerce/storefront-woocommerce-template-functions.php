@@ -544,3 +544,17 @@ if ( ! function_exists( 'novon_add_product_link_close' ) ) {
 		echo "</a>";
 	}
 }
+
+
+if ( ! function_exists( 'woocommerce_secure_checkout' ) ) {
+	/**
+	 *  
+	 * Checkout message
+	 *
+	 * @since   1.0.0
+	 * @return  void
+	 */
+	function woocommerce_secure_checkout() {
+		echo "<p>This is a secure checkout.</p>";
+	}
+}

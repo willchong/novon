@@ -139,6 +139,9 @@ section.products {
 			}
 			.slick-prev {
 				left: -2.5rem;
+				width: 22px;
+				height: 62px;
+				background: transparent;
 				&:after {
 					content: '\f104';
 					font-size: 4.5rem;
@@ -150,6 +153,9 @@ section.products {
 			}
 			.slick-next {
 				right: -2rem;
+				width: 22px;
+				height: 62px;
+				background: transparent;
 				&:after {
 					content: '\f105';
 					font-size: 4.5rem;

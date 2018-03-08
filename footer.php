@@ -40,8 +40,8 @@
 	        <li>© <?php echo date('Y'); ?> Novon Collection</li>
 	    </ul>
 	    <ul>
-	        <li><a class="no-highlight" href="#"><img src="<?php echo get_template_directory_uri(); ?>/novon/images/icon-facebook-4.svg" alt=""></a></li>
-	        <li><a class="no-highlight" href="#"><img src="<?php echo get_template_directory_uri(); ?>/novon/images/icon-instagram-14.svg" alt=""></a></li>
+	        <li><a class="no-highlight" target="_blank" href="https://www.facebook.com/novonjewelry/"><img src="<?php echo get_template_directory_uri(); ?>/novon/images/icon-facebook-4.svg" alt=""></a></li>
+	        <li><a class="no-highlight" target="_blank" href="https://www.instagram.com/novonjewelry/"><img src="<?php echo get_template_directory_uri(); ?>/novon/images/icon-instagram-14.svg" alt=""></a></li>
 	    </ul>
 	</footer>
 
