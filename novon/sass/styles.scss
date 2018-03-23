@@ -126,6 +126,22 @@ select::-ms-expand {
   outline: none;
 }
 
+#main {
+  &:focus {
+    outline: none;
+  }
+}
+#content {
+  &:focus {
+    outline: none;
+  }
+  .col-full {
+    &:focus {
+      outline: none;
+    }
+  }
+}
+
 a {
   color: inherit;
   transition: all 0.35s;
@@ -222,12 +238,18 @@ a {
   display: none;
 }
 
+body.woocommerce-cart .woocommerce-message a {
+    display: none;
+}
+
+
 @import "partials/header",
         "partials/homepage",
         "partials/shop",
         "partials/product",
         "partials/cart",
         "partials/category",
+        "partials/configurator",
         "partials/contact",
         "partials/footer";
   

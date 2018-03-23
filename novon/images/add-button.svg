@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="103px" height="103px" viewBox="0 0 103 103" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 48.2 (47327) - http://www.bohemiancoding.com/sketch -->
+    <title>+Button</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Product-Page" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-338.000000, -371.000000)">
+        <g id="+Button" transform="translate(338.000000, 371.000000)">
+            <circle id="Oval-3" fill="#696969" cx="51.5" cy="51.5" r="51.5"></circle>
+            <g id="Group-2" transform="translate(27.000000, 27.000000)" stroke="#FFFFFF" stroke-linecap="round" stroke-width="6">
+                <path d="M25.5,0.997424128 L25.5,49.5259696" id="Line"></path>
+                <path d="M49.5025759,25 L0.974030353,25" id="Line"></path>
+            </g>
+        </g>
+    </g>
+</svg>

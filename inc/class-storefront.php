@@ -256,6 +256,9 @@ if ( ! class_exists( 'Storefront' ) ) :
 			wp_enqueue_script( 'scrollmagic-bridge', 'https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.min.js', array( 'jquery' ), '20120206', true );
 			wp_enqueue_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array( 'jquery' ), '20120206', true );
 			wp_enqueue_script( 'novon-script', get_template_directory_uri() . '/novon/js/script.js', array( 'jquery' ), '20120206', true );
+			wp_enqueue_script( 'novon-configurator', get_template_directory_uri() . '/novon/js/configurator.js', array( 'jquery' ), '20120206', true );
+
+
 
 		}
 

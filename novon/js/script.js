@@ -1,5 +1,18 @@
 $(function(){
 
+
+	if ($('body').hasClass('home')) {
+		$('.js-modal').addClass('js-active');
+		$('body,html').addClass('overlay');
+	}
+
+	$(document).on('click', '.js-modal', function(event) {
+
+		$('.js-modal').removeClass('js-active');
+		$('body,html').removeClass('overlay');
+
+	});
+
 	$('.swiper-wrapper').slick({
 	  centerMode: true,
 	  centerPadding: '25%',

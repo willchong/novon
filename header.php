@@ -14,6 +14,10 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
+<script type="text/javascript">
+var CORE = {};
+CORE.template_url = '<?= get_bloginfo("template_url"); ?>';
+</script>
 
 <?php wp_head(); ?>
 

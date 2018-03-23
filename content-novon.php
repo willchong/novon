@@ -71,7 +71,7 @@
                         </a>
                     </div>
                     <div class="swiper-slide">
-                        <a class="no-visual" href="<?php echo get_site_url(); ?>/product/925-sterling-silver-onyx-with-one-c-clasp/">
+                        <a class="no-visual" href="<?php echo get_site_url(); ?>/product/onyx-c-link-sphere-drop/">
                             <div class="image">
                                 <img src="<?php echo get_template_directory_uri(); ?>/novon/images/stones-black-onyx.jpg" alt="">
                             </div>
@@ -139,6 +139,14 @@
     <section class="shop">
         <h1>Shop the collection</h1>
         <a href="/shop/" class="cta inverse bigger transparent">See Products</a>
+    </section>
+
+    <section class="modal js-modal">
+        <div class="content">
+            <h1>Come see the Novon Collection pop-up</h1>
+            <p>at the Concept 0.5 store in the Yorkdale Mall (Toronto, ON) until March 31st.<br>Use coupon code "<strong>YORKDALE</strong>" for 25% off your purchase!</p>
+            <a class="cta" target="_blank" href="http://yorkdale.com/stores/concept/">Find out more</a>
+        </div>
     </section>
 
 </section>
