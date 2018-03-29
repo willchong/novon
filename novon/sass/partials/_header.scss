@@ -193,4 +193,10 @@ header.novon {
       }
     }
   }
+  @include breakpoint(max-width, 640px) {
+    .cta {
+       min-width: 7rem;
+       padding: 0.5rem;
+    }
+  }
 }

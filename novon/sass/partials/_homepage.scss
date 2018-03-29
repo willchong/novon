@@ -21,7 +21,7 @@ section.intro {
 			margin-bottom: 1.5rem;
 		}
 		a {
-			max-width: 240px;
+			max-width: 280px;
 			margin: 0 auto;
 		}
 	}
@@ -34,7 +34,7 @@ section.bio {
 		margin-bottom: 2rem;
 	}
 	p {
-		font-size: 1.5rem;
+		font-size: 1rem;
 		color: $grey;
 		max-width: 600px;
 		margin: 0 auto;
@@ -73,7 +73,7 @@ section.modular {
 		@include dropshadow(heavy);	
 		.steps {
 			padding: 4rem 0 4rem 4rem;
-			h1 {
+			h2 {
 				width: 100%;
 				margin-bottom: 2rem;
 			}
@@ -88,7 +88,7 @@ section.modular {
 				margin: 0;
 				padding: 0;
 				margin-left: 1.25rem;
-				font-size: 1.5rem;
+				font-size: 1rem;
 				font-weight: 700;
 				list-style: decimal;
 				list-style-position: outside;
@@ -108,21 +108,21 @@ section.modular {
 				top: 0;
 				left: 50%;
 				transform: translateX(-50%);
-				height: 90%;
+				height: 70%;
 			}
 			.bottom {
 				position: absolute;
 				top: 0;
 				left: 50%;
 				transform: translateX(-50%);
-				height: 90%;
+				height: 70%;
 			}
 			.change {
 				position: absolute;
 				top: 0;
 				left: 50%;
 				transform: translateX(-50%);
-				height: 90%;
+				height: 70%;
 			}
 		}
 	}
@@ -131,7 +131,7 @@ section.modular {
 section.c-link {
 	display: flex;
 	.grey {
-		min-height: 640px;
+		min-height: 400px;
 		// padding: 0 4rem;
 		padding-left: 10%;
 		width: 50%;
@@ -139,7 +139,7 @@ section.c-link {
 		justify-content: center;
 		flex-direction: column;
 		background-color: $light-grey;
-		h1 {
+		h2 {
 			margin-bottom: 2rem;
 		}
 		p {
@@ -151,8 +151,9 @@ section.c-link {
 		width: 50%;
 		display: flex;
 		align-items: center;
+		justify-content: center;
 		img {
-			width: 100%;
+			width: 50%;
 		}
 	}
 }
@@ -166,10 +167,10 @@ section.stones {
 		background-color: $white;
 		padding: 4rem 0;
 		margin: 0 auto;
-		margin-top: -5rem;
+		margin-top: -2rem;
 		overflow: hidden;
 		position: relative;
-		h1 {
+		h2 {
 			text-align: center;
 			margin-bottom: 2rem;
 		}
@@ -192,12 +193,14 @@ section.stones {
 						margin: 0 1rem;
 						align-items: stretch;
 						padding: 0 2rem;
-						min-height: 380px;
+						min-height: 250px;
 						.image {
 							img {
 								width: auto;
 								align-self: center;
 								vertical-align: top;
+								width: 70%;
+								margin: 0 auto;
 							}
 						}
 						.description {
@@ -291,6 +294,8 @@ section.silver {
 			@include dropshadow(heavy);
 			img {
 				align-self: center;
+				width: 65%;
+				margin: 2rem;
 			}
 		}
 		.description {
@@ -305,7 +310,7 @@ section.silver {
 				color: $white;
 				text-align: left;
 				padding: 5rem 3rem 6rem;
-				h1 {
+				h2 {
 					margin-bottom: 1.5rem;
 				}
 				
@@ -327,7 +332,7 @@ section.shop {
 		line-height: 1;
 	}
 	a {
-		max-width: 240px;
+		max-width: 280px;
 		margin: 0 auto;
 	}
 }
@@ -441,16 +446,41 @@ section.shop {
 						padding-bottom: 2rem;
 						flex-direction: column;
 						align-items: center;
-						.image {
-							width: 50%;
-						}
-						.description {
-							width: 100%;
-							padding: 0;
-							margin: 0;
+						a {
+							align-items: center;
+							flex-direction: column;
+							.image {
+								width: 50%;
+							}
+							.description {
+								width: 80%;
+								align-items:center;
+								justify-content: center;
+								padding: 0;
+								padding-bottom: 2rem;
+								margin: 0;
+								h3 {
+									text-align: center;
+								}
+								p {
+									text-align: center;
+								}
+							}
 						}
 					}
 				}
+			}
+			.slick-next {
+				width: 26px;
+				height: 48px;
+				right: 0px;
+				top: 40%;
+			}
+			.slick-prev {
+				width: 26px;
+				height: 48px;
+				left: 0px;
+				top: 40%;
 			}
 		}
 	}
@@ -506,7 +536,7 @@ section.shop {
 			line-height: 1.1;
 		}
 		p {
-			font-size: 1.2rem;
+			font-size: 1rem;
 			margin: 2rem;
 		}
 		.cta {

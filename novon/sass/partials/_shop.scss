@@ -96,11 +96,16 @@ section.products {
 				cursor: pointer;
 				transition: all 0.35s;
 				img {
-					width: auto;
+					width: 50%;
 					height: 70px;
 					margin-bottom: 0.5rem;
 					&.cyan {
 						display: none;
+					}
+				}
+				&[data-filter="product_cat-coin"] {
+					img {
+						width: auto;
 					}
 				}
 				p {
@@ -196,11 +201,13 @@ section.products {
 					}
 				}
 				img {
-					width: 100%;
+					width: 75%;
+					margin: 0 auto;
 					height: auto;
 				}
 				h2 {
-					font-size: 1.5rem;
+					font-size: 1.2rem;
+					line-height: 1.4;
 					padding: 0 1rem 0 0;
 					margin-top: 1rem;
 					margin-bottom: 1.5rem;
@@ -353,11 +360,13 @@ section.products {
 						}
 					}
 					img {
-						width: 100%;
+						width: 75%;
+						margin: 0 auto;
 						height: auto;
 					}
 					h2 {
-						font-size: 1.5rem;
+						font-size: 1.2rem;
+						line-height: 1.4;
 						padding: 0 1rem 0 0;
 						margin-top: 1rem;
 						margin-bottom: 1.5rem;
@@ -427,22 +436,28 @@ section.products {
 	}
 	section.products {
 		.tops, .attachments, .chains {
+			.fancy-header {
+				h2 {
+					padding: 0 0.5rem;
+					font-size: 1.5rem;
+				}
+			}
 			.list {
 				.product { 
 					h2 {
-						font-size: 2rem;
+						font-size: 1.5rem;
 					}
 					p {
-						font-size: 1.25rem;
+						font-size: 1rem;
 					}
 					.price {
-						font-size: 1.25rem;
+						font-size: 1rem;
 					}
 					.add_to_cart_button {
-						font-size: 1.25rem;
+						font-size: 1rem;
 					}
 					.added_to_cart {
-						font-size: 1.25rem;
+						font-size: 1rem;
 					}
 				}
 			}

@@ -101,53 +101,6 @@ get_header(); ?>
 										} 
 										wp_reset_postdata();
 									?>
-							    <?php
-							      // $args = array(
-							      //   'posts_per_page' => -1,
-							      //         'tax_query' => array(
-							      //             'relation' => 'AND',
-							      //             array(
-							      //                 'taxonomy' => 'product_cat',
-							      //                 'field' => 'slug',
-							      //                 'terms' => ['pendants']
-							      //             )
-							      //         ),
-							      //         'post_type' => 'product',
-							      //         'orderby'   => 'menu_order',
-							      //         'order'     => 'ASC'
-							      //   );
-							      // $loop = new WP_Query( $args );
-							      // if ( $loop->have_posts() ) {
-							      //   while ( $loop->have_posts() ) : $loop->the_post();
-							      //     wc_get_template_part( 'content', 'product' );
-							      //   endwhile;
-							      // } 
-							      // wp_reset_postdata();
-							    ?>
-							      <?php
-							        // $args = array(
-							        //   'posts_per_page' => -1,
-							        //         'tax_query' => array(
-							        //             'relation' => 'AND',
-							        //             array(
-							        //                 'taxonomy' => 'product_cat',
-							        //                 'field' => 'slug',
-							        //                 'terms' => ['chains']
-							        //             )
-							        //         ),
-							        //         'post_type' => 'product',
-							        //         'orderby'   => 'menu_order',
-							        //         'order'     => 'ASC'
-							        //   );
-							        // $loop = new WP_Query( $args );
-							        // if ( $loop->have_posts() ) {
-							        //   while ( $loop->have_posts() ) : $loop->the_post();
-							        //     wc_get_template_part( 'content', 'product' );
-							        //   endwhile;
-							        // } 
-							        // wp_reset_postdata();
-							      ?>
-
 						</ul>
 					</div>
 					<div class="attachments">
@@ -186,6 +139,30 @@ get_header(); ?>
 							                  'taxonomy' => 'product_cat',
 							                  'field' => 'slug',
 							                  'terms' => ['oval']
+							              )
+							          ),
+							          'post_type' => 'product',
+							          'product_tag' => ['double'],
+							          'orderby'   => 'menu_order',
+							          'order'     => 'ASC'
+							    );
+							  $loop = new WP_Query( $args );
+							  if ( $loop->have_posts() ) {
+							    while ( $loop->have_posts() ) : $loop->the_post();
+							      wc_get_template_part( 'content', 'configurator' );
+							    endwhile;
+							  } 
+							  wp_reset_postdata();
+							?>
+							<?php
+							  $args = array(
+							    'posts_per_page' => -1,
+							          'tax_query' => array(
+							              'relation' => 'AND',
+							              array(
+							                  'taxonomy' => 'product_cat',
+							                  'field' => 'slug',
+							                  'terms' => ['cabochon']
 							              )
 							          ),
 							          'post_type' => 'product',
@@ -258,6 +235,30 @@ get_header(); ?>
 							                  'taxonomy' => 'product_cat',
 							                  'field' => 'slug',
 							                  'terms' => ['oval']
+							              )
+							          ),
+							          'post_type' => 'product',
+							          'product_tag' => ['single'],
+							          'orderby'   => 'menu_order',
+							          'order'     => 'ASC'
+							    );
+							  $loop = new WP_Query( $args );
+							  if ( $loop->have_posts() ) {
+							    while ( $loop->have_posts() ) : $loop->the_post();
+							      wc_get_template_part( 'content', 'configurator' );
+							    endwhile;
+							  } 
+							  wp_reset_postdata();
+							?>
+							<?php
+							  $args = array(
+							    'posts_per_page' => -1,
+							          'tax_query' => array(
+							              'relation' => 'AND',
+							              array(
+							                  'taxonomy' => 'product_cat',
+							                  'field' => 'slug',
+							                  'terms' => ['cabochon']
 							              )
 							          ),
 							          'post_type' => 'product',

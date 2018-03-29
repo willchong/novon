@@ -16,18 +16,13 @@
         </div>
     </section>
 
-    <section class="bio">
-        <h3>The NOVON Collection</h3>
-        <p>Novon is a jewellery company inspired by nature’s elements. Our passion is to make you look and feel exceptional.</p>
-    </section>
-
     <section class="modular" id="modular">
         <div class="overlay">
             <img src="<?php echo get_template_directory_uri(); ?>/novon/images/modular-design-bg-2.jpg" alt="">
         </div>
         <div class="panel">
             <div class="steps">
-                <h1>Modular Design</h1>
+                <h2>Modular Design</h2>
                 <p id="earrings">Our modular design lets you create your own unique earrings, necklaces or bracelets to suit your style or mood.</p>
                 <ol >
                     <li>Choose an earring or necklace top.</li>
@@ -45,7 +40,7 @@
 
     <section class="c-link" id="c-link">
         <div class="grey">
-            <h1>C-Link</h1>
+            <h2>C-Link</h2>
             <p>Bring it all together with our C-Link. Mix and match coins, crystals and stone charms for a stunning look in any situation.</p>
         </div>
         <div class="image">
@@ -55,7 +50,7 @@
 
     <section class="stones">
         <div class="inset">
-            <h1>Stones and Crystals</h1>
+            <h2>Stones and Crystals</h2>
             <p>Find your balance with natural stones and crystals including Amethyst, Black Onyx, Rose Quartz, Lapis Lazuli and Swarovski Rose Pearl.</p>
             <div class="swiper-container carousel">
                 <div class="swiper-wrapper">
@@ -129,11 +124,16 @@
             </div>
             <div class="description">
                 <div class="wrapper">
-                    <h1>Silver</h1>
+                    <h2>Silver</h2>
                     <p>Enjoy our selection of .925 sterling silver, all rhodium plated to prevent tarnishing and to provide a long-lasting shine.</p>
                 </div>
             </div>
         </div>
+    </section>
+
+    <section class="bio">
+        <h3>The NOVON Collection</h3>
+        <p>Novon is a jewellery company inspired by nature’s elements. Our passion is to make you look and feel exceptional.</p>
     </section>
 
     <section class="shop">

@@ -34,8 +34,7 @@ $(function(){
 	      {
 	        breakpoint: 640,
 	        settings: {
-	          centerPadding: '0',
-	          arrows: false
+	          centerPadding: '0'
 	        }
 	      }
 	    ]
@@ -70,7 +69,7 @@ $(function(){
 	$('.js-tops').slick({
 	  centerMode: false,
 	  // dots: true,
-	  slidesToShow: 3,
+	  slidesToShow: 4,
 	  responsive: [
 	      {
 	        breakpoint: 640,
@@ -84,7 +83,7 @@ $(function(){
 	$('.js-attachments').slick({
 	  centerMode: false,
 	  // dots: true,
-	  slidesToShow: 3,
+	  slidesToShow: 4,
 	  responsive: [
 	      {
 	        breakpoint: 640,
@@ -111,7 +110,7 @@ $(function(){
 
 	$('.tops .js-icon').on('click', function(event) {
 		$('.js-tops').slick('slickUnfilter');
-		$('.js-tops').slick('slickSetOption', 'slidesToShow', 3, true);
+		$('.js-tops').slick('slickSetOption', 'slidesToShow', 4, true);
 
 		if ($(this).hasClass('js-active')) {
 			$(this).removeClass('js-active');
@@ -135,7 +134,7 @@ $(function(){
 
 	$('.attachments .js-icon').on('click', function(event) {
 		$('.js-attachments').slick('slickUnfilter');
-		$('.js-attachments').slick('slickSetOption', 'slidesToShow', 3, true);
+		$('.js-attachments').slick('slickSetOption', 'slidesToShow', 4, true);
 		
 		if ($(this).hasClass('js-active')) {
 			$(this).removeClass('js-active');

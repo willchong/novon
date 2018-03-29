@@ -405,7 +405,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   font-weight: normal;
-  font-size: 14px;
+  font-size: 16px;
   line-height: 1;
   height: 100%;
   width: 100%;
@@ -422,19 +422,19 @@ h1, h2, h3, h4, h5, h6 {
   line-height: 1.2; }
 
 h1 {
-  font-size: 3.6rem; }
+  font-size: 2rem; }
 
 h2 {
-  font-size: 3rem; }
+  font-size: 2rem; }
 
 h3 {
-  font-size: 2.25rem; }
+  font-size: 1.6rem; }
 
 h4 {
-  font-size: 1.5rem; }
+  font-size: 1.4rem; }
 
 p {
-  font-size: 1.5rem;
+  font-size: 1rem;
   line-height: 1.4;
   margin: 0;
   padding: 0; }
@@ -746,6 +746,10 @@ header.novon {
           margin-left: 0; }
         header.novon .storefront-primary-navigation .icons a:hover {
           background-color: inherit; }
+  @media (max-width: 640px) {
+    header.novon .cta {
+      min-width: 7rem;
+      padding: 0.5rem; } }
 
 .novon-wrap {
   width: 100%;
@@ -765,7 +769,7 @@ section.intro .description {
   section.intro .description h4 {
     margin-bottom: 1.5rem; }
   section.intro .description a {
-    max-width: 240px;
+    max-width: 280px;
     margin: 0 auto; }
 
 section.bio {
@@ -774,7 +778,7 @@ section.bio {
   section.bio h3 {
     margin-bottom: 2rem; }
   section.bio p {
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: #696969;
     max-width: 600px;
     margin: 0 auto; }
@@ -812,7 +816,7 @@ section.modular .panel {
   section.modular .panel .steps {
     padding: 4rem 0 4rem 4rem;
     width: 52%; }
-    section.modular .panel .steps h1 {
+    section.modular .panel .steps h2 {
       width: 100%;
       margin-bottom: 2rem; }
     section.modular .panel .steps p {
@@ -823,7 +827,7 @@ section.modular .panel {
       margin: 0;
       padding: 0;
       margin-left: 1.25rem;
-      font-size: 1.5rem;
+      font-size: 1rem;
       font-weight: 700;
       list-style: decimal;
       list-style-position: outside; }
@@ -841,28 +845,28 @@ section.modular .panel {
       left: 50%;
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%);
-      height: 90%; }
+      height: 70%; }
     section.modular .panel .earrings .bottom {
       position: absolute;
       top: 0;
       left: 50%;
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%);
-      height: 90%; }
+      height: 70%; }
     section.modular .panel .earrings .change {
       position: absolute;
       top: 0;
       left: 50%;
       -webkit-transform: translateX(-50%);
               transform: translateX(-50%);
-      height: 90%; }
+      height: 70%; }
 
 section.c-link {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex; }
   section.c-link .grey {
-    min-height: 640px;
+    min-height: 400px;
     padding-left: 10%;
     width: 50%;
     display: -webkit-box;
@@ -876,7 +880,7 @@ section.c-link {
         -ms-flex-direction: column;
             flex-direction: column;
     background-color: #D1D1D1; }
-    section.c-link .grey h1 {
+    section.c-link .grey h2 {
       margin-bottom: 2rem; }
     section.c-link .grey p {
       width: 360px;
@@ -888,9 +892,12 @@ section.c-link {
     display: flex;
     -webkit-box-align: center;
         -ms-flex-align: center;
-            align-items: center; }
+            align-items: center;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
     section.c-link .image img {
-      width: 100%; }
+      width: 50%; }
 
 section.stones {
   z-index: 1002;
@@ -902,10 +909,10 @@ section.stones {
     background-color: #ffffff;
     padding: 4rem 0;
     margin: 0 auto;
-    margin-top: -5rem;
+    margin-top: -2rem;
     overflow: hidden;
     position: relative; }
-    section.stones .inset h1 {
+    section.stones .inset h2 {
       text-align: center;
       margin-bottom: 2rem; }
     section.stones .inset p {
@@ -928,12 +935,14 @@ section.stones {
             -ms-flex-align: stretch;
                 align-items: stretch;
         padding: 0 2rem;
-        min-height: 380px; }
+        min-height: 250px; }
         section.stones .inset .carousel .swiper-wrapper .swiper-slide a .image img {
           width: auto;
           -ms-flex-item-align: center;
               align-self: center;
-          vertical-align: top; }
+          vertical-align: top;
+          width: 70%;
+          margin: 0 auto; }
         section.stones .inset .carousel .swiper-wrapper .swiper-slide a .description {
           display: -webkit-box;
           display: -ms-flexbox;
@@ -1021,7 +1030,9 @@ section.silver {
               box-shadow: 0 0 12px 0 rgba(0, 0, 0, 0.5); }
       section.silver .inset .image img {
         -ms-flex-item-align: center;
-            align-self: center; }
+            align-self: center;
+        width: 65%;
+        margin: 2rem; }
     section.silver .inset .description {
       z-index: 1001;
       width: 50%;
@@ -1042,7 +1053,7 @@ section.silver {
         color: #ffffff;
         text-align: left;
         padding: 5rem 3rem 6rem; }
-        section.silver .inset .description .wrapper h1 {
+        section.silver .inset .description .wrapper h2 {
           margin-bottom: 1.5rem; }
 
 section.shop {
@@ -1057,7 +1068,7 @@ section.shop {
     letter-spacing: 2px;
     line-height: 1; }
   section.shop a {
-    max-width: 240px;
+    max-width: 280px;
     margin: 0 auto; }
 
 @media (max-width: 1200px) {
@@ -1144,12 +1155,41 @@ section.shop {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center; }
-    section.stones .inset .carousel .swiper-wrapper .swiper-slide .image {
-      width: 50%; }
-    section.stones .inset .carousel .swiper-wrapper .swiper-slide .description {
-      width: 100%;
-      padding: 0;
-      margin: 0; }
+    section.stones .inset .carousel .swiper-wrapper .swiper-slide a {
+      -webkit-box-align: center;
+          -ms-flex-align: center;
+              align-items: center;
+      -webkit-box-orient: vertical;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: column;
+              flex-direction: column; }
+      section.stones .inset .carousel .swiper-wrapper .swiper-slide a .image {
+        width: 50%; }
+      section.stones .inset .carousel .swiper-wrapper .swiper-slide a .description {
+        width: 80%;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        padding: 0;
+        padding-bottom: 2rem;
+        margin: 0; }
+        section.stones .inset .carousel .swiper-wrapper .swiper-slide a .description h3 {
+          text-align: center; }
+        section.stones .inset .carousel .swiper-wrapper .swiper-slide a .description p {
+          text-align: center; }
+  section.stones .inset .slick-next {
+    width: 26px;
+    height: 48px;
+    right: 0px;
+    top: 40%; }
+  section.stones .inset .slick-prev {
+    width: 26px;
+    height: 48px;
+    left: 0px;
+    top: 40%; }
   section.silver .inset {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -1199,7 +1239,7 @@ section.shop {
     .modal .content h1 {
       line-height: 1.1; }
     .modal .content p {
-      font-size: 1.2rem;
+      font-size: 1rem;
       margin: 2rem; }
     .modal .content .cta {
       max-width: 180px;
@@ -1299,11 +1339,13 @@ section.products {
         -webkit-transition: all 0.35s;
         transition: all 0.35s; }
         section.products .tops .icons .icon img, section.products .attachments .icons .icon img, section.products .chains .icons .icon img {
-          width: auto;
+          width: 50%;
           height: 70px;
           margin-bottom: 0.5rem; }
           section.products .tops .icons .icon img.cyan, section.products .attachments .icons .icon img.cyan, section.products .chains .icons .icon img.cyan {
             display: none; }
+        section.products .tops .icons .icon[data-filter="product_cat-coin"] img, section.products .attachments .icons .icon[data-filter="product_cat-coin"] img, section.products .chains .icons .icon[data-filter="product_cat-coin"] img {
+          width: auto; }
         section.products .tops .icons .icon p, section.products .attachments .icons .icon p, section.products .chains .icons .icon p {
           color: #696969;
           font-size: 1rem;
@@ -1390,10 +1432,12 @@ section.products {
           section.products .tops .list .product a:hover, section.products .attachments .list .product a:hover, section.products .chains .list .product a:hover {
             background-color: inherit; }
         section.products .tops .list .product img, section.products .attachments .list .product img, section.products .chains .list .product img {
-          width: 100%;
+          width: 75%;
+          margin: 0 auto;
           height: auto; }
         section.products .tops .list .product h2, section.products .attachments .list .product h2, section.products .chains .list .product h2 {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
+          line-height: 1.4;
           padding: 0 1rem 0 0;
           margin-top: 1rem;
           margin-bottom: 1.5rem; }
@@ -1542,10 +1586,12 @@ section.products {
           .novon-search .products .results .product a:hover {
             background-color: inherit; }
         .novon-search .products .results .product img {
-          width: 100%;
+          width: 75%;
+          margin: 0 auto;
           height: auto; }
         .novon-search .products .results .product h2 {
-          font-size: 1.5rem;
+          font-size: 1.2rem;
+          line-height: 1.4;
           padding: 0 1rem 0 0;
           margin-top: 1rem;
           margin-bottom: 1.5rem; }
@@ -1601,16 +1647,19 @@ section.products {
     width: 100%;
     text-align: center;
     font-size: 2rem; }
+  section.products .tops .fancy-header h2, section.products .attachments .fancy-header h2, section.products .chains .fancy-header h2 {
+    padding: 0 0.5rem;
+    font-size: 1.5rem; }
   section.products .tops .list .product h2, section.products .attachments .list .product h2, section.products .chains .list .product h2 {
-    font-size: 2rem; }
+    font-size: 1.5rem; }
   section.products .tops .list .product p, section.products .attachments .list .product p, section.products .chains .list .product p {
-    font-size: 1.25rem; }
+    font-size: 1rem; }
   section.products .tops .list .product .price, section.products .attachments .list .product .price, section.products .chains .list .product .price {
-    font-size: 1.25rem; }
+    font-size: 1rem; }
   section.products .tops .list .product .add_to_cart_button, section.products .attachments .list .product .add_to_cart_button, section.products .chains .list .product .add_to_cart_button {
-    font-size: 1.25rem; }
+    font-size: 1rem; }
   section.products .tops .list .product .added_to_cart, section.products .attachments .list .product .added_to_cart, section.products .chains .list .product .added_to_cart {
-    font-size: 1.25rem; }
+    font-size: 1rem; }
   .novon-search section.products .results .product {
     width: 100%; } }
 
@@ -1647,7 +1696,7 @@ section.products {
         flex-wrap: wrap; }
     .single-product .novon-product-wrapper div.product .woocommerce-product-gallery {
       float: none;
-      width: 50%;
+      width: 35%;
       margin: 0;
       padding-right: 2rem; }
       .single-product .novon-product-wrapper div.product .woocommerce-product-gallery figure {
@@ -1688,8 +1737,9 @@ section.products {
           color: #ffffff; }
     .single-product .novon-product-wrapper div.product .summary {
       float: none;
-      width: 50%;
+      width: 65%;
       margin: 0;
+      margin-bottom: 2rem;
       display: -webkit-box;
       display: -ms-flexbox;
       display: flex;
@@ -1739,14 +1789,15 @@ section.products {
                   align-items: center; }
           .single-product .novon-product-wrapper div.product .summary .cart .quantity label {
             margin-right: 0.5rem;
-            font-size: 1.5rem;
+            font-size: 1rem;
             color: #696969; }
           .single-product .novon-product-wrapper div.product .summary .cart .quantity .qty {
             text-align: right;
             width: 3rem;
+            font-size: 1rem;
             height: 3rem; }
         .single-product .novon-product-wrapper div.product .summary .cart button {
-          max-width: 220px;
+          max-width: 240px;
           font-size: 1.25rem;
           padding: 0.75rem 4rem;
           background: #000000;
@@ -1756,7 +1807,7 @@ section.products {
           -webkit-transition: all 0.35s;
           transition: all 0.35s;
           font-weight: 700;
-          font-size: 1.5rem; }
+          font-size: 1rem; }
           .single-product .novon-product-wrapper div.product .summary .cart button:hover {
             background: #BBF1F1;
             color: #000000; }
@@ -1766,6 +1817,8 @@ section.products {
         border-top: 0; }
         .single-product .novon-product-wrapper div.product .summary .product_meta a {
           text-decoration: none; }
+        .single-product .novon-product-wrapper div.product .summary .product_meta .tagged_as {
+          display: none; }
     .single-product .novon-product-wrapper div.product .related {
       max-width: none;
       margin-top: 2rem;
@@ -1811,6 +1864,8 @@ section.products {
               background-color: inherit; }
           .single-product .novon-product-wrapper div.product .related .products .product img {
             width: 100%;
+            width: 60%;
+            margin: 0 auto;
             height: auto; }
           .single-product .novon-product-wrapper div.product .related .products .product h2 {
             font-size: 1.5rem;
@@ -1950,7 +2005,8 @@ section.products {
         .site-main .up-sells ul.products li.product a:hover {
           background-color: inherit; }
       .site-main .up-sells ul.products li.product img {
-        width: 100%;
+        width: 60%;
+        margin: 0 auto;
         height: auto; }
       .site-main .up-sells ul.products li.product h2 {
         font-size: 1.5rem;
@@ -2424,7 +2480,8 @@ section.products {
         .site-main .novon-category .products .product a:hover {
           background-color: inherit; }
       .site-main .novon-category .products .product img {
-        width: 100%;
+        width: 60%;
+        margin: 0 auto;
         height: auto; }
       .site-main .novon-category .products .product h2 {
         text-align: left;
@@ -2528,6 +2585,10 @@ section.configurator {
           justify-content: space-between; }
   section.configurator:focus {
     outline: none; }
+  section.configurator img {
+    display: none; }
+    section.configurator img[src] {
+      display: block; }
   section.configurator .fancy-header {
     width: 100%;
     position: relative;
@@ -2557,24 +2618,15 @@ section.configurator {
     width: 48%;
     border: 1px solid #000000;
     font-size: 1.2rem;
-    padding: 0 3rem 3rem 3rem; }
+    padding: 0 3rem 3rem 3rem;
+    position: relative; }
     section.configurator .preview .phase {
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
+      position: relative;
+      display: block;
       color: #696969;
       opacity: 0.5;
       width: 65%;
+      text-align: center;
       margin: 0 auto; }
       section.configurator .preview .phase .instructions {
         margin-top: 3rem;
@@ -2595,12 +2647,30 @@ section.configurator {
           width: 64px;
           margin: 1rem; }
         section.configurator .preview .phase .instructions strong {
-          text-transform: uppercase; }
+          text-transform: uppercase;
+          font-size: 1rem; }
         section.configurator .preview .phase .instructions p {
           text-transform: uppercase;
-          font-size: 1.2rem; }
+          font-size: 1rem; }
         section.configurator .preview .phase .instructions.js-hidden {
           display: none; }
+      section.configurator .preview .phase label {
+        opacity: 0;
+        top: 50%;
+        left: 50%;
+        position: absolute;
+        -webkit-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+        border: 1px solid #696969;
+        padding: 0.25rem;
+        background-color: rgba(255, 255, 255, 0.75);
+        font-size: 0.75rem;
+        text-transform: uppercase;
+        z-index: 5000;
+        -webkit-transition: all 0.5s;
+        transition: all 0.5s; }
+        section.configurator .preview .phase label.js-active {
+          opacity: 1; }
       section.configurator .preview .phase.phase-2 .instructions {
         margin-bottom: 3rem; }
       section.configurator .preview .phase.js-hidden {
@@ -2609,6 +2679,25 @@ section.configurator {
         opacity: 1; }
       section.configurator .preview .phase .piece {
         width: 75%; }
+      section.configurator .preview .phase img {
+        display: inline-block; }
+    section.configurator .preview .earring-clone {
+      pointer-events: none;
+      position: absolute;
+      -webkit-transform: translateX(-14.5%);
+              transform: translateX(-14.5%);
+      padding: 0 3rem 3rem 3rem;
+      width: 100%;
+      top: 0;
+      left: 0;
+      display: none; }
+      section.configurator .preview .earring-clone.js-active {
+        display: block; }
+      section.configurator .preview .earring-clone .phase.phase-1 {
+        opacity: 0; }
+      section.configurator .preview .earring-clone .phase .piece {
+        -webkit-transform: none !important;
+                transform: none !important; }
     section.configurator .preview .summary {
       margin-top: 1rem;
       padding: 1rem; }
@@ -2616,12 +2705,14 @@ section.configurator {
         font-weight: 700;
         text-align: center;
         display: block;
-        margin-bottom: 1rem; }
+        margin-bottom: 1rem;
+        font-size: 1rem; }
       section.configurator .preview .summary ul li {
+        font-size: 1rem;
         text-align: center;
         margin-bottom: 0.5rem; }
     section.configurator .preview .buttons {
-      width: 80%;
+      width: 100%;
       margin: 0 auto;
       display: -webkit-box;
       display: -ms-flexbox;
@@ -2731,16 +2822,23 @@ section.configurator {
     margin-left: -2%; }
   section.configurator .preview.js--pendants.js-single-sphere .phase-2 .piece, section.configurator .preview.js--earrings.js-single-sphere .phase-2 .piece {
     margin-left: 3.5%; }
+  section.configurator .preview.js--pendants.js-single-cabochon .phase-3 .piece, section.configurator .preview.js--earrings.js-single-cabochon .phase-3 .piece {
+    margin-left: -3%; }
   section.configurator .preview.js--pendants.js-double-oval .phase-2 .piece, section.configurator .preview.js--earrings.js-double-oval .phase-2 .piece {
     margin-left: 0; }
   section.configurator .preview.js--pendants.js-double-oval.js-single-oval .phase-3 .piece, section.configurator .preview.js--earrings.js-double-oval.js-single-oval .phase-3 .piece {
     margin-left: 0%; }
   section.configurator .preview.js--pendants.js-double-oval.js-single-sphere .phase-3 .piece, section.configurator .preview.js--earrings.js-double-oval.js-single-sphere .phase-3 .piece {
     margin-left: 0.75%; }
+  section.configurator .preview.js--pendants.js-double-cabochon .phase-2 .piece, section.configurator .preview.js--earrings.js-double-cabochon .phase-2 .piece {
+    margin-left: 0; }
+  section.configurator .preview.js--earrings .phase-2 .piece, section.configurator .preview.js--earrings .phase-3 .piece, section.configurator .preview.js--earrings .phase-4 .piece {
+    -webkit-transform: translateX(36.5%);
+            transform: translateX(36.5%); }
   section.configurator .preview.js--earrings.js-double-sphere .phase-2 .piece {
     margin-left: 4.5%; }
   section.configurator .preview.js--earrings.js-double-sphere.js-single-sphere .phase-3 .piece {
-    margin-left: 0.25%; }
+    margin-left: 1.25%; }
   section.configurator .preview.js--earrings.js-double-sphere.js-single-oval .phase-3 .piece {
     margin-left: 0%; }
   section.configurator .preview.js--chains.js-double-coin .phase-1, section.configurator .preview.js--chains .js-double-sphere .phase-1 {
@@ -2805,6 +2903,20 @@ section.configurator {
       width: 100%; }
     section.configurator .fancy-header h2 {
       padding: 0 1rem; }
+    section.configurator .preview {
+      padding: 0 1rem 1rem 1rem; }
+      section.configurator .preview .buttons {
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column; }
+        section.configurator .preview .buttons .reset, section.configurator .preview .buttons .add-items {
+          width: 100%;
+          margin-bottom: 0.5rem; }
+      section.configurator .preview .earring-clone {
+        padding: 0 1rem 1rem 1rem;
+        -webkit-transform: translateX(-17%);
+                transform: translateX(-17%); }
     section.configurator .selections {
       margin-top: 2rem; }
       section.configurator .selections .tops .thumbnails .thumbnail, section.configurator .selections .attachments .thumbnails .thumbnail {

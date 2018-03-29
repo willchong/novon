@@ -28,7 +28,7 @@
 			flex-wrap: wrap;
 			.woocommerce-product-gallery {
 				float: none;
-				width: 50%;
+				width: 35%;
 				margin: 0;
 				padding-right: 2rem;
 				figure {
@@ -71,8 +71,9 @@
 			}
 			.summary {
 				float: none;
-				width: 50%;
+				width: 65%;
 				margin: 0;
+				margin-bottom: 2rem;
 				display: flex;
 				flex-direction: column;
 				align-items: flex-start;
@@ -111,17 +112,18 @@
 						align-items: center;
 						label {
 							margin-right: 0.5rem;
-							font-size: 1.5rem;
+							font-size: 1rem;
 							color: $grey;
 						}
 						.qty {
 							text-align: right;
 							width: 3rem;
+							font-size: 1rem;
 							height: 3rem;
 						}
 					}
 					button {
-						max-width: 220px;
+						max-width: 240px;
 						font-size: 1.25rem;
 						padding: 0.75rem 4rem;
 						background: $black;
@@ -130,7 +132,7 @@
 						border: none;
 						transition: all 0.35s;
 						font-weight: 700;
-						font-size: 1.5rem;
+						font-size: 1rem;
 						&:hover {
 							background: $cyan;
 							color: $black;
@@ -143,6 +145,9 @@
 					border-top: 0;
 					a {
 						text-decoration: none;
+					}
+					.tagged_as {
+						display: none;
 					}
 				}
 			}
@@ -187,6 +192,8 @@
 						}
 						img {
 							width: 100%;
+							width: 60%;
+							margin: 0 auto;
 							height: auto;
 						}
 						h2 {
@@ -327,7 +334,8 @@
 				}
 			}
 			img {
-				width: 100%;
+				width: 60%;
+				margin: 0 auto;
 				height: auto;
 			}
 			h2 {

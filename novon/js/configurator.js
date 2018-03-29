@@ -1,6 +1,12 @@
 $(function(){
 
 	// console.log(CORE.template_url);
+	if (getQueryVariable('wmc-currency') == "CAD") {
+		CORE.currency = "CAD";
+	} else {
+		CORE.currency = "USD";
+	}
+	console.log(CORE.currency);
 
 	$(document).on('click', '.selections .header', function(event) {
 
@@ -59,6 +65,8 @@ $(function(){
 			$('.configurator-attachments .thumbnail[data-product-category="coin"][data-product-type="double"]').addClass('js-disabled');
 			$('.configurator-attachments .thumbnail[data-product-category="coin"][data-product-type="double"]').removeClass('js-active');
 
+
+
 		//if chains, disable all single clasps
 		} else if (_s.productCategory.indexOf('chains') >= 0) {
 			$('.configurator-attachments .thumbnail[data-product-type="single"]').addClass('js-disabled').removeClass('js-active');
@@ -89,9 +97,10 @@ $(function(){
 			if ($(this).hasClass('js-active')) {
 				$(this).removeClass('js-active');
 			} else {
-				if ($(this).data('product-category') == 'sphere' || $(this).data('product-category') == 'oval') {
+				if ($(this).data('product-category') == 'sphere' || $(this).data('product-category') == 'oval' || $(this).data('product-category') == 'cabochon') {
 					$('.configurator-attachments .thumbnail.js-active[data-product-category="sphere"]').removeClass('js-active');
 					$('.configurator-attachments .thumbnail.js-active[data-product-category="oval"]').removeClass('js-active');
+					$('.configurator-attachments .thumbnail.js-active[data-product-category="cabochon"]').removeClass('js-active');
 					$(this).addClass('js-active');
 				} else {
 					$('.configurator-attachments .thumbnail.js-active[data-product-category="'+_category+'"]').removeClass('js-active');
@@ -111,18 +120,15 @@ $(function(){
 			if (_category == "coin" && _type == "single") {
 				$('.configurator-attachments .thumbnail.js-active[data-product-category="sphere"]').removeClass('js-active');
 				$('.configurator-attachments .thumbnail.js-active[data-product-category="oval"]').removeClass('js-active');
+				$('.configurator-attachments .thumbnail.js-active[data-product-category="cabochon"]').removeClass('js-active');
 
 			}
 			//if double oval / sphere, remove any single coins
-			if (_category == "oval" &&  _type == "double" || _category == "sphere" && _type == "double") {
+			if (_category == "oval" &&  _type == "double" || _category == "sphere" && _type == "double" || _category == "cabochon" && _type == "double") {
 				$('.configurator-attachments .thumbnail.js-active[data-product-category="coin"]').removeClass('js-active');
 			}
 
 		}
-
-
-		
-
 
 		$('.js-phase-2 .instructions').addClass('js-hidden');
 
@@ -138,11 +144,23 @@ $(function(){
 		event.preventDefault();
 		var _selections = [];
 
-		$.each($('.thumbnail.js-active'), function(i,v) {
-			_selections.push($(this).data('product-id'));
-		});
+		var _category = $('.configurator-tops .thumbnail.js-active').data('product-category');
 
-		console.log(_selections.join());
+		if (_category == "earrings") {
+
+			_selections.push($('.configurator-tops .thumbnail.js-active').data('product-id')+":1");
+
+			$.each($('.configurator-attachments .thumbnail.js-active'), function(i,v) {
+				_selections.push($(this).data('product-id')+":2");
+			});
+
+		} else {
+
+			$.each($('.thumbnail.js-active'), function(i,v) {
+				_selections.push($(this).data('product-id'));
+			});
+			
+		}
 
 		window.location.href = window.location.origin+"/cart/?add-to-cart="+_selections.join();
 
@@ -161,25 +179,35 @@ function evaluateCombo() {
 	var _images_turned = [];
 	var _slugs = [];
 	var _names = [];
+	var _prices = [];
 
-	$('.js-preview').removeClass().addClass('preview').addClass('js-preview');
 
-	$.each($('.thumbnail.js-active'), function(k,v) {
-
-		_types.push($(this).data('product-type'));
-		_categories.push($(this).data('product-category'));
-		_slugs.push($(this).data('product-slug'));
-		_names.push($(this).data('product-name'));
-		_images_straight.push($(this).data('product-conf'));
-		_images_turned.push($(this).data('product-conf-alt'));
-
-		$('.js-preview').addClass('js-'+$(this).data('product-type')+'-'+$(this).data('product-category'));
-
-		console.log(k);
-		console.log(v);
-	});
 	
 	// $('.js-preview .piece, .js-summary, .js-buttons').fadeOut('fast', function() {
+
+	$('.js-dummy').fadeOut('fast', function() {
+
+		$('.js-preview').removeClass().addClass('preview').addClass('js-preview');
+
+
+		$.each($('.thumbnail.js-active'), function(k,v) {
+
+			_types.push($(this).data('product-type'));
+			_categories.push($(this).data('product-category'));
+			_slugs.push($(this).data('product-slug'));
+			_names.push($(this).data('product-name'));
+			_prices.push($(this).data('product-price'));
+			_images_straight.push($(this).data('product-conf'));
+			_images_turned.push($(this).data('product-conf-alt'));
+
+			$('.js-preview').addClass('js-'+$(this).data('product-type')+'-'+$(this).data('product-category'));
+
+			console.log(k);
+			console.log(v);
+		});
+
+	}).fadeIn('fast');
+
 	$('.js-preview .piece, .js-summary, .js-buttons').fadeOut('fast', function() {
 
 		console.log(_categories);
@@ -187,25 +215,35 @@ function evaluateCombo() {
 		$('.js-preview .piece').attr('src', '');
 		$('.js-summary ul').empty();
 
+		if (_categories.indexOf('earrings') >= 0) {
+			$('.js-earring-clone').addClass('js-active');
+		} else {
+			$('.js-earring-clone').removeClass('js-active');
+		}
+
 		if (_categories.indexOf('chains') >= 0) {
 
 			console.log('do chain stuff');
 			$('.js-phase-1 .piece').attr('src', _images_straight[0]);
+			$('.js-phase-1 .piece').data('hover', _names[0]);
 			$('.js-phase-4 .piece').attr('src', _images_turned[0]);
+			$('.js-phase-4 .piece').data('hover', _names[0]);
 
 			var sphereIndex = _categories.indexOf('sphere');
 			var ovalIndex = _categories.indexOf('oval');
 			var coinIndex = _categories.indexOf('coin');
+			var cabochonIndex = _categories.indexOf('cabochon');
 
 			if (coinIndex < 0) {
 				$('.js-phase-2').addClass('js-hidden');
 			} else {
 				$('.js-phase-2').removeClass('js-hidden');
 				$('.js-phase-2 .piece').attr('src', _images_straight[coinIndex]);
+				$('.js-phase-2 .piece').data('hover', _names[coinIndex]);
 
 			}
 
-			if (sphereIndex < 0 && ovalIndex < 0) {
+			if (sphereIndex < 0 && ovalIndex < 0 && cabochonIndex < 0) {
 				$('.js-phase-3').addClass('js-hidden');
 			} else {
 				$('.js-phase-3').removeClass('js-hidden');
@@ -213,8 +251,13 @@ function evaluateCombo() {
 
 			if (sphereIndex > 0) {
 				$('.js-phase-3 .piece').attr('src', _images_turned[sphereIndex]);
-			} else {
+				$('.js-phase-3 .piece').data('hover', _names[sphereIndex]);
+			} else if (ovalIndex > 0) {
 				$('.js-phase-3 .piece').attr('src', _images_turned[ovalIndex]);
+				$('.js-phase-3 .piece').data('hover', _names[ovalIndex]);
+			} else {
+				$('.js-phase-3 .piece').attr('src', _images_turned[cabochonIndex]);
+				$('.js-phase-3 .piece').data('hover', _names[cabochonIndex]);
 			}
 
 			if (_categories.length < 3) {
@@ -224,7 +267,7 @@ function evaluateCombo() {
 			}
 
 			for (var i=0; i<_categories.length; i++) {
-				var _template = "<li><a href='"+window.location.origin+'/product/'+_slugs[i]+"' target='_blank'>"+_names[i]+"</a></li>";
+				var _template = "<li><a href='"+window.location.origin+'/product/'+_slugs[i]+"' target='_blank'>"+_names[i]+" - $"+_prices[i]+"</a></li>";
 				$('.js-summary ul').append(_template);
 			}
 
@@ -237,12 +280,27 @@ function evaluateCombo() {
 				//if even, show turned
 				if ((i+1) % 2 == 0) {
 					$('.js-phase-'+(i+1)+' .piece').attr('src', _images_turned[i]);
+					$('.js-phase-'+(i+1)+' .piece').data('hover', _names[i]);
 				//if odd, show straight
 				} else {
 					$('.js-phase-'+(i+1)+' .piece').attr('src', _images_straight[i]);
+					$('.js-phase-'+(i+1)+' .piece').data('hover', _names[i]);
 				}
-				var _template = "<li><a href='"+window.location.origin+'/product/'+_slugs[i]+"' target='_blank'>"+_names[i]+"</a></li>";
-				$('.js-summary ul').append(_template);
+
+				if (_categories.indexOf('earrings') >= 0) {
+					if (i > 0) {
+						var _template = "<li><a href='"+window.location.origin+'/product/'+_slugs[i]+"' target='_blank'>"+_names[i]+" - $"+_prices[i]+" x 2</a></li>";
+						$('.js-summary ul').append(_template);
+					} else {
+						var _template = "<li><a href='"+window.location.origin+'/product/'+_slugs[i]+"' target='_blank'>"+_names[i]+" - $"+_prices[i]+"</a></li>";
+						$('.js-summary ul').append(_template);
+					}
+				} else {
+					var _template = "<li><a href='"+window.location.origin+'/product/'+_slugs[i]+"' target='_blank'>"+_names[i]+" - $"+_prices[i]+"</a></li>";
+					$('.js-summary ul').append(_template);
+					
+				}
+
 			}
 
 		}
@@ -251,7 +309,23 @@ function evaluateCombo() {
 
 	}).fadeIn('fast');
 
-	
+	$(document).on('mouseover', '.js-preview .phase', function(event) {
+
+		var _text = $(this).find('.piece').data('hover');
+		$(this).find('.piece').siblings('label').html(_text);
+		$(this).find('.piece').siblings('label').addClass('js-active');
+		// $(this).attr('alt', _text);
+		// console.log($(this).data('hover'));
+	});
+
+	$(document).on('mouseout', '.js-preview .phase', function(event) {
+
+		// var _text = $(this).data('hover');
+		// $(this).siblings('label').html(_text);
+		$(this).find('.piece').siblings('label').removeClass('js-active');
+		// $(this).attr('alt', _text);
+		// console.log($(this).data('hover'));
+	});
 
 
 	// $('.js-preview .piece').fadeIn('fast');
@@ -292,4 +366,15 @@ function resetConfigurator(event) {
 	$('.attachments .configurator-attachments').removeClass('js-active');
 	$('.preview .js-phase-2').removeClass('js-active');
 
+}
+
+function getQueryVariable(variable)
+{
+       var query = window.location.search.substring(1);
+       var vars = query.split("&");
+       for (var i=0;i<vars.length;i++) {
+               var pair = vars[i].split("=");
+               if(pair[0] == variable){return pair[1];}
+       }
+       return(false);
 }

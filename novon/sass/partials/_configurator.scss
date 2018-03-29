@@ -9,6 +9,12 @@ section.configurator {
 	&:focus {
 	  outline: none;
 	}
+	img {
+		display: none;
+		&[src] {
+			display: block;
+		}
+	}
 	.fancy-header {
 		width: 100%;
 		position: relative;
@@ -41,15 +47,18 @@ section.configurator {
 		border: 1px solid $black;
 		font-size: 1.2rem;
 		padding: 0 3rem 3rem 3rem;
+		position: relative;
 		.phase {
-			display: flex;
-			flex-direction: column;
-			align-items: center;
-			justify-content: center;
+			position: relative;
+			display: block;
+			// flex-direction: column;
+			// align-items: center;
+			// justify-content: center;
 			color: $grey;
 			// margin-top: 2rem;
 			opacity: 0.5;
 			width: 65%;
+			text-align: center;
 			margin: 0 auto;
 			.instructions {
 				margin-top: 3rem;
@@ -63,13 +72,31 @@ section.configurator {
 				}
 				strong {
 					text-transform: uppercase;
+					font-size: 1rem;
 				}
 				p {
 					text-transform: uppercase;
-					font-size: 1.2rem;
+					font-size: 1rem;
 				}
 				&.js-hidden {
 					display: none;
+				}
+			}
+			label {
+				opacity: 0;
+				top: 50%;
+				left: 50%;
+				position: absolute;
+				transform: translate(-50%,-50%);
+				border: 1px solid $grey;
+				padding: 0.25rem;
+				background-color: rgba(255,255,255, 0.75);
+				font-size: 0.75rem;
+				text-transform: uppercase;
+				z-index: 5000;
+				transition: all 0.5s;
+				&.js-active {
+					opacity: 1;
 				}
 			}
 			&.phase-1 {
@@ -95,6 +122,30 @@ section.configurator {
 			.piece {
 				width: 75%;
 			}
+			img {
+				display: inline-block;
+			}
+		}
+		.earring-clone {
+			pointer-events: none;
+			position: absolute;
+			transform: translateX(-14.5%);
+			padding: 0 3rem 3rem 3rem;
+			width: 100%;
+			top: 0;
+			left: 0;
+			display: none;
+			&.js-active {
+				display: block;
+			}
+			.phase {
+				&.phase-1 {
+					opacity: 0;
+				}
+				.piece {
+					transform: none !important;
+				}
+			}
 		}
 		.summary {
 			margin-top: 1rem;
@@ -104,16 +155,18 @@ section.configurator {
 				text-align: center;
 				display: block;
 				margin-bottom: 1rem;
+				font-size: 1rem;
 			}
 			ul {
 				li {
+					font-size: 1rem;
 					text-align: center;
 					margin-bottom: 0.5rem;
 				}
 			}
 		}
 		.buttons {
-			width: 80%;
+			width: 100%;
 			margin: 0 auto;
 			display: flex;
 			flex-direction: row;
@@ -265,6 +318,13 @@ section.configurator {
 					}
 				}
 			}
+			&.js-single-cabochon {
+				.phase-3 {
+					.piece {
+						margin-left: -3%;
+					}
+				}
+			}
 			&.js-double-oval {
 				.phase-2 {
 					.piece {
@@ -286,8 +346,22 @@ section.configurator {
 					}
 				}
 			}
+			&.js-double-cabochon {
+				.phase-2 {
+					.piece {
+						margin-left: 0;
+					}		
+				}
+					
+			}
+
 		}
 		&.js--earrings {
+			.phase-2, .phase-3, .phase-4 {
+				.piece {
+					transform: translateX(36.5%);
+				}
+			}
 			&.js-double-sphere {
 				.phase-2 {
 					.piece {
@@ -297,7 +371,7 @@ section.configurator {
 				&.js-single-sphere {
 					.phase-3 {
 						.piece {
-							margin-left: 0.25%;
+							margin-left: 1.25%;
 						}
 					}
 				}
@@ -403,6 +477,20 @@ section.configurator {
 		.fancy-header {
 			h2 {
 				padding: 0 1rem;
+			}
+		}
+		.preview {
+			padding: 0 1rem 1rem 1rem;
+			.buttons {
+				flex-direction: column;
+				.reset, .add-items {
+					width: 100%;
+					margin-bottom: 0.5rem;
+				}
+			}
+			.earring-clone {
+				padding: 0 1rem 1rem 1rem;
+				transform: translateX(-17%);
 			}
 		}
 		.selections {
