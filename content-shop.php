@@ -72,7 +72,7 @@
     <div class="js-dummy"></div>
     <section class="configurator">
       <div class="fancy-header">
-        <h2>Novon Configurator</h2>
+        <h2>Design Your Own</h2>
       </div>
       <div class="preview js-preview">
         <div class="phase phase-1 js-phase-1 js-active">
@@ -82,7 +82,7 @@
             <p>Choose a top</p>
           </div>
           <img class="piece" src="" alt="">
-          <label>label</label>
+          <label></label>
         </div>
         <div class="phase phase-2 js-phase-2 js-active">
           <div class="instructions">
@@ -91,15 +91,15 @@
             <p>Select attachment</p>
           </div>
           <img class="piece" src="" alt="">
-          <label>label</label>
+          <label></label>
         </div>
         <div class="phase phase-3 js-phase-3 js-active">
           <img class="piece" src="" alt="">
-          <label>label</label>
+          <label></label>
         </div>
         <div class="phase phase-4 js-phase-4 js-active">
           <img class="piece" src="" alt="">
-          <label>label</label>
+          <label></label>
         </div>
         <div class="earring-clone js-earring-clone">
           <div class="phase phase-1 js-phase-1 js-active">

@@ -2615,7 +2615,7 @@ section.configurator {
                 transform: translateY(-50%);
         left: 0; }
   section.configurator .preview {
-    width: 48%;
+    width: 460px;
     border: 1px solid #000000;
     font-size: 1.2rem;
     padding: 0 3rem 3rem 3rem;
@@ -2654,6 +2654,8 @@ section.configurator {
           font-size: 1rem; }
         section.configurator .preview .phase .instructions.js-hidden {
           display: none; }
+      section.configurator .preview .phase a {
+        text-decoration: none; }
       section.configurator .preview .phase label {
         opacity: 0;
         top: 50%;
@@ -2668,11 +2670,16 @@ section.configurator {
         text-transform: uppercase;
         z-index: 5000;
         -webkit-transition: all 0.5s;
-        transition: all 0.5s; }
+        transition: all 0.5s;
+        cursor: pointer; }
         section.configurator .preview .phase label.js-active {
           opacity: 1; }
+      section.configurator .preview .phase.phase-1 label {
+        top: 65%; }
       section.configurator .preview .phase.phase-2 .instructions {
         margin-bottom: 3rem; }
+      section.configurator .preview .phase.phase-2 label {
+        top: 45%; }
       section.configurator .preview .phase.js-hidden {
         display: none; }
       section.configurator .preview .phase.js-active {
@@ -2684,10 +2691,9 @@ section.configurator {
     section.configurator .preview .earring-clone {
       pointer-events: none;
       position: absolute;
-      -webkit-transform: translateX(-14.5%);
-              transform: translateX(-14.5%);
+      margin-left: -67px;
       padding: 0 3rem 3rem 3rem;
-      width: 100%;
+      width: 460px;
       top: 0;
       left: 0;
       display: none; }
@@ -2737,7 +2743,7 @@ section.configurator {
         width: 70%;
         border-radius: 0; }
   section.configurator .selections {
-    width: 48%;
+    width: calc(100% - 470px);
     font-size: 1rem; }
     section.configurator .selections .tops .header, section.configurator .selections .attachments .header {
       width: 100%;
@@ -2892,6 +2898,16 @@ section.configurator {
   section.configurator .preview.js--chains.js-incomplete .phase-2 .piece {
     margin: 1.5rem !important; }
 
+@media (max-width: 960px) {
+  section.configurator .selections .tops .thumbnails .thumbnail, section.configurator .selections .attachments .thumbnails .thumbnail {
+    width: 23%;
+    margin: 1%; } }
+
+@media (max-width: 768px) {
+  section.configurator .selections .tops .thumbnails .thumbnail, section.configurator .selections .attachments .thumbnails .thumbnail {
+    width: 31%;
+    margin: 1%; } }
+
 @media (max-width: 640px) {
   section.configurator {
     -webkit-box-orient: vertical;
@@ -2904,6 +2920,8 @@ section.configurator {
     section.configurator .fancy-header h2 {
       padding: 0 1rem; }
     section.configurator .preview {
+      width: 320px;
+      margin: 0 auto;
       padding: 0 1rem 1rem 1rem; }
       section.configurator .preview .buttons {
         -webkit-box-orient: vertical;
@@ -2914,9 +2932,9 @@ section.configurator {
           width: 100%;
           margin-bottom: 0.5rem; }
       section.configurator .preview .earring-clone {
+        width: 320px;
         padding: 0 1rem 1rem 1rem;
-        -webkit-transform: translateX(-17%);
-                transform: translateX(-17%); }
+        margin-left: -53px; }
     section.configurator .selections {
       margin-top: 2rem; }
       section.configurator .selections .tops .thumbnails .thumbnail, section.configurator .selections .attachments .thumbnails .thumbnail {

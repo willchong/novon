@@ -1,10 +1,10 @@
 $(function(){
 
 
-	if ($('body').hasClass('home')) {
-		$('.js-modal').addClass('js-active');
-		$('body,html').addClass('overlay');
-	}
+	// if ($('body').hasClass('home')) {
+	// 	$('.js-modal').addClass('js-active');
+	// 	$('body,html').addClass('overlay');
+	// }
 
 	$(document).on('click', '.js-modal', function(event) {
 

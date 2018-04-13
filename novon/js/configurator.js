@@ -226,8 +226,10 @@ function evaluateCombo() {
 			console.log('do chain stuff');
 			$('.js-phase-1 .piece').attr('src', _images_straight[0]);
 			$('.js-phase-1 .piece').data('hover', _names[0]);
+			$('.js-phase-1 .piece').data('link', _slugs[0]);
 			$('.js-phase-4 .piece').attr('src', _images_turned[0]);
 			$('.js-phase-4 .piece').data('hover', _names[0]);
+			$('.js-phase-4 .piece').data('link', _slugs[0]);
 
 			var sphereIndex = _categories.indexOf('sphere');
 			var ovalIndex = _categories.indexOf('oval');
@@ -240,6 +242,7 @@ function evaluateCombo() {
 				$('.js-phase-2').removeClass('js-hidden');
 				$('.js-phase-2 .piece').attr('src', _images_straight[coinIndex]);
 				$('.js-phase-2 .piece').data('hover', _names[coinIndex]);
+				$('.js-phase-2 .piece').data('link', _slugs[coinIndex]);
 
 			}
 
@@ -252,12 +255,15 @@ function evaluateCombo() {
 			if (sphereIndex > 0) {
 				$('.js-phase-3 .piece').attr('src', _images_turned[sphereIndex]);
 				$('.js-phase-3 .piece').data('hover', _names[sphereIndex]);
+				$('.js-phase-3 .piece').data('link', _slugs[sphereIndex]);
 			} else if (ovalIndex > 0) {
 				$('.js-phase-3 .piece').attr('src', _images_turned[ovalIndex]);
 				$('.js-phase-3 .piece').data('hover', _names[ovalIndex]);
+				$('.js-phase-3 .piece').data('link', _slugs[ovalIndex]);
 			} else {
 				$('.js-phase-3 .piece').attr('src', _images_turned[cabochonIndex]);
 				$('.js-phase-3 .piece').data('hover', _names[cabochonIndex]);
+				$('.js-phase-3 .piece').data('link', _slugs[cabochonIndex]);
 			}
 
 			if (_categories.length < 3) {
@@ -281,10 +287,12 @@ function evaluateCombo() {
 				if ((i+1) % 2 == 0) {
 					$('.js-phase-'+(i+1)+' .piece').attr('src', _images_turned[i]);
 					$('.js-phase-'+(i+1)+' .piece').data('hover', _names[i]);
+					$('.js-phase-'+(i+1)+' .piece').data('link', _slugs[i]);
 				//if odd, show straight
 				} else {
 					$('.js-phase-'+(i+1)+' .piece').attr('src', _images_straight[i]);
 					$('.js-phase-'+(i+1)+' .piece').data('hover', _names[i]);
+					$('.js-phase-'+(i+1)+' .piece').data('link', _slugs[i]);
 				}
 
 				if (_categories.indexOf('earrings') >= 0) {
@@ -305,15 +313,32 @@ function evaluateCombo() {
 
 		}
 
-		
+		// $('.piece').siblings('label').html('<a href="'+window.location.origin+'/product/'+_link+'" target="_blank">'+_text+'</a>');
+
+		$.each($('.js-preview .phase'), function(j,k) {
+
+			var _text = $(this).find('.piece').data('hover');
+			var _link = $(this).find('.piece').data('link');
+			if (_text != "" && _text != undefined) {
+				$(this).find('.piece').siblings('label').html('<a href="'+window.location.origin+'/product/'+_link+'" target="_blank">'+_text+'</a>');
+			}
+		});
 
 	}).fadeIn('fast');
 
+	
+
 	$(document).on('mouseover', '.js-preview .phase', function(event) {
 
-		var _text = $(this).find('.piece').data('hover');
-		$(this).find('.piece').siblings('label').html(_text);
-		$(this).find('.piece').siblings('label').addClass('js-active');
+		// var _text = $(this).find('.piece').data('hover');
+		// var _link = $(this).find('.piece').data('link');
+		// if (_text != "" && _text != undefined) {
+			// $(this).find('.piece').siblings('label').html('<a href="'+window.location.origin+'/product/'+_link+'" target="_blank">'+_text+'</a>');
+			var _label = $(this).find('.piece').siblings('label').html();
+			if (_label != "") {
+				$(this).find('.piece').siblings('label').addClass('js-active');
+			}
+		// }
 		// $(this).attr('alt', _text);
 		// console.log($(this).data('hover'));
 	});
