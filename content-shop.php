@@ -122,8 +122,8 @@
           </ul>
         </div>
         <div class="buttons js-buttons">
-          <a href="" class="cta reset js-reset">Reset</a>
-          <a href="" class="cta add-items js-add-items">Add Items to Cart</a>
+          <a class="cta reset js-reset">Reset</a>
+          <a class="cta add-items js-add-items">Add Items to Cart</a>
         </div>
       </div>
       <div class="selections">

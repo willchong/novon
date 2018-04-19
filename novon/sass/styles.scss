@@ -242,6 +242,16 @@ body.woocommerce-cart .woocommerce-message a {
     display: none;
 }
 
+.woocommerce-message {
+  background-color: $cyan !important;
+  color: $black !important;
+}
+
+.tippy-tooltip.novon-theme {
+  /* Your styling here. Example: */
+  background-color: rgba(0,0,0, 0.8);
+  border-radius: 0;
+}
 
 @import "partials/header",
         "partials/homepage",

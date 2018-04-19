@@ -256,6 +256,9 @@ section.configurator {
 						width: 100%;
 						height: auto;
 					}
+					&:hover {
+						border: 3px solid $grey;
+					}
 					&.js-active {
 						border: 3px solid $cyan;
 					}

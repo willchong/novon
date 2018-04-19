@@ -76,7 +76,7 @@
 							}
 						}
 					}
-					input[name="update_cart"] {
+					input[name="update_cart"], button[name="update_cart"] {
 						padding: 0.75rem 1.25rem;
 						appearance: none;
 						background-color: $black;
@@ -112,12 +112,38 @@
 					margin-bottom: 1rem;
 				}
 				table {
-					width: 40%;
+					font-size: 1rem;
+					line-height: 1.4;
+					width: 100%;
 					margin-bottom: 1rem;
 					border-top: 1px solid $light-grey;
 					border-bottom: 1px solid $light-grey;
 					tr {
 						height: 2.25rem;
+					}
+				}
+				.shipping-calculator-form {
+					width: 80%;
+					margin-left: 20%;
+					padding: 1rem 0;
+					button[name="calc_shipping"] {
+						padding: 0.75rem 1.25rem;
+						appearance: none;
+						background-color: $black;
+						border: 1px solid $black;
+						color: $white;
+						font-size: 1rem;
+						padding: 0.75rem 1.5rem;
+						cursor: pointer;
+						transition: all 0.35s;
+						&:hover {
+							color: $black;
+							background-color: $cyan;
+							border: 1px solid $cyan;
+						}
+					}
+					.select2-container--default .select2-selection--single {
+						border-radius: 0;
 					}
 				}
 				.wc-proceed-to-checkout {
@@ -228,7 +254,8 @@
 					margin-bottom: 1rem;
 				}
 				p {
-					font-size: 1.25rem;
+					font-size: 1rem;
+					margin-bottom: 0;
 				}
 				input, select, span.select2 {
 					margin-bottom: 1rem;
@@ -240,12 +267,12 @@
 			}
 			.woocommerce-account-fields {
 				.woocommerce-form__label {
-					font-size: 1.25rem;
+					font-size: 1rem;
 				}
 				.create-account {
 					p {
 						margin-top: 0.5rem;
-						font-size: 1.25rem;
+						font-size: 1rem;
 					}
 				}
 			}
@@ -254,7 +281,7 @@
 					margin-bottom: 0.5rem;
 				}
 				p {
-					font-size: 1.25rem;
+					font-size: 1rem;
 				}
 				textarea {
 					padding: 0.5rem;
@@ -262,12 +289,16 @@
 			}
 			.woocommerce-checkout-review-order {
 				table {
-					font-size: 1.25rem;
+					font-size: 1rem;
 					width: 100%;
 					line-height: 1.8;
+					.product-name {
+						text-align: left;
+					}
 					tr {
 						td {
 							padding-bottom: 0.5rem;
+							line-height: 1.4;
 						}
 					}
 					.product-total {
@@ -276,13 +307,18 @@
 					tfoot {
 						border-top: 1px solid $light-grey;
 						text-align: right;
+						line-height: 2.5;
 						tr {
+							margin-bottom: 0.5rem;
+							th {
+								width: 50%;
+							}
 							td {
+								width: 50%;
 								padding: 0;
 							}
 							&.cart-subtotal {
 								th {
-									display: block;
 									padding-top: 1rem;
 								}
 								td {
@@ -296,7 +332,7 @@
 			.woocommerce-checkout-payment {
 				.wc_payment_methods {
 					p {
-						font-size: 1.25rem;
+						font-size: 1rem;
 					}
 				}
 				.place-order {
@@ -325,19 +361,76 @@
 
 #payment {
 	.payment_methods {
-		font-size: 16px;
+		font-size: 1rem;
+		li {
+			.payment_box {
+				fieldset {
+					input {
+						font-size: 1rem !important;
+					}
+				}
+			}
+		}
+	}
+	.place-order {
+	    margin-top: 1rem;
+	    .terms {
+			font-size: 14px;
+			margin-bottom: 2rem;
+	    }
+	    input[type="checkbox"] {
+	    	font-size: 2rem;
+	    }
 	}
 
+	button[type="submit"] {
+		display: inline-block;
+		font-size: 1.25rem;
+		text-decoration: none;
+		border: none;
+		appearance: none;
+		background-color: $black;
+		padding: 0.75rem 1.25rem;
+		color: $white;
+		transition: all 0.35s;
+		&:hover {
+			color: $black;
+			background-color: $cyan;
+			// border: 1px solid $cyan;
+		}
+	}
 } 
 
 .woocommerce-checkout ul#shipping_method {
-	width: 180px;
+	// width: 180px;
 	display: flex;
 	flex-direction: column;
 	justify-content: flex-end;
 	li {
 		text-align: right;
-		font-size: 1.2rem;
+		font-size: 1rem;
+	}
+}
+
+.woocommerce-checkout #payment div.payment_box input.js-sv-wc-payment-gateway-credit-card-form-input[type="tel"] {
+	font-size: 1rem;
+}
+
+@include breakpoint(min-width, 768px) {
+	.table.cart td {
+		padding: 0.5rem;
+	}
+	.checkout {
+		#customer_details {
+			width: 40%;
+			margin-right: 5%;
+		}
+		#order_review {
+			width: 50%;
+		}
+		#order_review_heading {
+			width: 50%;
+		}
 	}
 }
 

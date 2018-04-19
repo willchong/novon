@@ -1,5 +1,10 @@
 $(function(){
 
+	tippy('.thumbnail img', {
+		theme: "novon",
+		animation: "shift-away"
+	});
+
 	// console.log(CORE.template_url);
 	if (getQueryVariable('wmc-currency') == "CAD") {
 		CORE.currency = "CAD";
@@ -137,7 +142,7 @@ $(function(){
 
 	});
 
-	$(document).on('click', '.js-reset', event, resetConfigurator);
+	$(document).on('click', '.js-reset', resetConfigurator);
 
 	$(document).on('click', '.js-add-items', function(event) {
 
@@ -148,7 +153,8 @@ $(function(){
 
 		if (_category == "earrings") {
 
-			_selections.push($('.configurator-tops .thumbnail.js-active').data('product-id')+":1");
+			_selections.push($('.configurator-tops .thumbnail.js-active').data('product-id'));
+			// _selections.push($('.configurator-tops .thumbnail.js-active').data('product-id')+":1");
 
 			$.each($('.configurator-attachments .thumbnail.js-active'), function(i,v) {
 				_selections.push($(this).data('product-id')+":2");
@@ -161,6 +167,8 @@ $(function(){
 			});
 			
 		}
+
+		console.log(_selections.join());
 
 		window.location.href = window.location.origin+"/cart/?add-to-cart="+_selections.join();
 

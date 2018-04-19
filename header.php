@@ -12,6 +12,12 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, user-scalable=no">
+<meta property="og:url" content="https://novoncollection.com/" />
+<meta property="og:type" content="website" />
+<meta property="og:title" content="The Novon Collection" />
+<meta property="og:description" content="Novon is a jewellery company inspired by nature’s elements. Our passion is to make you look and feel exceptional." />
+<meta property="og:image" content="https://novoncollection.com/wp-content/themes/storefront/novon/images/novon-intro.jpg" />
+
 <link rel="profile" href="http://gmpg.org/xfn/11">
 <link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>">
 <script type="text/javascript">
