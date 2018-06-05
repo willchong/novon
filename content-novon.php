@@ -9,10 +9,16 @@
 <section class="novon-wrap">
 
     <section class="intro">
-        <img src="<?php echo get_template_directory_uri(); ?>/novon/images/novon-intro.jpg" alt="">
+
+        <h1>A jewellery company inspired by nature’s elements.</h1>
+        <img src="<?php echo get_template_directory_uri(); ?>/novon/images/homepage-hero.jpg" alt="">
+        
+    </section>
+
+    <section class="post-intro">
         <div class="description">
-            <h4>Custom jewelry made by you.</h4>
-            <a href="/shop/" class="cta inverse">Shop the collection</a>
+            <h4>The Novon Collection</h4>
+            <a href="/shop/#design" class="cta inverse">Design your own</a>
         </div>
     </section>
 
@@ -29,6 +35,7 @@
                     <li>Add a stone, crystal or coin.</li>
                     <li>Add something else to create a totally new piece of jewelry.</li>
                 </ol>
+                <a href="/shop/#design" class="cta">Design your own</a>
             </div>
             <div class="earrings">
                 <img id="earrings-top" class="top" src="<?php echo get_template_directory_uri(); ?>/novon/images/animation-top.png" alt="">
@@ -52,6 +59,7 @@
         <div class="inset">
             <h2>Stones and Crystals</h2>
             <p>Find your balance with natural stones and crystals including Amethyst, Black Onyx, Rose Quartz, Lapis Lazuli and Swarovski Rose Pearl.</p>
+            <a href="/shop/#design" class="cta">Design your own</a>
             <div class="swiper-container carousel">
                 <div class="swiper-wrapper">
                     <div class="swiper-slide">
@@ -131,10 +139,10 @@
         </div>
     </section>
 
-    <section class="bio">
+   <!--  <section class="bio">
         <h3>The NOVON Collection</h3>
         <p>Novon is a jewellery company inspired by nature’s elements. Our passion is to make you look and feel exceptional.</p>
-    </section>
+    </section> -->
 
     <section class="shop">
         <h1>Shop the collection</h1>

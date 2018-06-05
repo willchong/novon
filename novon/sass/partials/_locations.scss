@@ -1,0 +1,119 @@
+.site-main {
+	.locations {
+		display: flex;
+		flex-wrap: wrap;
+		h1 {
+			width: 100%;
+			text-align: center;
+			height: auto;
+			margin-top: 2rem;
+			margin-bottom: 2rem;
+		}
+		.list {
+			padding: 1rem;
+			width: 40%;
+			font-size: 1rem;
+			display: flex;
+			flex-direction: column;
+			justify-content: flex-start;
+			h2 {
+				padding: 0 1rem;
+				font-size: 1.5rem;
+				max-width: 400px;
+				width: 100%;
+				margin: 0 auto;
+				margin-bottom: 0.5rem;
+			}
+			li {
+				padding: 1rem;
+				list-style: none;
+				margin-bottom: 2rem;
+				max-width: 400px;
+				width: 100%;
+				margin: 0 auto;
+				transition: all 0.33s;
+				position: relative;
+				h4 {
+					font-size: 1.25rem;
+					margin-bottom: 0.25rem;
+				}
+				&:hover {
+					cursor: pointer;
+					background-color: $cyan;
+				}
+				&:after {
+					content: '';
+					position: absolute;
+					width: calc(100% - 2rem);
+					left: 1rem;
+					// left: 50%;
+					// transform: translate(-50%, 0);
+					bottom: -1rem;
+					height: 1px;
+					background-color: $light-grey;
+				}
+				&:last-child {
+					&:after {
+						display: none;
+					}
+				}
+			}
+		}
+		.map {
+			width: 60%;
+			min-height: 500px;
+			.map-card {
+				padding: 0.5rem;
+				max-width: 240px;
+				display: flex;
+				flex-direction: row;
+				flex-wrap: wrap;
+				justify-content: space-between;
+				strong {
+					font-size: 1rem;
+					margin-bottom: 0.25rem;
+					width: 100%;
+				}
+				p {
+					font-size: 0.8rem;
+					width: 100%;
+					margin-bottom: 0.25rem;
+
+				}
+				.half {
+					width: 50%;
+					margin-bottom: 0.25rem;
+					a {
+						font-size: 0.8rem;
+						&.directions {
+							text-decoration: none;
+							font-weight: 700;
+						}
+					}
+					&:last-of-type {
+						text-align: right;
+					}
+				}
+				
+				
+			}
+		}
+	}
+}
+
+@include breakpoint(max-width, 640px) {
+	.site-main {
+			.locations {
+				flex-direction: column;
+				.list {
+					order: 2;
+					width: 100%;
+				}
+				.map {
+					width: 100%;
+					min-height: 300px;
+					order: 1;
+				}
+			}
+	}
+}

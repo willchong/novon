@@ -259,6 +259,11 @@ if ( ! class_exists( 'Storefront' ) ) :
 			wp_enqueue_script( 'novon-script', get_template_directory_uri() . '/novon/js/script.js', array( 'jquery' ), '20120206', true );
 			wp_enqueue_script( 'novon-configurator', get_template_directory_uri() . '/novon/js/configurator.js', array( 'jquery' ), '20120206', true );
 
+			if ( is_page_template( 'template-locations.php' )) {
+				wp_enqueue_script( 'novon-location-script', get_template_directory_uri() . '/novon/js/locations.js', array( 'jquery' ), '20120206', true );
+				wp_enqueue_script( 'gmaps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyCEAU8ymsfDkLynyCHROYPKIdv5qmRdJTw', array( 'jquery' ), '20120206', true );
+			}
+
 
 
 		}

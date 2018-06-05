@@ -253,6 +253,14 @@ body.woocommerce-cart .woocommerce-message a {
   border-radius: 0;
 }
 
+@include breakpoint(max-width, 640px) {
+  #primary {
+    margin-top: 64px;
+    outline: none;
+  }
+
+}
+
 @import "partials/header",
         "partials/homepage",
         "partials/shop",
@@ -261,5 +269,6 @@ body.woocommerce-cart .woocommerce-message a {
         "partials/category",
         "partials/configurator",
         "partials/contact",
+        "partials/locations",
         "partials/footer";
   

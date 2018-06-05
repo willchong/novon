@@ -451,6 +451,21 @@ if ( ! function_exists( 'storefront_novon_product_wrapper_close' ) ) {
 	}
 }
 
+if ( ! function_exists( 'storefront_novon_design_your_own' ) ) {
+	/**
+	 * 
+	 *
+	 * @since   2.2.0
+	 * @return  void
+	 */
+	function storefront_novon_design_your_own() {
+		echo '<div class="dyo">';
+		echo '<p>Some of our creations.</p>';
+		echo '<a href="/shop/#design" class="cta">Design your own</a>';
+		echo '</div>';
+	}
+}
+
 if (!function_exists('obox_woocommerce_product_excerpt'))  
 { 
      function obox_woocommerce_product_excerpt()  

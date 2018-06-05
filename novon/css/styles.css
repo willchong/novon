@@ -579,6 +579,11 @@ body.woocommerce-cart .woocommerce-message a {
   background-color: rgba(0, 0, 0, 0.8);
   border-radius: 0; }
 
+@media (max-width: 640px) {
+  #primary {
+    margin-top: 64px;
+    outline: none; } }
+
 header.novon {
   height: 84px;
   width: 100%;
@@ -597,7 +602,12 @@ header.novon {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  padding: 1.5rem; }
+  padding: 1.5rem;
+  top: 0;
+  -webkit-transition: all 0.33s;
+  transition: all 0.33s; }
+  header.novon.js-active {
+    top: 0; }
   header.novon .site-branding {
     float: none; }
     header.novon .site-branding a:hover {
@@ -756,28 +766,56 @@ header.novon {
         header.novon .storefront-primary-navigation .icons a:hover {
           background-color: inherit; }
   @media (max-width: 640px) {
-    header.novon .cta {
-      min-width: 7rem;
-      padding: 0.5rem; } }
+    header.novon {
+      height: 64px;
+      padding: 1rem; }
+      header.novon .cta {
+        min-width: 7rem;
+        padding: 0.5rem; } }
 
 .novon-wrap {
   width: 100%;
   margin: 0 auto; }
   .novon-wrap.less-margin {
+    padding: 0 1rem;
     margin-top: 2rem;
     margin-bottom: 2rem; }
 
-section.intro img {
-  width: 100%; }
+section.intro {
+  position: relative; }
+  section.intro h1 {
+    top: 80%;
+    left: 50%;
+    width: 100%;
+    text-align: center;
+    padding: 0 3rem;
+    -webkit-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+    z-index: 1000;
+    position: absolute; }
+  section.intro img {
+    width: 100%; }
+  section.intro:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background: rgba(255, 255, 255, 0);
+    background: -webkit-gradient(left top, left bottom, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(59%, rgba(255, 255, 255, 0)), color-stop(100%, rgba(255, 255, 255, 0.75)));
+    background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(59%, rgba(255, 255, 255, 0)), to(rgba(255, 255, 255, 0.75)));
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 59%, rgba(255, 255, 255, 0.75) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ffffff', GradientType=0 ); }
 
-section.intro .description {
+section.post-intro .description {
   background-color: #000000;
   padding: 4rem;
   color: #ffffff;
   text-align: center; }
-  section.intro .description h4 {
+  section.post-intro .description h4 {
     margin-bottom: 1.5rem; }
-  section.intro .description a {
+  section.post-intro .description a {
     max-width: 280px;
     margin: 0 auto; }
 
@@ -844,6 +882,10 @@ section.modular .panel {
         padding-left: 1rem;
         line-height: 1.4;
         margin-bottom: 1rem; }
+  section.modular .panel .cta {
+    max-width: 220px;
+    margin: 0 auto;
+    margin-top: 2rem; }
   section.modular .panel .earrings {
     width: 48%;
     position: relative;
@@ -930,6 +972,10 @@ section.stones {
       margin: 0 auto;
       text-align: center;
       color: #696969; }
+    section.stones .inset .cta {
+      max-width: 220px;
+      margin: 0 auto;
+      margin-top: 1rem; }
     section.stones .inset .carousel {
       overflow: visible;
       margin: 2rem auto;
@@ -1110,6 +1156,9 @@ section.shop {
       width: 75%; } }
 
 @media (max-width: 640px) {
+  section.intro h1 {
+    font-size: 1.4rem;
+    padding: 0 2rem; }
   section.bio p {
     padding: 0 1rem; }
   section.modular .panel {
@@ -1255,38 +1304,51 @@ section.shop {
       margin: 0 auto;
       cursor: pointer; }
 
-section.originals .category {
-  position: relative; }
-  section.originals .category img {
-    width: 100%;
-    z-index: 1001; }
-  section.originals .category h3 {
-    color: #ffffff;
-    z-index: 1002;
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    -webkit-transform: translate(-50%, -50%);
-            transform: translate(-50%, -50%);
-    -webkit-transition: all 0.35s;
-    transition: all 0.35s; }
-  section.originals .category:after {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    left: 0;
-    top: 0;
-    background: rgba(0, 0, 0, 0.65);
-    -webkit-transition: all 0.35s;
-    transition: all 0.35s; }
-  section.originals .category:hover {
-    cursor: pointer; }
-    section.originals .category:hover h3 {
-      color: #000000; }
-    section.originals .category:hover:after {
-      background: -webkit-gradient(linear, left top, left bottom, from(rgba(187, 255, 255, 0.25)), to(rgba(187, 255, 255, 0.25)));
-      background: linear-gradient(rgba(187, 255, 255, 0.25), rgba(187, 255, 255, 0.25)); }
+section.originals {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex; }
+  section.originals a {
+    width: 33.3333%; }
+  section.originals .category {
+    position: relative; }
+    section.originals .category img {
+      width: 100%;
+      z-index: 1001; }
+      section.originals .category img.desktop {
+        display: inline-block;
+        width: 100%; }
+      section.originals .category img.mobile {
+        display: none; }
+    section.originals .category h3 {
+      color: #ffffff;
+      z-index: 1002;
+      position: absolute;
+      left: 50%;
+      text-align: center;
+      width: 80%;
+      top: 50%;
+      -webkit-transform: translate(-50%, -50%);
+              transform: translate(-50%, -50%);
+      -webkit-transition: all 0.35s;
+      transition: all 0.35s; }
+    section.originals .category:after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      left: 0;
+      top: 0;
+      background: rgba(0, 0, 0, 0.65);
+      -webkit-transition: all 0.35s;
+      transition: all 0.35s; }
+    section.originals .category:hover {
+      cursor: pointer; }
+      section.originals .category:hover h3 {
+        color: #000000; }
+      section.originals .category:hover:after {
+        background: -webkit-gradient(linear, left top, left bottom, from(rgba(187, 255, 255, 0.25)), to(rgba(187, 255, 255, 0.25)));
+        background: linear-gradient(rgba(187, 255, 255, 0.25), rgba(187, 255, 255, 0.25)); }
 
 .novon-wrapper {
   max-width: 960px;
@@ -1651,11 +1713,26 @@ section.products {
           .novon-search .products .results .product .added_to_cart:hover {
             background: #BBF1F1; }
 
+@media (max-width: 768px) {
+  section.originals {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap; }
+    section.originals a {
+      width: 100%; }
+    section.originals .category {
+      width: 100%; }
+      section.originals .category img.desktop {
+        display: none; }
+      section.originals .category img.mobile {
+        display: inline-block; } }
+
 @media (max-width: 640px) {
-  section.originals .category h3 {
-    width: 100%;
-    text-align: center;
-    font-size: 2rem; }
+  section.originals .category {
+    width: 100%; }
+    section.originals .category h3 {
+      width: 100%;
+      text-align: center;
+      font-size: 2rem; }
   section.products .tops .fancy-header h2, section.products .attachments .fancy-header h2, section.products .chains .fancy-header h2 {
     padding: 0 0.5rem;
     font-size: 1.5rem; }
@@ -2483,6 +2560,7 @@ section.products {
     -webkit-box-pack: start;
         -ms-flex-pack: start;
             justify-content: flex-start;
+    padding: 0 1rem;
     padding-top: 2rem;
     margin-bottom: 2rem; }
     .site-main .novon-category .cta-wrapper .cta {
@@ -2501,7 +2579,7 @@ section.products {
     width: 100%;
     position: relative;
     text-align: center;
-    margin-bottom: 3rem; }
+    margin-bottom: 1rem; }
     .site-main .novon-category .woocommerce-products-header h1 {
       width: auto;
       display: inline-block;
@@ -2521,6 +2599,18 @@ section.products {
         -webkit-transform: translateY(-50%);
                 transform: translateY(-50%);
         left: 0; }
+  .site-main .novon-category .dyo {
+    width: 50%;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 2rem; }
+    .site-main .novon-category .dyo p {
+      margin-bottom: 0.5rem; }
+    .site-main .novon-category .dyo .cta {
+      padding: 0.5rem 1rem;
+      max-width: 180px;
+      margin: 0 auto;
+      border-radius: 0; }
   .site-main .novon-category .products {
     max-width: 960px;
     margin: 0 auto;
@@ -2699,7 +2789,6 @@ section.configurator {
         left: 0; }
   section.configurator .preview {
     width: 460px;
-    border: 1px solid #000000;
     font-size: 1.2rem;
     padding: 0 3rem 3rem 3rem;
     position: relative; }
@@ -2825,6 +2914,39 @@ section.configurator {
       section.configurator .preview .buttons .add-items {
         width: 70%;
         border-radius: 0; }
+      section.configurator .preview .buttons .liveview {
+        display: none; }
+      section.configurator .preview .buttons.js-active {
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap; }
+        section.configurator .preview .buttons.js-active .reset {
+          -webkit-box-ordinal-group: 3;
+              -ms-flex-order: 2;
+                  order: 2;
+          width: 25%;
+          margin-bottom: 0.5rem;
+          padding: 0.5rem; }
+        section.configurator .preview .buttons.js-active .add-items {
+          -webkit-box-ordinal-group: 2;
+              -ms-flex-order: 1;
+                  order: 1;
+          width: 100%;
+          margin-bottom: 0.5rem;
+          padding: 0.5rem; }
+        section.configurator .preview .buttons.js-active .liveview {
+          -webkit-box-ordinal-group: 4;
+              -ms-flex-order: 3;
+                  order: 3;
+          display: inline-block;
+          width: calc(75% - 0.5rem);
+          margin-bottom: 0.5rem;
+          border-radius: 0;
+          border: 1px solid #696969;
+          background-color: #ffffff;
+          color: #696969; }
+          section.configurator .preview .buttons.js-active .liveview:hover {
+            background-color: #696969;
+            color: #ffffff; }
   section.configurator .selections {
     width: calc(100% - 470px);
     font-size: 1rem; }
@@ -2889,16 +3011,8 @@ section.configurator {
         section.configurator .selections .tops .thumbnails .thumbnail.js-active, section.configurator .selections .attachments .thumbnails .thumbnail.js-active {
           border: 3px solid #BBF1F1; }
         section.configurator .selections .tops .thumbnails .thumbnail.js-disabled, section.configurator .selections .attachments .thumbnails .thumbnail.js-disabled {
+          display: none;
           pointer-events: none; }
-          section.configurator .selections .tops .thumbnails .thumbnail.js-disabled:after, section.configurator .selections .attachments .thumbnails .thumbnail.js-disabled:after {
-            content: '';
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            opacity: 0.5;
-            top: 0;
-            left: 0;
-            background: repeating-linear-gradient(-45deg, #999, #999 10px, #666 10px, #666 20px); }
     section.configurator .selections .attachments .header {
       margin-top: 1rem; }
   section.configurator .preview .phase-2 .piece {
@@ -2962,8 +3076,8 @@ section.configurator {
     position: relative;
     z-index: 1; }
     section.configurator .preview.js--chains.js-double-sphere .phase-2 .piece {
-      -webkit-transform: rotate(90deg);
-              transform: rotate(90deg);
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
       margin-top: 3%;
       margin-left: -4%; }
   section.configurator .preview.js--chains.js-double-sphere .phase-3 {
@@ -2978,10 +3092,172 @@ section.configurator {
     section.configurator .preview.js--chains.js-double-sphere .phase-4 .piece {
       margin-top: -11%;
       margin-left: -4%; }
+  section.configurator .preview.js--chains.js-chain-override.sphere-sphere .phase-1 {
+    position: relative;
+    z-index: 2; }
+  section.configurator .preview.js--chains.js-chain-override.sphere-sphere .phase-2 {
+    position: relative;
+    z-index: 1; }
+    section.configurator .preview.js--chains.js-chain-override.sphere-sphere .phase-2 .piece {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      margin-top: -11%;
+      margin-left: 0%; }
+  section.configurator .preview.js--chains.js-chain-override.sphere-sphere .phase-3 {
+    position: relative;
+    z-index: 2; }
+    section.configurator .preview.js--chains.js-chain-override.sphere-sphere .phase-3 .piece {
+      margin-top: -12%;
+      margin-left: -1%; }
+  section.configurator .preview.js--chains.js-chain-override.sphere-sphere .phase-4 {
+    position: relative;
+    z-index: 3; }
+    section.configurator .preview.js--chains.js-chain-override.sphere-sphere .phase-4 .piece {
+      margin-top: -11%;
+      margin-left: -4%; }
+  section.configurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-1 {
+    position: relative;
+    z-index: 2; }
+  section.configurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-2 {
+    position: relative;
+    z-index: 1; }
+    section.configurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-2 .piece {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      margin-top: -11%;
+      margin-left: -3%; }
+  section.configurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-3 {
+    position: relative;
+    z-index: 2; }
+    section.configurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-3 .piece {
+      margin-top: -12.5%;
+      margin-left: -1%; }
+  section.configurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-4 {
+    position: relative;
+    z-index: 3; }
+    section.configurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-4 .piece {
+      margin-top: -11%;
+      margin-left: -4.5%; }
+  section.configurator .preview.js--chains.js-chain-override.oval-oval .phase-1 {
+    position: relative;
+    z-index: 2; }
+  section.configurator .preview.js--chains.js-chain-override.oval-oval .phase-2 {
+    position: relative;
+    z-index: 1; }
+    section.configurator .preview.js--chains.js-chain-override.oval-oval .phase-2 .piece {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      margin-top: -11%;
+      margin-left: 0%; }
+  section.configurator .preview.js--chains.js-chain-override.oval-oval .phase-3 {
+    position: relative;
+    z-index: 2; }
+    section.configurator .preview.js--chains.js-chain-override.oval-oval .phase-3 .piece {
+      margin-top: -10.5%;
+      margin-left: -4%; }
+  section.configurator .preview.js--chains.js-chain-override.oval-oval .phase-4 {
+    position: relative;
+    z-index: 3; }
+    section.configurator .preview.js--chains.js-chain-override.oval-oval .phase-4 .piece {
+      margin-top: -11%;
+      margin-left: -4%; }
+  section.configurator .preview.js--chains.js-chain-override.oval-sphere .phase-1 {
+    position: relative;
+    z-index: 2; }
+  section.configurator .preview.js--chains.js-chain-override.oval-sphere .phase-2 {
+    position: relative;
+    z-index: 1; }
+    section.configurator .preview.js--chains.js-chain-override.oval-sphere .phase-2 .piece {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      margin-top: -10%;
+      margin-left: -1%; }
+  section.configurator .preview.js--chains.js-chain-override.oval-sphere .phase-3 {
+    position: relative;
+    z-index: 2; }
+    section.configurator .preview.js--chains.js-chain-override.oval-sphere .phase-3 .piece {
+      margin-top: -11%;
+      margin-left: 0%; }
+  section.configurator .preview.js--chains.js-chain-override.oval-sphere .phase-4 {
+    position: relative;
+    z-index: 3; }
+    section.configurator .preview.js--chains.js-chain-override.oval-sphere .phase-4 .piece {
+      margin-top: -11%;
+      margin-left: -4.5%; }
+  section.configurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-1 {
+    position: relative;
+    z-index: 2; }
+  section.configurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-2 {
+    position: relative;
+    z-index: 1; }
+    section.configurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-2 .piece {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      margin-top: -11%;
+      margin-left: -3%; }
+  section.configurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-3 {
+    position: relative;
+    z-index: 2; }
+    section.configurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-3 .piece {
+      margin-top: -12.5%;
+      margin-left: -3%; }
+  section.configurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-4 {
+    position: relative;
+    z-index: 3; }
+    section.configurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-4 .piece {
+      margin-top: -11%;
+      margin-left: -4.5%; }
+  section.configurator .preview.js--chains.js-chain-override.cabochon-oval .phase-1 {
+    position: relative;
+    z-index: 2; }
+  section.configurator .preview.js--chains.js-chain-override.cabochon-oval .phase-2 {
+    position: relative;
+    z-index: 1; }
+    section.configurator .preview.js--chains.js-chain-override.cabochon-oval .phase-2 .piece {
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
+      margin-top: -11%;
+      margin-left: -3%; }
+  section.configurator .preview.js--chains.js-chain-override.cabochon-oval .phase-3 {
+    position: relative;
+    z-index: 2; }
+    section.configurator .preview.js--chains.js-chain-override.cabochon-oval .phase-3 .piece {
+      margin-top: -12.5%;
+      margin-left: -4%; }
+  section.configurator .preview.js--chains.js-chain-override.cabochon-oval .phase-4 {
+    position: relative;
+    z-index: 3; }
+    section.configurator .preview.js--chains.js-chain-override.cabochon-oval .phase-4 .piece {
+      margin-top: -11%;
+      margin-left: -4.5%; }
   section.configurator .preview.js--chains.js-incomplete .phase .piece {
     margin: 1rem !important; }
   section.configurator .preview.js--chains.js-incomplete .phase-2 .piece {
     margin: 1.5rem !important; }
+
+.configurator-modal .content {
+  position: relative; }
+  .configurator-modal .content .modal-close {
+    font-size: 1rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer; }
+  .configurator-modal .content .configurator {
+    position: absolute;
+    z-index: 2; }
+    .configurator-modal .content .configurator .preview .phase label {
+      display: none !important; }
+    .configurator-modal .content .configurator .preview .summary {
+      display: none; }
+    .configurator-modal .content .configurator .preview .buttons {
+      display: none; }
+  .configurator-modal .content .js-lp-earrings-bg, .configurator-modal .content .js-lp-bracelets-bg, .configurator-modal .content .js-lp-necklaces-bg {
+    display: none; }
+    .configurator-modal .content .js-lp-earrings-bg.js-active, .configurator-modal .content .js-lp-bracelets-bg.js-active, .configurator-modal .content .js-lp-necklaces-bg.js-active {
+      display: block;
+      position: relative;
+      z-index: 1; }
 
 @media (max-width: 960px) {
   section.configurator .selections .tops .thumbnails .thumbnail, section.configurator .selections .attachments .thumbnails .thumbnail {
@@ -3009,17 +3285,31 @@ section.configurator {
       margin: 0 auto;
       padding: 0 1rem 1rem 1rem; }
       section.configurator .preview .buttons {
-        -webkit-box-orient: vertical;
+        -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
-            -ms-flex-direction: column;
-                flex-direction: column; }
-        section.configurator .preview .buttons .reset, section.configurator .preview .buttons .add-items {
-          width: 100%;
-          margin-bottom: 0.5rem; }
+            -ms-flex-direction: row;
+                flex-direction: row;
+        -webkit-box-pack: justify;
+            -ms-flex-pack: justify;
+                justify-content: space-between; }
+        section.configurator .preview .buttons .reset {
+          width: 30%;
+          margin-bottom: 0.5rem;
+          padding: 0.5rem; }
+        section.configurator .preview .buttons .add-items {
+          width: 69%;
+          margin-bottom: 0.5rem;
+          padding: 0.5rem; }
       section.configurator .preview .earring-clone {
         width: 320px;
         padding: 0 1rem 1rem 1rem;
         margin-left: -53px; }
+      section.configurator .preview .phase {
+        width: 55%; }
+      section.configurator .preview .summary {
+        margin: 0;
+        padding: 0;
+        padding-bottom: 1rem; }
     section.configurator .selections {
       margin-top: 2rem; }
       section.configurator .selections .tops .thumbnails .thumbnail, section.configurator .selections .attachments .thumbnails .thumbnail {
@@ -3103,6 +3393,120 @@ section.configurator {
     .woo-contact-form #contact-form-99 {
       padding: 1rem;
       width: 100%; } }
+
+.site-main .locations {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap; }
+  .site-main .locations h1 {
+    width: 100%;
+    text-align: center;
+    height: auto;
+    margin-top: 2rem;
+    margin-bottom: 2rem; }
+  .site-main .locations .list {
+    padding: 1rem;
+    width: 40%;
+    font-size: 1rem;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
+    .site-main .locations .list h2 {
+      padding: 0 1rem;
+      font-size: 1.5rem;
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+      margin-bottom: 0.5rem; }
+    .site-main .locations .list li {
+      padding: 1rem;
+      list-style: none;
+      margin-bottom: 2rem;
+      max-width: 400px;
+      width: 100%;
+      margin: 0 auto;
+      -webkit-transition: all 0.33s;
+      transition: all 0.33s;
+      position: relative; }
+      .site-main .locations .list li h4 {
+        font-size: 1.25rem;
+        margin-bottom: 0.25rem; }
+      .site-main .locations .list li:hover {
+        cursor: pointer;
+        background-color: #BBF1F1; }
+      .site-main .locations .list li:after {
+        content: '';
+        position: absolute;
+        width: calc(100% - 2rem);
+        left: 1rem;
+        bottom: -1rem;
+        height: 1px;
+        background-color: #D1D1D1; }
+      .site-main .locations .list li:last-child:after {
+        display: none; }
+  .site-main .locations .map {
+    width: 60%;
+    min-height: 500px; }
+    .site-main .locations .map .map-card {
+      padding: 0.5rem;
+      max-width: 240px;
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      -webkit-box-orient: horizontal;
+      -webkit-box-direction: normal;
+          -ms-flex-direction: row;
+              flex-direction: row;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+      -webkit-box-pack: justify;
+          -ms-flex-pack: justify;
+              justify-content: space-between; }
+      .site-main .locations .map .map-card strong {
+        font-size: 1rem;
+        margin-bottom: 0.25rem;
+        width: 100%; }
+      .site-main .locations .map .map-card p {
+        font-size: 0.8rem;
+        width: 100%;
+        margin-bottom: 0.25rem; }
+      .site-main .locations .map .map-card .half {
+        width: 50%;
+        margin-bottom: 0.25rem; }
+        .site-main .locations .map .map-card .half a {
+          font-size: 0.8rem; }
+          .site-main .locations .map .map-card .half a.directions {
+            text-decoration: none;
+            font-weight: 700; }
+        .site-main .locations .map .map-card .half:last-of-type {
+          text-align: right; }
+
+@media (max-width: 640px) {
+  .site-main .locations {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+    .site-main .locations .list {
+      -webkit-box-ordinal-group: 3;
+          -ms-flex-order: 2;
+              order: 2;
+      width: 100%; }
+    .site-main .locations .map {
+      width: 100%;
+      min-height: 300px;
+      -webkit-box-ordinal-group: 2;
+          -ms-flex-order: 1;
+              order: 1; } }
 
 footer {
   height: 124px;

@@ -44,7 +44,7 @@ section.configurator {
 	}
 	.preview {
 		width: 460px;
-		border: 1px solid $black;
+		// border: 1px solid $black;
 		font-size: 1.2rem;
 		padding: 0 3rem 3rem 3rem;
 		position: relative;
@@ -197,6 +197,38 @@ section.configurator {
 				width: 70%;
 				border-radius: 0;
 			}
+			.liveview {
+				display: none;
+			}
+			&.js-active {
+				flex-wrap: wrap;
+				.reset {
+					order: 2;
+					width: 25%;
+					margin-bottom: 0.5rem;
+					padding: 0.5rem;
+				}
+				.add-items {
+					order: 1;
+					width: 100%;
+					margin-bottom: 0.5rem;
+					padding: 0.5rem;
+				}
+				.liveview {
+					order: 3;
+					display: inline-block;
+					width: calc(75% - 0.5rem);
+					margin-bottom: 0.5rem;
+					border-radius: 0;
+					border: 1px solid $grey;
+					background-color: $white;
+					color: $grey;
+					&:hover {
+						background-color: $grey;
+						color: $white;
+					}
+				}
+			}
 		}
 	}
 	.selections {
@@ -263,23 +295,24 @@ section.configurator {
 						border: 3px solid $cyan;
 					}
 					&.js-disabled {
+						display: none;
 						pointer-events: none;
-						&:after {
-							content: '';
-							position: absolute;
-							width: 100%;
-							height: 100%;
-							opacity: 0.5;
-							top: 0;
-							left: 0;
-							background: repeating-linear-gradient(
-							    -45deg,
-							    #999,
-							    #999 10px,
-							    #666 10px,
-							    #666 20px
-							);
-						}
+						// &:after {
+						// 	content: '';
+						// 	position: absolute;
+						// 	width: 100%;
+						// 	height: 100%;
+						// 	opacity: 0.5;
+						// 	top: 0;
+						// 	left: 0;
+						// 	background: repeating-linear-gradient(
+						// 	    -45deg,
+						// 	    #999,
+						// 	    #999 10px,
+						// 	    #666 10px,
+						// 	    #666 20px
+						// 	);
+						// }
 					}
 				}
 			}
@@ -439,7 +472,7 @@ section.configurator {
 					position: relative;
 					z-index: 1;
 					.piece {
-						transform: rotate(90deg);
+						transform: rotate(0deg);
 						margin-top: 3%;
 						margin-left: -4%;
 					}
@@ -461,6 +494,194 @@ section.configurator {
 					}
 				}
 			}
+			&.js-chain-override {
+				&.sphere-sphere {
+					.phase-1 {
+						position: relative;
+						z-index: 2;
+					}
+					.phase-2 {
+						position: relative;
+						z-index: 1;
+						.piece {
+							transform: rotate(0deg);
+							margin-top: -11%;
+							margin-left: 0%;
+						}
+					}
+					.phase-3 {
+						position: relative;
+						z-index: 2;
+						.piece {
+							margin-top: -12%;
+							margin-left: -1%;
+						}
+					}
+					.phase-4 {
+						position: relative;
+						z-index: 3;
+						.piece {
+							margin-top: -11%;
+							margin-left: -4%;
+						}
+					}
+				}
+				&.cabochon-sphere {
+					.phase-1 {
+						position: relative;
+						z-index: 2;
+					}
+					.phase-2 {
+						position: relative;
+						z-index: 1;
+						.piece {
+							transform: rotate(0deg);
+							margin-top: -11%;
+							margin-left: -3%;
+						}
+					}
+					.phase-3 {
+						position: relative;
+						z-index: 2;
+						.piece {
+							margin-top: -12.5%;
+							margin-left: -1%;
+						}
+					}
+					.phase-4 {
+						position: relative;
+						z-index: 3;
+						.piece {
+							margin-top: -11%;
+							margin-left: -4.5%;
+						}
+					}
+				}
+				&.oval-oval {
+					.phase-1 {
+						position: relative;
+						z-index: 2;
+					}
+					.phase-2 {
+						position: relative;
+						z-index: 1;
+						.piece {
+							transform: rotate(0deg);
+							margin-top: -11%;
+							margin-left: 0%;
+						}
+					}
+					.phase-3 {
+						position: relative;
+						z-index: 2;
+						.piece {
+							margin-top: -10.5%;
+							margin-left: -4%;
+						}
+					}
+					.phase-4 {
+						position: relative;
+						z-index: 3;
+						.piece {
+							margin-top: -11%;
+							margin-left: -4%;
+						}
+					}
+				}
+				&.oval-sphere {
+					.phase-1 {
+						position: relative;
+						z-index: 2;
+					}
+					.phase-2 {
+						position: relative;
+						z-index: 1;
+						.piece {
+							transform: rotate(0deg);
+							margin-top: -10%;
+							margin-left: -1%;
+						}
+					}
+					.phase-3 {
+						position: relative;
+						z-index: 2;
+						.piece {
+							margin-top: -11%;
+							margin-left: 0%;
+						}
+					}
+					.phase-4 {
+						position: relative;
+						z-index: 3;
+						.piece {
+							margin-top: -11%;
+							margin-left: -4.5%;
+						}
+					}
+				}
+				&.cabochon-cabochon {
+					.phase-1 {
+						position: relative;
+						z-index: 2;
+					}
+					.phase-2 {
+						position: relative;
+						z-index: 1;
+						.piece {
+							transform: rotate(0deg);
+							margin-top: -11%;
+							margin-left: -3%;
+						}
+					}
+					.phase-3 {
+						position: relative;
+						z-index: 2;
+						.piece {
+							margin-top: -12.5%;
+							margin-left: -3%;
+						}
+					}
+					.phase-4 {
+						position: relative;
+						z-index: 3;
+						.piece {
+							margin-top: -11%;
+							margin-left: -4.5%;
+						}
+					}
+				}
+				&.cabochon-oval {
+					.phase-1 {
+						position: relative;
+						z-index: 2;
+					}
+					.phase-2 {
+						position: relative;
+						z-index: 1;
+						.piece {
+							transform: rotate(0deg);
+							margin-top: -11%;
+							margin-left: -3%;
+						}
+					}
+					.phase-3 {
+						position: relative;
+						z-index: 2;
+						.piece {
+							margin-top: -12.5%;
+							margin-left: -4%;
+						}
+					}
+					.phase-4 {
+						position: relative;
+						z-index: 3;
+						.piece {
+							margin-top: -11%;
+							margin-left: -4.5%;
+						}
+					}
+				}
+			}
 			&.js-incomplete {
 				.phase {
 					.piece {
@@ -477,7 +698,44 @@ section.configurator {
 		}
 	}
 
+}
 
+.configurator-modal {
+	.content {
+		position: relative;
+		.modal-close {
+			font-size: 1rem;
+			position: absolute;
+			top: 0;
+			right: 0;
+			cursor: pointer;
+		}
+		.configurator {
+			position: absolute;
+			z-index: 2;
+			.preview {
+				.phase {
+					label {
+						display: none !important;
+					}
+				}
+				.summary {
+					display: none;
+				}
+				.buttons {
+					display: none;
+				}
+			}
+		}
+		.js-lp-earrings-bg, .js-lp-bracelets-bg, .js-lp-necklaces-bg {
+			display: none;
+			&.js-active {
+				display: block;
+				position: relative;
+				z-index: 1;
+			}
+		}
+	}
 }
 
 @include breakpoint(max-width, 960px) {
@@ -526,11 +784,26 @@ section.configurator {
 			width: 320px;
 			margin: 0 auto;
 			padding: 0 1rem 1rem 1rem;
+			// .summary {
+			// 	position: fixed;
+			// 	top: 92px;
+			// 	left: 0;
+			// 	width: 50%;
+			// 	background-color: rgba(255,255,255,0.75);
+			// 	border: 1px solid $grey;
+			// }
 			.buttons {
-				flex-direction: column;
-				.reset, .add-items {
-					width: 100%;
+				flex-direction: row;
+				justify-content: space-between;
+				.reset {
+					width: 30%;
 					margin-bottom: 0.5rem;
+					padding: 0.5rem;
+				}
+				.add-items {
+					width: 69%;
+					margin-bottom: 0.5rem;
+					padding: 0.5rem;
 				}
 			}
 			.earring-clone {
@@ -538,6 +811,14 @@ section.configurator {
 				padding: 0 1rem 1rem 1rem;
 				// transform: translateX(-17%);
 				margin-left: -53px;
+			}
+			.phase {
+				width: 55%;
+			}
+			.summary {
+				margin: 0;
+				padding: 0;
+				padding-bottom: 1rem;
 			}
 		}
 		.selections {

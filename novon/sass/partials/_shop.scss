@@ -1,15 +1,28 @@
 section.originals {
+	display: flex;
+	a {
+		width: 33.3333%;
+	}
 	.category {
 		position: relative;
 		img {
 			width: 100%;
 			z-index: 1001;
+			&.desktop {
+				display: inline-block;
+				width: 100%;
+			}
+			&.mobile {
+				display: none;
+			}
 		}
 		h3 {
 			color: $white;
 			z-index: 1002;
 			position: absolute;
 			left: 50%;
+			text-align: center;
+			width: 80%;
 			top: 50%;
 			transform: translate(-50%, -50%);
 			transition: all 0.35s;
@@ -423,10 +436,34 @@ section.products {
 		}
 }
 
+@include breakpoint(max-width, 768px) {
+
+	section.originals {
+		a {
+			width: 100%;
+		}
+		flex-wrap: wrap;
+		.category {
+			width: 100%;
+			img {
+				&.desktop {
+					display: none;
+				}
+				&.mobile {
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+
+}
+
 @include breakpoint(max-width, 640px) {
 
 	section.originals {
 		.category {
+			width: 100%;
 			h3 {
 				width: 100%;
 				text-align: center;

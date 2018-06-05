@@ -11,6 +11,12 @@ header.novon {
   justify-content: space-between;
   align-items: center;
   padding: 1.5rem;
+  // top: -84px;
+  top: 0;
+  transition: all 0.33s;
+  &.js-active {
+    top: 0;
+  }
   .site-branding {
     float: none;
     a {
@@ -194,9 +200,12 @@ header.novon {
     }
   }
   @include breakpoint(max-width, 640px) {
+    height: 64px;
+    padding: 1rem;
     .cta {
        min-width: 7rem;
        padding: 0.5rem;
     }
+
   }
 }

@@ -48,22 +48,25 @@
 <?php else: ?>
 
 <section class="originals">
-    <a href="/product-category/originals/our-earrings/">
+    <a href="/product-category/originals/pre-designed-earrings/">
     <div class="category">
-	        <img src="<?php echo get_template_directory_uri(); ?>/novon/images/original-earrings.jpg" alt="">
-	        <h3>Our Earrings</h3>
+          <img class="desktop" src="<?php echo get_template_directory_uri(); ?>/novon/images/original-earrings-box.jpg" alt="">
+	        <img class="mobile" src="<?php echo get_template_directory_uri(); ?>/novon/images/original-earrings.jpg" alt="">
+	        <h3>Pre-designed earrings</h3>
     </div>
     </a>
-    <a href="/product-category/originals/our-bracelets/">
+    <a href="/product-category/originals/pre-designed-bracelets/">
     <div class="category">
-	        <img src="<?php echo get_template_directory_uri(); ?>/novon/images/original-bracelets.jpg" alt="">
-	        <h3>Our Bracelets</h3>
+          <img class="desktop" src="<?php echo get_template_directory_uri(); ?>/novon/images/original-bracelets-box.jpg" alt="">
+	        <img class="mobile" src="<?php echo get_template_directory_uri(); ?>/novon/images/original-bracelets.jpg" alt="">
+	        <h3>Pre-designed bracelets</h3>
     </div>
     </a>
-    <a href="/product-category/originals/our-necklaces/">
+    <a href="/product-category/originals/pre-designed-necklaces/">
     <div class="category">
-	        <img src="<?php echo get_template_directory_uri(); ?>/novon/images/original-necklaces.jpg" alt="">
-	        <h3>Our Necklaces</h3>
+          <img class="desktop" src="<?php echo get_template_directory_uri(); ?>/novon/images/original-necklaces-box.jpg" alt="">
+	        <img class="mobile" src="<?php echo get_template_directory_uri(); ?>/novon/images/original-necklaces.jpg" alt="">
+	        <h3>Pre-designed necklaces</h3>
     </div>
     </a>
 </section>
@@ -79,7 +82,7 @@
           <div class="instructions">
             <img class="js-add" src="<?php echo get_template_directory_uri(); ?>/novon/images/add-button.svg" alt="">
             <strong>Step 1:</strong>
-            <p>Choose a top</p>
+            <p>Choose a pendant or earring top</p>
           </div>
           <img class="piece" src="" alt="">
           <label></label>
@@ -124,11 +127,12 @@
         <div class="buttons js-buttons">
           <a class="cta reset js-reset">Reset</a>
           <a class="cta add-items js-add-items">Add Items to Cart</a>
+          <a class="cta liveview js-liveview">View your design</a>
         </div>
       </div>
       <div class="selections">
         <div class="tops">
-          <div class="header js-active">Tops</div>
+          <div class="header js-active">Tops and Chains</div>
           <ul class="thumbnails configurator-tops js-active">
               <?php
                 $args = array(
@@ -195,7 +199,7 @@
                           )
                       ),
                       'post_type' => 'product',
-                      'product_tag' => ['double'],
+                      'product_tag' => ['single'],
                       'orderby'   => 'menu_order',
                       'order'     => 'ASC'
                 );
@@ -219,55 +223,7 @@
                           )
                       ),
                       'post_type' => 'product',
-                      'product_tag' => ['double'],
-                      'orderby'   => 'menu_order',
-                      'order'     => 'ASC'
-                );
-              $loop = new WP_Query( $args );
-              if ( $loop->have_posts() ) {
-                while ( $loop->have_posts() ) : $loop->the_post();
-                  wc_get_template_part( 'content', 'configurator' );
-                endwhile;
-              } 
-              wp_reset_postdata();
-            ?>
-            <?php
-              $args = array(
-                'posts_per_page' => -1,
-                      'tax_query' => array(
-                          'relation' => 'AND',
-                          array(
-                              'taxonomy' => 'product_cat',
-                              'field' => 'slug',
-                              'terms' => ['cabochon']
-                          )
-                      ),
-                      'post_type' => 'product',
-                      'product_tag' => ['double'],
-                      'orderby'   => 'menu_order',
-                      'order'     => 'ASC'
-                );
-              $loop = new WP_Query( $args );
-              if ( $loop->have_posts() ) {
-                while ( $loop->have_posts() ) : $loop->the_post();
-                  wc_get_template_part( 'content', 'configurator' );
-                endwhile;
-              } 
-              wp_reset_postdata();
-            ?>
-            <?php
-              $args = array(
-                'posts_per_page' => -1,
-                      'tax_query' => array(
-                          'relation' => 'AND',
-                          array(
-                              'taxonomy' => 'product_cat',
-                              'field' => 'slug',
-                              'terms' => ['coin']
-                          )
-                      ),
-                      'post_type' => 'product',
-                      'product_tag' => ['double'],
+                      'product_tag' => ['single'],
                       'orderby'   => 'menu_order',
                       'order'     => 'ASC'
                 );
@@ -304,6 +260,31 @@
               wp_reset_postdata();
             ?>
             <?php
+              $args = array(
+                'posts_per_page' => -1,
+                      'tax_query' => array(
+                          'relation' => 'AND',
+                          array(
+                              'taxonomy' => 'product_cat',
+                              'field' => 'slug',
+                              'terms' => ['cabochon']
+                          )
+                      ),
+                      'post_type' => 'product',
+                      'product_tag' => ['single'],
+                      'orderby'   => 'menu_order',
+                      'order'     => 'ASC'
+                );
+              $loop = new WP_Query( $args );
+              if ( $loop->have_posts() ) {
+                while ( $loop->have_posts() ) : $loop->the_post();
+                  wc_get_template_part( 'content', 'configurator' );
+                endwhile;
+              } 
+              wp_reset_postdata();
+            ?>
+
+             <?php
               $args = array(
                 'posts_per_page' => -1,
                       'tax_query' => array(
@@ -315,7 +296,7 @@
                           )
                       ),
                       'post_type' => 'product',
-                      'product_tag' => ['single'],
+                      'product_tag' => ['double'],
                       'orderby'   => 'menu_order',
                       'order'     => 'ASC'
                 );
@@ -339,7 +320,31 @@
                           )
                       ),
                       'post_type' => 'product',
-                      'product_tag' => ['single'],
+                      'product_tag' => ['double'],
+                      'orderby'   => 'menu_order',
+                      'order'     => 'ASC'
+                );
+              $loop = new WP_Query( $args );
+              if ( $loop->have_posts() ) {
+                while ( $loop->have_posts() ) : $loop->the_post();
+                  wc_get_template_part( 'content', 'configurator' );
+                endwhile;
+              } 
+              wp_reset_postdata();
+            ?>
+            <?php
+              $args = array(
+                'posts_per_page' => -1,
+                      'tax_query' => array(
+                          'relation' => 'AND',
+                          array(
+                              'taxonomy' => 'product_cat',
+                              'field' => 'slug',
+                              'terms' => ['coin']
+                          )
+                      ),
+                      'post_type' => 'product',
+                      'product_tag' => ['double'],
                       'orderby'   => 'menu_order',
                       'order'     => 'ASC'
                 );
@@ -363,7 +368,7 @@
                           )
                       ),
                       'post_type' => 'product',
-                      'product_tag' => ['single'],
+                      'product_tag' => ['double'],
                       'orderby'   => 'menu_order',
                       'order'     => 'ASC'
                 );
@@ -623,6 +628,15 @@
       	</section>
          
     </section>
+</section>
+<section class="configurator-modal modal js-modal">
+    <div class="content js-content">
+        <div class="modal-close js-modal-close">X</div>
+        <section class="configurator js-configurator-modal"></section>
+        <img class="js-lp-earrings-bg" src="<?php echo get_template_directory_uri(); ?>/novon/images/original-earrings-box.jpg" alt="">
+        <img class="js-lp-bracelets-bg" src="<?php echo get_template_directory_uri(); ?>/novon/images/original-bracelets-box.jpg" alt="">
+        <img class="js-lp-necklaces-bg" src="<?php echo get_template_directory_uri(); ?>/novon/images/original-necklaces-box.jpg" alt="">
+    </div>
 </section>
 
 <?php endif; ?>

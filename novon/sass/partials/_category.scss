@@ -6,6 +6,7 @@
 		.cta-wrapper {
 			display: flex;
 			justify-content: flex-start;
+			padding: 0 1rem;
 			padding-top: 2rem;
 			margin-bottom: 2rem;
 			.cta {
@@ -27,7 +28,7 @@
 			width: 100%;
 			position: relative;
 			text-align: center;
-			margin-bottom: 3rem;
+			margin-bottom: 1rem;
 			h1 {
 				width: auto;
 				display: inline-block;
@@ -49,6 +50,21 @@
 					
 				}
 			}	
+		}
+		.dyo {
+			width: 50%;
+			margin: 0 auto;
+			text-align: center;
+			margin-bottom: 2rem;
+			p {
+				margin-bottom: 0.5rem;
+			}
+			.cta {
+				padding: 0.5rem 1rem;
+				max-width: 180px;
+				margin: 0 auto;
+				border-radius: 0;
+			}
 		}
 		.products {
 			max-width: 960px;

@@ -6,12 +6,13 @@ $(function(){
 	// 	$('body,html').addClass('overlay');
 	// }
 
-	$(document).on('click', '.js-modal', function(event) {
 
-		$('.js-modal').removeClass('js-active');
-		$('body,html').removeClass('overlay');
+	// $(document).on('click', '.js-modal', function(event) {
 
-	});
+	// 	$('.js-modal').removeClass('js-active');
+	// 	$('body,html').removeClass('overlay');
+
+	// });
 
 	$('.swiper-wrapper').slick({
 	  centerMode: true,
@@ -76,6 +77,12 @@ $(function(){
 	        settings: {
 	          slidesToShow: 1
 	        }
+	      },
+	      {
+	        breakpoint: 768,
+	        settings: {
+	          slidesToShow: 3
+	        }
 	      }
 	    ]
 	});
@@ -89,6 +96,12 @@ $(function(){
 	        breakpoint: 640,
 	        settings: {
 	          slidesToShow: 1
+	        }
+	      },
+	      {
+	        breakpoint: 768,
+	        settings: {
+	          slidesToShow: 3
 	        }
 	      }
 	    ]
@@ -156,6 +169,34 @@ $(function(){
 		}
 
 	});
+
+	$(window).on('load', function() {
+
+		var _hash = window.location.hash;
+
+		if (_hash == "#design") {
+			$("html, body").animate({ scrollTop: ($('.configurator').offset().top-84)+'px' });
+		}
+
+	});
+
+	// var lastScrollTop = 0;
+	
+	// $(window).on('scroll', function(event) {
+
+	// 	// if ($(window).width() < 640) {
+	// 		var st = $(this).scrollTop();
+	// 		if (st > lastScrollTop){
+	// 		    // downscroll code
+	// 		    $('header.novon').removeClass('js-active');
+	// 		} else {
+	// 		   // upscroll code
+	// 		    $('header.novon').addClass('js-active');
+	// 		}
+	// 		lastScrollTop = st;
+	// 	// }
+
+	// });
 
 
 });
