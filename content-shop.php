@@ -124,11 +124,18 @@
 
           </ul>
         </div>
+        <?php if ($_GET["demo"] == 1): ?>
+        <div class="buttons js-buttons js-active">
+          <a class="cta reset js-reset">Reset</a>
+          <a class="cta add-items js-add-items">Add Items to Cart</a>
+          <a class="cta liveview js-liveview disabled">View your design</a>
+        </div>
+        <?php else: ?>
         <div class="buttons js-buttons">
           <a class="cta reset js-reset">Reset</a>
           <a class="cta add-items js-add-items">Add Items to Cart</a>
-          <a class="cta liveview js-liveview">View your design</a>
         </div>
+        <?php endif; ?>
       </div>
       <div class="selections">
         <div class="tops">
@@ -631,11 +638,11 @@
 </section>
 <section class="configurator-modal modal js-modal">
     <div class="content js-content">
-        <div class="modal-close js-modal-close">X</div>
+        <div class="modal-close js-modal-close"><img src="<?php echo get_template_directory_uri(); ?>/novon/images/x-black.svg" alt=""></div>
         <section class="configurator js-configurator-modal"></section>
-        <img class="js-lp-earrings-bg" src="<?php echo get_template_directory_uri(); ?>/novon/images/original-earrings-box.jpg" alt="">
-        <img class="js-lp-bracelets-bg" src="<?php echo get_template_directory_uri(); ?>/novon/images/original-bracelets-box.jpg" alt="">
-        <img class="js-lp-necklaces-bg" src="<?php echo get_template_directory_uri(); ?>/novon/images/original-necklaces-box.jpg" alt="">
+        <img class="js-lp-earrings-bg" src="<?php echo get_template_directory_uri(); ?>/novon/images/live-preview-earrings-bg.jpg" alt="">
+        <img class="js-lp-pendants-bg" src="<?php echo get_template_directory_uri(); ?>/novon/images/live-preview-chains-bg.jpg" alt="">
+        <img class="js-lp-necklaces-bg" src="<?php echo get_template_directory_uri(); ?>/novon/images/live-preview-chains-bg.jpg" alt="">
     </div>
 </section>
 

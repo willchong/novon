@@ -2947,6 +2947,17 @@ section.configurator {
           section.configurator .preview .buttons.js-active .liveview:hover {
             background-color: #696969;
             color: #ffffff; }
+          section.configurator .preview .buttons.js-active .liveview.disabled {
+            position: relative; }
+            section.configurator .preview .buttons.js-active .liveview.disabled:after {
+              content: '';
+              position: absolute;
+              width: 100%;
+              height: 100%;
+              opacity: 0.25;
+              top: 0;
+              left: 0;
+              background: repeating-linear-gradient(-45deg, #999, #999 10px, #666 10px, #666 20px); }
   section.configurator .selections {
     width: calc(100% - 470px);
     font-size: 1rem; }
@@ -3053,8 +3064,8 @@ section.configurator {
     position: relative;
     z-index: 1; }
     section.configurator .preview.js--chains.js-double-coin .phase-2 .piece, section.configurator .preview.js--chains .js-double-sphere .phase-2 .piece {
-      -webkit-transform: rotate(90deg);
-              transform: rotate(90deg);
+      -webkit-transform: rotate(0deg);
+              transform: rotate(0deg);
       margin-top: 3%;
       margin-left: -4%; }
   section.configurator .preview.js--chains.js-double-coin .phase-3, section.configurator .preview.js--chains .js-double-sphere .phase-3 {
@@ -3069,6 +3080,9 @@ section.configurator {
     section.configurator .preview.js--chains.js-double-coin .phase-4 .piece, section.configurator .preview.js--chains .js-double-sphere .phase-4 .piece {
       margin-top: -11%;
       margin-left: -4%; }
+  section.configurator .preview.js--chains.js-double-coin .phase-2 .piece {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
   section.configurator .preview.js--chains.js-double-sphere .phase-1 {
     position: relative;
     z-index: 2; }
@@ -3092,6 +3106,9 @@ section.configurator {
     section.configurator .preview.js--chains.js-double-sphere .phase-4 .piece {
       margin-top: -11%;
       margin-left: -4%; }
+  section.configurator .preview.js--chains.js-double-sphere.js-double-coin .phase-2 .piece {
+    -webkit-transform: rotate(90deg);
+            transform: rotate(90deg); }
   section.configurator .preview.js--chains.js-chain-override.sphere-sphere .phase-1 {
     position: relative;
     z-index: 2; }
@@ -3240,9 +3257,12 @@ section.configurator {
   .configurator-modal .content .modal-close {
     font-size: 1rem;
     position: absolute;
-    top: 0;
-    right: 0;
-    cursor: pointer; }
+    top: 0.5rem;
+    right: 0.5rem;
+    cursor: pointer;
+    z-index: 1000; }
+    .configurator-modal .content .modal-close img {
+      width: 20px; }
   .configurator-modal .content .configurator {
     position: absolute;
     z-index: 2; }
@@ -3252,12 +3272,284 @@ section.configurator {
       display: none; }
     .configurator-modal .content .configurator .preview .buttons {
       display: none; }
-  .configurator-modal .content .js-lp-earrings-bg, .configurator-modal .content .js-lp-bracelets-bg, .configurator-modal .content .js-lp-necklaces-bg {
+    .configurator-modal .content .configurator .preview .earring-clone {
+      display: none; }
+    .configurator-modal .content .configurator .preview.js--chains {
+      width: 37%;
+      -webkit-transform: translate(104%, 42%) rotate(20deg);
+              transform: translate(104%, 42%) rotate(20deg); }
+      .configurator-modal .content .configurator .preview.js--chains .phase-1 .piece {
+        width: 16%;
+        margin-left: -8%; }
+      .configurator-modal .content .configurator .preview.js--chains .phase-4 {
+        width: 250%;
+        margin-left: -159.5%;
+        margin-top: -48%; }
+      .configurator-modal .content .configurator .preview.js--chains.oval-sphere {
+        -webkit-transform: translate(101%, 39%) rotate(22deg);
+                transform: translate(101%, 39%) rotate(22deg); }
+      .configurator-modal .content .configurator .preview.js--chains.oval-oval {
+        -webkit-transform: translate(99%, 38%) rotate(25deg);
+                transform: translate(99%, 38%) rotate(25deg); }
+      .configurator-modal .content .configurator .preview.js--chains.cabochon-cabochon {
+        -webkit-transform: translate(100%, 38%) rotate(25deg);
+                transform: translate(100%, 38%) rotate(25deg); }
+      .configurator-modal .content .configurator .preview.js--chains.cabochon-oval {
+        -webkit-transform: translate(99%, 37%) rotate(25deg);
+                transform: translate(99%, 37%) rotate(25deg); }
+      .configurator-modal .content .configurator .preview.js--chains.cabochon-sphere {
+        -webkit-transform: translate(102%, 39%) rotate(23deg);
+                transform: translate(102%, 39%) rotate(23deg); }
+      .configurator-modal .content .configurator .preview.js--chains.js-double-sphere.js-double-coin {
+        -webkit-transform: translate(103%, 40%) rotate(20deg);
+                transform: translate(103%, 40%) rotate(20deg); }
+      .configurator-modal .content .configurator .preview.js--chains.js-double-oval.js-double-coin {
+        -webkit-transform: translate(100%, 38%) rotate(24deg);
+                transform: translate(100%, 38%) rotate(24deg); }
+      .configurator-modal .content .configurator .preview.js--chains.js-double-cabochon.js-double-coin {
+        -webkit-transform: translate(100%, 38%) rotate(24deg);
+                transform: translate(100%, 38%) rotate(24deg); }
+      @media (max-width: 640px) {
+        .configurator-modal .content .configurator .preview.js--chains.js-double-sphere.js-double-coin {
+          width: 100%;
+          margin: 0;
+          -webkit-transform: scale(0.23) translate(104%, 42%) rotate(18deg);
+                  transform: scale(0.23) translate(104%, 42%) rotate(18deg);
+          top: -60%;
+          left: -12%; }
+        .configurator-modal .content .configurator .preview.js--chains.js-double-oval.js-double-coin {
+          width: 100%;
+          margin: 0;
+          -webkit-transform: scale(0.23) translate(104%, 42%) rotate(18deg);
+                  transform: scale(0.23) translate(104%, 42%) rotate(18deg);
+          top: -64%;
+          left: -12%; }
+        .configurator-modal .content .configurator .preview.js--chains.js-double-cabochon.js-double-coin {
+          width: 100%;
+          margin: 0;
+          -webkit-transform: scale(0.23) translate(104%, 42%) rotate(18deg);
+                  transform: scale(0.23) translate(104%, 42%) rotate(18deg);
+          top: -64%;
+          left: -12%; } }
+    .configurator-modal .content .configurator .preview.js--earrings {
+      padding: 0;
+      width: 17%;
+      padding-top: 40.5%;
+      left: 35%; }
+      .configurator-modal .content .configurator .preview.js--earrings .phase-2 .piece {
+        margin-top: -12%;
+        margin-left: 5%; }
+      .configurator-modal .content .configurator .preview.js--earrings.js-single-oval .phase-2 .piece {
+        margin-left: 3.5%; }
+      .configurator-modal .content .configurator .preview.js--earrings.js-single-coin .phase-2 .piece {
+        margin-left: 1.5%; }
+      .configurator-modal .content .configurator .preview.js--earrings.js-single-cabochon .phase-2 .piece {
+        margin-left: 3.5%; }
+      @media (max-width: 640px) {
+        .configurator-modal .content .configurator .preview.js--earrings {
+          margin: initial;
+          width: 100%;
+          padding: 0;
+          -webkit-transform-origin: center;
+                  transform-origin: center;
+          -webkit-transform: scale(0.2);
+                  transform: scale(0.2);
+          left: -2.5%;
+          top: 12%; }
+          .configurator-modal .content .configurator .preview.js--earrings.js-single-sphere.js-double-sphere {
+            top: -2.5%; }
+          .configurator-modal .content .configurator .preview.js--earrings.js-single-sphere.js-double-oval {
+            top: -3.5%; }
+          .configurator-modal .content .configurator .preview.js--earrings.js-single-sphere.js-double-cabochon {
+            top: -2.5%; }
+          .configurator-modal .content .configurator .preview.js--earrings.js-single-oval {
+            top: 9.5%; }
+            .configurator-modal .content .configurator .preview.js--earrings.js-single-oval.js-double-sphere {
+              top: -2.5%; }
+            .configurator-modal .content .configurator .preview.js--earrings.js-single-oval.js-double-oval {
+              top: -5.5%; }
+            .configurator-modal .content .configurator .preview.js--earrings.js-single-oval.js-double-cabochon {
+              top: -5.5%; }
+          .configurator-modal .content .configurator .preview.js--earrings.js-single-coin {
+            top: 7.5%; }
+          .configurator-modal .content .configurator .preview.js--earrings.js-single-cabochon {
+            top: 10.5%; }
+            .configurator-modal .content .configurator .preview.js--earrings.js-single-cabochon.js-double-sphere {
+              top: -2.5%; }
+            .configurator-modal .content .configurator .preview.js--earrings.js-single-cabochon.js-double-oval {
+              top: -5.5%; }
+            .configurator-modal .content .configurator .preview.js--earrings.js-single-cabochon.js-double-cabochon {
+              top: -5.5%; }
+          .configurator-modal .content .configurator .preview.js--earrings.js-double-sphere {
+            top: 5%; }
+          .configurator-modal .content .configurator .preview.js--earrings.js-double-oval {
+            top: 8%; }
+          .configurator-modal .content .configurator .preview.js--earrings.js-double-cabochon {
+            top: 5%; } }
+    .configurator-modal .content .configurator .preview.js--pendants {
+      padding: 0;
+      width: 20%;
+      margin-top: 22%;
+      margin-left: 35%; }
+      .configurator-modal .content .configurator .preview.js--pendants .phase-1 .piece {
+        max-width: none;
+        width: 330%;
+        -webkit-transform: translateX(-34.75%);
+                transform: translateX(-34.75%); }
+      .configurator-modal .content .configurator .preview.js--pendants .phase-2 .piece {
+        width: 67.5%; }
+      .configurator-modal .content .configurator .preview.js--pendants.js-single-coin .phase-2 .piece {
+        width: 60%; }
+      .configurator-modal .content .configurator .preview.js--pendants.js-double-coin .phase-2 .piece {
+        width: 60%; }
+      @media (max-width: 640px) {
+        .configurator-modal .content .configurator .preview.js--pendants {
+          margin: initial;
+          width: 100%;
+          padding: 0;
+          -webkit-transform-origin: center;
+                  transform-origin: center;
+          -webkit-transform: scale(0.25);
+                  transform: scale(0.25);
+          left: -2.5%;
+          top: -38%; }
+          .configurator-modal .content .configurator .preview.js--pendants.js-single-sphere.js-double-sphere {
+            top: -48%; }
+          .configurator-modal .content .configurator .preview.js--pendants.js-single-sphere.js-double-oval {
+            top: -50%; }
+          .configurator-modal .content .configurator .preview.js--pendants.js-single-sphere.js-double-cabochon {
+            top: -50%; }
+          .configurator-modal .content .configurator .preview.js--pendants.js-single-oval {
+            top: -40%; }
+          .configurator-modal .content .configurator .preview.js--pendants.js-single-coin {
+            top: -40%; }
+          .configurator-modal .content .configurator .preview.js--pendants.js-single-cabochon {
+            top: -39%; }
+            .configurator-modal .content .configurator .preview.js--pendants.js-single-cabochon.js-double-sphere {
+              top: -51%; }
+            .configurator-modal .content .configurator .preview.js--pendants.js-single-cabochon.js-double-oval {
+              top: -54%; }
+            .configurator-modal .content .configurator .preview.js--pendants.js-single-cabochon.js-double-cabochon {
+              top: -54%; }
+          .configurator-modal .content .configurator .preview.js--pendants.js-double-sphere {
+            top: -41%; }
+          .configurator-modal .content .configurator .preview.js--pendants.js-double-oval {
+            top: -44%; }
+          .configurator-modal .content .configurator .preview.js--pendants.js-double-cabochon {
+            top: -43%; } }
+    .configurator-modal .content .configurator .preview.js-chain-override {
+      width: 37%;
+      margin-top: 20%;
+      margin-left: 37%;
+      -webkit-transform: rotate(22deg);
+              transform: rotate(22deg); }
+      .configurator-modal .content .configurator .preview.js-chain-override .phase-1 .piece {
+        width: 16%;
+        margin-left: -8%; }
+      .configurator-modal .content .configurator .preview.js-chain-override .phase-4 {
+        width: 250%;
+        margin-left: -159.5%;
+        margin-top: -48%; }
+      .configurator-modal .content .configurator .preview.js-chain-override.oval-sphere {
+        margin-top: -1%;
+        margin-left: 0%;
+        -webkit-transform: translate(101%, 42%) rotate(23deg);
+                transform: translate(101%, 42%) rotate(23deg); }
+      .configurator-modal .content .configurator .preview.js-chain-override.sphere-sphere {
+        width: 37%;
+        margin-top: 20%;
+        margin-left: 38%; }
+      .configurator-modal .content .configurator .preview.js-chain-override.oval-oval {
+        width: 37%;
+        margin-top: 0%;
+        margin-left: -1%;
+        -webkit-transform: translate(99%, 38%) rotate(26deg);
+                transform: translate(99%, 38%) rotate(26deg); }
+      .configurator-modal .content .configurator .preview.js-chain-override.cabochon-sphere {
+        width: 37%;
+        margin-top: 1.5%;
+        margin-left: 1%;
+        -webkit-transform: translate(99%, 37%) rotate(24deg);
+                transform: translate(99%, 37%) rotate(24deg); }
+      .configurator-modal .content .configurator .preview.js-chain-override.cabochon-oval {
+        width: 37%;
+        margin-top: 0.5%;
+        margin-left: 0;
+        -webkit-transform: translate(99%, 37%) rotate(27deg);
+                transform: translate(99%, 37%) rotate(27deg); }
+      .configurator-modal .content .configurator .preview.js-chain-override.cabochon-cabochon {
+        width: 37%;
+        margin-top: 0.5%;
+        margin-left: 0;
+        -webkit-transform: translate(99%, 37%) rotate(27deg);
+                transform: translate(99%, 37%) rotate(27deg); }
+      @media (max-width: 640px) {
+        .configurator-modal .content .configurator .preview.js-chain-override.sphere-sphere {
+          width: 100%;
+          margin-top: 0;
+          margin-left: 0;
+          top: -42%;
+          left: 13%;
+          -webkit-transform: scale(0.23) rotate(14deg);
+                  transform: scale(0.23) rotate(14deg); }
+        .configurator-modal .content .configurator .preview.js-chain-override.oval-sphere {
+          width: 100%;
+          margin-top: 0;
+          margin-left: 0;
+          top: -44%;
+          left: 13%;
+          -webkit-transform: scale(0.23) rotate(18deg);
+                  transform: scale(0.23) rotate(18deg); }
+        .configurator-modal .content .configurator .preview.js-chain-override.oval-oval {
+          width: 100%;
+          margin-top: 0;
+          margin-left: 0;
+          top: -47%;
+          left: 12%;
+          -webkit-transform: scale(0.23) rotate(20deg);
+                  transform: scale(0.23) rotate(20deg); }
+        .configurator-modal .content .configurator .preview.js-chain-override.cabochon-sphere {
+          width: 100%;
+          margin-top: 0;
+          margin-left: 0;
+          top: -45%;
+          left: 13%;
+          -webkit-transform: scale(0.23) rotate(16deg);
+                  transform: scale(0.23) rotate(16deg); }
+        .configurator-modal .content .configurator .preview.js-chain-override.cabochon-oval {
+          width: 100%;
+          margin-top: 0;
+          margin-left: 0;
+          top: -48%;
+          left: 12%;
+          -webkit-transform: scale(0.23) rotate(19deg);
+                  transform: scale(0.23) rotate(19deg); }
+        .configurator-modal .content .configurator .preview.js-chain-override.cabochon-cabochon {
+          width: 100%;
+          margin-top: 0;
+          margin-left: 0;
+          top: -47%;
+          left: 12%;
+          -webkit-transform: scale(0.23) rotate(19deg);
+                  transform: scale(0.23) rotate(19deg); } }
+  .configurator-modal .content .js-lp-earrings-bg, .configurator-modal .content .js-lp-pendants-bg, .configurator-modal .content .js-lp-necklaces-bg {
     display: none; }
-    .configurator-modal .content .js-lp-earrings-bg.js-active, .configurator-modal .content .js-lp-bracelets-bg.js-active, .configurator-modal .content .js-lp-necklaces-bg.js-active {
+    .configurator-modal .content .js-lp-earrings-bg.js-active, .configurator-modal .content .js-lp-pendants-bg.js-active, .configurator-modal .content .js-lp-necklaces-bg.js-active {
       display: block;
       position: relative;
       z-index: 1; }
+
+@media (max-width: 640px) {
+  .configurator-modal .content {
+    padding: 0.5rem; }
+    .configurator-modal .content .modal-close {
+      top: 1rem;
+      right: 1rem;
+      background-color: rgba(255, 255, 255, 0.5);
+      padding: 0.25rem; }
+    .configurator-modal .content .configurator {
+      padding: 0;
+      height: 100%; } }
 
 @media (max-width: 960px) {
   section.configurator .selections .tops .thumbnails .thumbnail, section.configurator .selections .attachments .thumbnails .thumbnail {
@@ -3281,9 +3573,9 @@ section.configurator {
     section.configurator .fancy-header h2 {
       padding: 0 1rem; }
     section.configurator .preview {
-      width: 320px;
       margin: 0 auto;
-      padding: 0 1rem 1rem 1rem; }
+      width: 100%;
+      padding: 0 0.5rem 1rem 0.5rem; }
       section.configurator .preview .buttons {
         -webkit-box-orient: horizontal;
         -webkit-box-direction: normal;
@@ -3301,9 +3593,9 @@ section.configurator {
           margin-bottom: 0.5rem;
           padding: 0.5rem; }
       section.configurator .preview .earring-clone {
-        width: 320px;
-        padding: 0 1rem 1rem 1rem;
-        margin-left: -53px; }
+        width: 100%;
+        padding: 0 0.5rem 1rem 0.5rem;
+        margin-left: -14.75%; }
       section.configurator .preview .phase {
         width: 55%; }
       section.configurator .preview .summary {

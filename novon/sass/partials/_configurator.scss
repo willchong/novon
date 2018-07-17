@@ -227,6 +227,26 @@ section.configurator {
 						background-color: $grey;
 						color: $white;
 					}
+					&.disabled {
+						// pointer-events: none;
+						position: relative;
+						&:after {
+							content: '';
+							position: absolute;
+							width: 100%;
+							height: 100%;
+							opacity: 0.25;
+							top: 0;
+							left: 0;
+							background: repeating-linear-gradient(
+							    -45deg,
+							    #999,
+							    #999 10px,
+							    #666 10px,
+							    #666 20px
+							);
+						}
+					}
 				}
 			}
 		}
@@ -441,7 +461,7 @@ section.configurator {
 					position: relative;
 					z-index: 1;
 					.piece {
-						transform: rotate(90deg);
+						transform: rotate(0deg);
 						margin-top: 3%;
 						margin-left: -4%;
 					}
@@ -460,6 +480,13 @@ section.configurator {
 					.piece {
 						margin-top: -11%;
 						margin-left: -4%;
+					}
+				}
+			}
+			&.js-double-coin {
+				.phase-2 {
+					.piece {
+						transform: rotate(90deg);
 					}
 				}
 			}
@@ -491,6 +518,13 @@ section.configurator {
 					.piece {
 						margin-top: -11%;
 						margin-left: -4%;
+					}
+				}
+				&.js-double-coin {
+					.phase-2 {
+						.piece {
+							transform: rotate(90deg);
+						}
 					}
 				}
 			}
@@ -703,16 +737,22 @@ section.configurator {
 .configurator-modal {
 	.content {
 		position: relative;
+		// width: 600px;
 		.modal-close {
 			font-size: 1rem;
 			position: absolute;
-			top: 0;
-			right: 0;
+			top: 0.5rem;
+			right: 0.5rem;
 			cursor: pointer;
+			z-index: 1000;
+			img {
+				width: 20px;
+			}
 		}
 		.configurator {
 			position: absolute;
 			z-index: 2;
+
 			.preview {
 				.phase {
 					label {
@@ -725,14 +765,377 @@ section.configurator {
 				.buttons {
 					display: none;
 				}
+				.earring-clone {
+					display: none;
+				}
+				&.js--chains {
+					width: 37%;
+					transform: translate(104%,42%) rotate(20deg);
+					.phase-1 {
+						.piece {
+							width: 16%;
+							margin-left: -8%;
+						}
+					}
+					.phase-4 {
+						width: 250%;
+						margin-left: -159.5%;
+						margin-top: -48%;
+					}
+					&.oval-sphere {
+						transform: translate(101%,39%) rotate(22deg);
+					}
+					&.oval-oval {
+						transform: translate(99%,38%) rotate(25deg);
+					}
+					&.cabochon-cabochon {
+						transform: translate(100%,38%) rotate(25deg);
+					}
+					&.cabochon-oval {
+						transform: translate(99%, 37%) rotate(25deg);
+					}
+					&.cabochon-sphere {
+						transform: translate(102%, 39%) rotate(23deg);
+					}
+					&.js-double-sphere.js-double-coin {
+						transform: translate(103%, 40%) rotate(20deg);
+					}
+					&.js-double-oval.js-double-coin {
+						transform: translate(100%, 38%) rotate(24deg);
+					}
+					&.js-double-cabochon.js-double-coin {
+						transform: translate(100%, 38%) rotate(24deg);
+					}
+					@include breakpoint(max-width, 640px) {
+						&.js-double-sphere.js-double-coin {
+							width: 100%;
+							margin: 0;
+							transform: scale(0.23) translate(104%, 42%) rotate(18deg);
+							top: -60%;
+							left: -12%;
+						}
+						&.js-double-oval.js-double-coin {
+							width: 100%;
+							margin: 0;
+							transform: scale(0.23) translate(104%, 42%) rotate(18deg);
+							top: -64%;
+							left: -12%;
+						}
+						&.js-double-cabochon.js-double-coin {
+							width: 100%;
+							margin: 0;
+							transform: scale(0.23) translate(104%, 42%) rotate(18deg);
+							top: -64%;
+							left: -12%;
+						}
+					}
+				}
+				&.js--earrings {
+					padding: 0;
+					width: 17%;
+					padding-top: 40.5%;
+					left: 35%;
+					// transform: translate(75%,133%);
+					.phase-2 {
+						.piece {
+							margin-top: -12%;
+							margin-left: 5%;
+						}
+					}
+					&.js-single-oval {
+						.phase-2 {
+							.piece {
+								margin-left: 3.5%;
+							}
+						}
+						// transform: translate(75%, 126%);
+					}
+					&.js-single-coin {
+						.phase-2 {
+							.piece {
+								margin-left: 1.5%;
+							}
+						}
+					}
+					&.js-single-cabochon {
+						.phase-2 {
+							.piece {
+								margin-left: 3.5%;
+							}
+						}
+					}
+					@include breakpoint(max-width, 640px) {
+						margin: initial;
+						width: 100%;
+						padding: 0;
+						transform-origin: center;
+						transform: scale(0.2);
+						left: -2.5%;
+						top: 12%;
+						&.js-single-sphere {
+							&.js-double-sphere {
+								top: -2.5%;
+							}
+							&.js-double-oval {
+								top: -3.5%;
+							}
+							&.js-double-cabochon {
+								top: -2.5%;
+							}
+						}
+						&.js-single-oval {
+							top: 9.5%;
+							&.js-double-sphere {
+								top: -2.5%;
+							}
+							&.js-double-oval {
+								top: -5.5%;
+							}
+							&.js-double-cabochon {
+								top: -5.5%;
+							}
+						}
+						&.js-single-coin {
+							top: 7.5%;
+						}
+						&.js-single-cabochon {
+							top: 10.5%;
+							&.js-double-sphere {
+								top: -2.5%;
+							}
+							&.js-double-oval {
+								top: -5.5%;
+							}
+							&.js-double-cabochon {
+								top: -5.5%;
+							}
+						}
+						&.js-double-sphere {
+							top: 5%;
+						}
+						&.js-double-oval {
+							top: 8%;
+						}
+						&.js-double-cabochon {
+							top: 5%;
+						}
+					}
+				}
+				&.js--pendants {
+					padding: 0;
+					width: 20%;
+					margin-top: 22%;
+					margin-left: 35%;
+					.phase-1 {
+						.piece {
+							max-width: none;
+							width: 330%;
+							transform: translateX(-34.75%);
+						}
+					}
+					.phase-2 {
+						.piece {
+							width: 67.5%;
+						}
+					}
+					&.js-single-coin {
+						.phase-2 {
+							.piece {
+								width: 60%;
+							}
+						}
+					}
+					&.js-double-coin {
+						.phase-2 {
+							.piece {
+								width: 60%;
+							}
+						}
+					}
+					@include breakpoint(max-width, 640px) {
+						margin: initial;
+						width: 100%;
+						padding: 0;
+						transform-origin: center;
+						transform: scale(0.25);
+						left: -2.5%;
+						top: -38%;
+						&.js-single-sphere {
+							&.js-double-sphere {
+								top: -48%;
+							}
+							&.js-double-oval {
+								top: -50%;
+							}
+							&.js-double-cabochon {
+								top: -50%;
+							}
+						}
+						&.js-single-oval {
+							top: -40%;
+							&.js-double-sphere {
+								// top: -2.5%;
+							}
+							&.js-double-oval {
+								// top: -5.5%;
+							}
+							&.js-double-cabochon {
+								// top: -5.5%;
+							}
+						}
+						&.js-single-coin {
+							top: -40%;
+						}
+						&.js-single-cabochon {
+							top: -39%;
+							&.js-double-sphere {
+								top: -51%;
+							}
+							&.js-double-oval {
+								top: -54%;
+							}
+							&.js-double-cabochon {
+								top: -54%;
+							}
+						}
+						&.js-double-sphere {
+							top: -41%;
+						}
+						&.js-double-oval {
+							top: -44%;
+						}
+						&.js-double-cabochon {
+							top: -43%;
+						}
+					}
+				}
+				&.js-chain-override {
+					width: 37%;
+					margin-top: 20%;
+					margin-left: 37%;
+					transform: rotate(22deg);
+					.phase-1 {
+						.piece {
+							width: 16%;
+							margin-left: -8%;
+						}
+					}
+					.phase-4 {
+						width: 250%;
+						margin-left: -159.5%;
+						margin-top: -48%;
+					}
+					&.oval-sphere {
+						margin-top: -1%;
+						margin-left: 0%;
+						transform: translate(101%, 42%) rotate(23deg);
+					}
+					&.sphere-sphere {
+						width: 37%;
+						margin-top: 20%;
+						margin-left: 38%;
+					}
+					&.oval-oval {
+						width: 37%;
+						margin-top: 0%;
+						margin-left: -1%;
+						transform: translate(99%, 38%) rotate(26deg);
+					}
+					&.cabochon-sphere {
+						width: 37%;
+						margin-top: 1.5%;
+						margin-left: 1%;
+						transform: translate(99%, 37%) rotate(24deg);
+					}
+					&.cabochon-oval {
+						width: 37%;
+						margin-top: 0.5%;
+						margin-left: 0;
+						transform: translate(99%, 37%) rotate(27deg);
+					}
+					&.cabochon-cabochon {
+						width: 37%;
+						margin-top: 0.5%;
+						margin-left: 0;
+						transform: translate(99%, 37%) rotate(27deg);
+					}
+					@include breakpoint(max-width, 640px) {
+						
+						&.sphere-sphere {
+							width: 100%;
+							margin-top: 0;
+							margin-left: 0;
+							top: -42%;
+							left: 13%;
+							transform: scale(0.23) rotate(14deg);
+						}
+						&.oval-sphere {
+							width: 100%;
+							margin-top: 0;
+							margin-left: 0;
+							top: -44%;
+							left: 13%;
+							transform: scale(0.23) rotate(18deg);
+						}
+						&.oval-oval {
+							width: 100%;
+							margin-top: 0;
+							margin-left: 0;
+							top: -47%;
+							left: 12%;
+							transform: scale(0.23) rotate(20deg);
+						}
+						&.cabochon-sphere {
+							width: 100%;
+							margin-top: 0;
+							margin-left: 0;
+							top: -45%;
+							left: 13%;
+							transform: scale(0.23) rotate(16deg);
+						}
+						&.cabochon-oval {
+							width: 100%;
+							margin-top: 0;
+							margin-left: 0;
+							top: -48%;
+							left: 12%;
+							transform: scale(0.23) rotate(19deg);
+						}
+						&.cabochon-cabochon {
+							width: 100%;
+							margin-top: 0;
+							margin-left: 0;
+							top: -47%;
+							left: 12%;
+							transform: scale(0.23) rotate(19deg);
+						}
+					}
+				}
+
 			}
 		}
-		.js-lp-earrings-bg, .js-lp-bracelets-bg, .js-lp-necklaces-bg {
+		.js-lp-earrings-bg, .js-lp-pendants-bg, .js-lp-necklaces-bg {
 			display: none;
 			&.js-active {
 				display: block;
 				position: relative;
 				z-index: 1;
+			}
+		}
+	}
+	@include breakpoint(max-width, 640px) {
+		.content {
+			padding: 0.5rem;
+			.modal-close {
+				top: 1rem;
+				right: 1rem;
+				background-color: rgba(255,255,255, 0.5);
+				padding: 0.25rem;
+			}
+			.configurator {
+				padding: 0;
+				height: 100%;
+
 			}
 		}
 	}
@@ -781,9 +1184,9 @@ section.configurator {
 			}
 		}
 		.preview {
-			width: 320px;
 			margin: 0 auto;
-			padding: 0 1rem 1rem 1rem;
+			width: 100%;
+			padding: 0 0.5rem 1rem 0.5rem;
 			// .summary {
 			// 	position: fixed;
 			// 	top: 92px;
@@ -807,10 +1210,10 @@ section.configurator {
 				}
 			}
 			.earring-clone {
-				width: 320px;
-				padding: 0 1rem 1rem 1rem;
+				width: 100%;
+				padding: 0 0.5rem 1rem 0.5rem;
 				// transform: translateX(-17%);
-				margin-left: -53px;
+				margin-left: -14.75%;
 			}
 			.phase {
 				width: 55%;

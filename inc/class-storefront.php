@@ -230,7 +230,11 @@ if ( ! class_exists( 'Storefront' ) ) :
 			wp_enqueue_style( 'storefront-icons', get_template_directory_uri() . '/assets/sass/base/icons.css', '', $storefront_version );
 
 			wp_enqueue_style( 'slick-style', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css', '', $storefront_version );
-			wp_enqueue_style( 'novon-style', get_template_directory_uri() . '/novon/css/styles.css', '', $storefront_version );
+			if ($_GET["demo"] == 1) {
+				wp_enqueue_style( 'novon-style2', get_template_directory_uri() . '/novon/css/styles.css', '', $storefront_version );
+			} else {
+				wp_enqueue_style( 'novon-style', get_template_directory_uri() . '/novon/css/styles_backup.css', '', $storefront_version );
+			}
 			
 			/**
 			 * Scripts
@@ -257,7 +261,19 @@ if ( ! class_exists( 'Storefront' ) ) :
 			wp_enqueue_script( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js', array( 'jquery' ), '20120206', true );
 			wp_enqueue_script( 'tippy', 'https://unpkg.com/tippy.js@2.5.1/dist/tippy.all.min.js', array( 'jquery' ), '20120206', true );
 			wp_enqueue_script( 'novon-script', get_template_directory_uri() . '/novon/js/script.js', array( 'jquery' ), '20120206', true );
-			wp_enqueue_script( 'novon-configurator', get_template_directory_uri() . '/novon/js/configurator.js', array( 'jquery' ), '20120206', true );
+
+			wp_register_script( 'my-script', 'myscript_url' );
+			wp_enqueue_script( 'my-script' );
+			$translation_array = array( 'templateUrl' => get_stylesheet_directory_uri() );
+			//after wp_enqueue_script
+			wp_localize_script( 'my-script', 'CORE', $translation_array );
+			
+			if ($_GET["demo"] == 1) {
+				wp_enqueue_script( 'novon-configurator2', get_template_directory_uri() . '/novon/js/configurator2.js', array( 'jquery' ), '20120206', true );
+			} else {
+				wp_enqueue_script( 'novon-configurator', get_template_directory_uri() . '/novon/js/configurator.js', array( 'jquery' ), '20120206', true );
+			}
+
 
 			if ( is_page_template( 'template-locations.php' )) {
 				wp_enqueue_script( 'novon-location-script', get_template_directory_uri() . '/novon/js/locations.js', array( 'jquery' ), '20120206', true );
