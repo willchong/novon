@@ -1,0 +1,156 @@
+.novon-blog-teaser, .novon-blog-post {
+	max-width: 720px;
+	margin: 0 auto;
+	padding: 2rem;
+	@include dropshadow('extra-light');
+	border: 1px solid $light-grey;
+	text-align: left;
+	margin-bottom: 2rem;
+	line-height: 1.4;
+	h2 {
+		font-size: 2rem;
+		margin-bottom: 1rem;
+		position: relative;
+		a {
+			text-decoration: none;
+			&:hover {
+				text-decoration: none;
+				background-color: transparent;
+			}
+		}
+		&:after {
+			content: '';
+			position: absolute;
+			width: 100%;
+			height: 1px;
+			bottom: -0.5rem;
+			left: 0;
+			background-color: $grey;
+		}
+	}
+	.meta-info {
+		color: $grey;
+	}
+	.inline-images {
+		display: flex; 
+		flex-direction: row;
+		flex-wrap: wrap;
+		margin-bottom: 1.25rem;
+		img {
+			width: 33.3333%;
+		}
+		&.image-length-2 {
+			img {
+				width: 50%;
+			}
+		}
+		&.image-length-1 {
+			img {
+				width: 100%;
+			}
+		}
+		&.image-length-4 {
+			img {
+				width: 25%;
+			}
+		}
+		&.image-length-5 {
+			img {
+				width: 20%;
+			}
+		}
+	}
+	img {
+		margin-top: 1.25rem;
+		// padding: 2rem;
+		// border: 1px solid $faint-grey;
+	}
+	a {
+		&:hover {
+			text-decoration: none;
+			background-color: transparent;
+			color: $cyan;
+		}
+	}
+	p {
+		margin-bottom: 1.25rem;
+		// font-size: 1.15rem;
+	}
+	ul, ol {
+		margin-left: 2rem;
+		margin-bottom: 1.25rem;
+		// font-size: 1.15rem;
+		li {
+			list-style-type: disc;
+			margin-bottom: 0.75rem;
+		}
+	}
+	ol {
+		margin-left: 1.75rem;
+		li {
+			padding-left: 0.25rem;
+			list-style-type: decimal;
+		}
+	}
+}
+.novon-blog-post {
+	padding-bottom: 4rem;
+}
+.novon-blog-teaser {
+	img {
+		margin-bottom: 1.25rem;
+	}
+	.inline-images {
+		img {
+			margin-bottom: 0;
+		}
+	}
+	.read-more {
+		margin: 1rem 0 0;
+		width: auto;
+		display: inline-block;
+	}
+}
+
+.novon-blog {
+	padding-top: 2rem;
+	padding-bottom: 4rem;
+	text-align: center;
+	.fancy-header {
+		width: 100%;
+		position: relative;
+		text-align: center;
+		margin: 0 auto;
+		margin-bottom: 3rem;
+		max-width: 720px;
+		h1 {
+			width: auto;
+			text-transform: uppercase;
+			display: inline-block;
+			padding: 0 3.5rem;
+			background-color: $white;
+			letter-spacing: 2px;
+			text-align: center;
+			z-index: 1001;
+			font-size: 2.5rem;
+			&:before {
+				z-index: -1;
+				content: '';
+				position: absolute;
+				width: 100%;
+				height: 4px;
+				background-color: $cyan;
+				top: 54%;
+				transform: translateY(-50%);
+				left: 0;
+			}
+		}	
+	}
+	a.cta {
+		display: inline-block;
+		width: auto;
+		margin: 2rem auto;
+		font-size: 1.25rem;
+		border-radius: 0;
+	}
+}

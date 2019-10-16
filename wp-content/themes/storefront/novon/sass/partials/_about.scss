@@ -1,0 +1,39 @@
+.about {
+    max-width: 800px;
+    margin: 0 auto;
+    width: 100%;
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    a {
+        text-decoration: underline;
+        display: inline-block;
+        &:hover {
+            background-color: inherit;
+        }
+    }
+    p {
+        margin-bottom: 0.75rem;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        margin-bottom: 1rem;
+    }
+    ul {
+        list-style: initial;
+        margin-left: 1.5rem;
+        margin-bottom: 1rem;
+        li {
+            line-height: 1.5;
+        }
+    }
+    img {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+    figure {
+        margin: 1rem 0;
+        max-width: 100%;
+        img {
+            margin: 0;
+        }
+    }
+}

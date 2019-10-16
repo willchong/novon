@@ -1,0 +1,141 @@
+COPY CHANGES
+
+The Novon Collection section
+Remove: "Canadian owned..." - primary target is USA so let's remove and clean up
+
+Stones & Crystals section
+Amethyst Change "emotional issues" to something like "promotes tranquility"
+
+Shop page
+Is there another word for Original? Ie. Original Earrings
+
+
+Product pages:
+Add USD to every price [v]
+
+Add sizing:
+
+ 
+
+In Original necklace:
+Thin chain (pendants) "Adjustable from 18 to 16""
+Thick chain : "17" with attachments"
+
+Add sizes to attachments (size is same for both single and double attachments):
+Ovals: .6"
+Spheres .4"
+Coin: .7"
+
+IMAGES CHANGES
+Across "Attachments" photography we generally want these to be proportional, so can we:
+
+Push in on ovals 10% [v]
+Pull out on spheres 10% [v]
+
+Home page
+
+In Stones and Crystals
+Connect Lapis Lazuli to a base [v]
+ 
+Phi coin – check to see if background is different colour [v]
+
+Earth Coin – Thick part of the center (earth) should be on the bottom – photog resending images, I'll share these today.
+
+PRODUCT/FUNCTION CHANGES:
+ 
+Home page
+Add click-ability to Stones and Crystals category – click to the individual stone shown in the carousel. [v]
+
+Shop page
+
+Under Tops
+
+Change "Necklaces" to "Pendants" [v]
+
+
+Add "Chains" [v]
+And the chain products [v] and create copy
+
+CH1 (1/4") – for adjusting length – and using bracelets
+CH2 (2") – for adjusting length – and using bracelets
+CH8 (5 ¼") – for adjusting length – and using bracelets
+CH24 (15") – standard
+Lobster clasp
+ 
+
+ 
+
+Add the double C-link product for Black Onyx and Rose Quartz, and can we make it so the same product, single and double Clinks, are next to each other.
+
+ 
+
+Cart:
+
+Default shipping to USA
+
+Change postal field to Zip/Postal
+
+ 
+
+Contact:
+
+Remove info@novoncollection.com (need to figure out how to add this) and change submit button to info@fortunes.com [v]
+
+ 
+
+Add "privacy policy" and "return and warranty" (we'll provide copy) [v]
+
+Everything he's going to ship is going to be less than 1 pound. Is that sufficient for the shipping info?
+
+ 
+
+Second, he's ready to point novoncollection.com to our site instead of what's there now.
+
+ 
+
+Can you help with that? I can't seem to find the secondary DNS in WPengine.
+
+ 
+
+The registrant is
+
+www.register.com
+u: andrewcarty
+p: Sendreceive2016
+
+
+
+
+Shipping:
+[V] Amount of shipping cost keeps changing as the purchasing price keeps going up
+- Fixed once box dimensions added
+[V] The shipping has 4 options but it does not specify what company. Is it FedEx and Canada Mail
+- Canada Post for sure
+[V] Possibility of getting free basic shipping with certain amount of purchase – Let's say any purchase of $150 + (Canadian before tax)  gets free Standard Shipping. Let's discuss the consequence of shipping to the US or another country.
+
+Pre Designed Bracelets
+[V] Option to design your own should be removed because there is no such option (https://novoncollection.com/product-category/originals/pre-designed-bracelets/) – remove the design your own.
+
+[ waiting on Rose Quartz ] There is no picture of Rose Quartz and Black Onyx rounds with 2 c-clasps in the assortment, they should be there.
+[ v ]
+
+
+
+[ waiting ] The picture of bracelet clasp is incomplete, there should be a picture that has both sides of the clasps in it
+- Can a screenshot of this be sent? I'm unsure which bracelet we're talking about...
+
+
+Stones
+[ V ] The picture of Swarovski crystals should not have the little button on the other end 
+
+[ v ] Az15F: Oval Amazonite has wrong picture
+
+
+Coins
+[ v ] Air, Water, Earth, Fire and Harmony Coins with double clasps have clasps in wrong location. The clasps should be arranged North-South (90 degrees from the current positioning)
+
+[V] The Element coins should be displayed in order and not interrupted with any other piece
+
+[ v ] In the config, the coins are still about 20% too large
+[ v ]  The size of the c-clasp in relation to the coin is wrong – too small
+

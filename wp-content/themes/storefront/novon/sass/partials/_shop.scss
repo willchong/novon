@@ -1,0 +1,462 @@
+.novon-wrapper {
+	max-width: 960px;
+	margin: 0 auto;
+}
+
+section.products {
+	max-width: 960px;
+	margin: 0 auto;
+	.tops, .attachments, .chains {
+		padding: 3rem;
+		.fancy-header {
+			width: 100%;
+			position: relative;
+			text-align: center;
+			margin-bottom: 1rem;
+			h2 {
+				width: auto;
+				display: inline-block;
+				padding: 0 3.5rem;
+				background-color: $white;
+				letter-spacing: 2px;
+				text-align: center;
+				z-index: 1001;
+				&:before {
+					z-index: -1;
+					content: '';
+					position: absolute;
+					width: 100%;
+					height: 4px;
+					background-color: $cyan;
+					top: 54%;
+					transform: translateY(-50%);
+					left: 0;
+				}
+			}	
+		}
+		p {
+			font-size: 1rem;
+			text-align: center;
+			margin: 0 auto;
+			margin-bottom: 1rem;
+			max-width: 600px;
+			color: $grey;
+		}
+		.icons {
+			width: 300px;
+			// height: 100px;
+			margin: 0 auto;
+			display: flex;
+			margin-bottom: 1.5rem;
+			justify-content: center;
+			.icon {
+				width: 29%;
+				margin: 0 2%;
+				padding: 0.5rem;
+				text-align: center;
+				border: 4px solid $white;
+				cursor: pointer;
+				transition: all 0.35s;
+				img {
+					width: 50%;
+					height: 70px;
+					margin-bottom: 0.5rem;
+					&.cyan {
+						display: none;
+					}
+				}
+				&[data-filter="product_cat-coin"] {
+					img {
+						width: auto;
+					}
+				}
+				p {
+					color: $grey;
+					font-size: 1rem;
+					margin-bottom: 0;
+				}
+				&:hover {
+					border: 4px solid $cyan;
+				}
+				&.js-active {
+					border: 4px solid $cyan;
+					img {
+						&.white {
+							display: none;
+						}
+						&.cyan {
+							display: inline-block;
+						}
+					}
+				}
+			}
+		}
+		.list {
+			display: flex;
+			flex-wrap: wrap;
+			justify-content: space-around;
+			align-items: stretch;
+			.slick-arrow {
+				position: absolute;
+				top: 50%;
+				transform: translateY(-50%);
+				appearance: none;
+				border: none;
+				font-family: "fontawesome";
+			}
+			.slick-prev {
+				left: -2.5rem;
+				width: 22px;
+				height: 62px;
+				background: transparent;
+				&:after {
+					content: '\f104';
+					font-size: 4.5rem;
+					color: $black;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+			.slick-next {
+				right: -2rem;
+				width: 22px;
+				height: 62px;
+				background: transparent;
+				&:after {
+					content: '\f105';
+					font-size: 4.5rem;
+					color: $black;
+					position: absolute;
+					top: 0;
+					left: 0;
+				}
+			}
+			.product {
+				width: 28%;
+				margin-bottom: 2rem;
+				margin-left: 1rem;
+				margin-right: 1rem;
+				padding-bottom: 2.5rem;
+				position: relative;
+				min-height: 520px;
+				&:before {
+				  content: '';
+				  position: absolute;
+				  top: 0;
+				  left: 0;
+				  pointer-events: none;
+				  width: 100%;
+				  height: 100%;
+				  @include white-gradient();
+				}
+				* {
+					&:focus {
+						outline: none;
+					}	
+				}
+				a {
+					text-decoration: none;
+					font-size: 1rem;
+					&:hover {
+						background-color: inherit;
+					}
+				}
+				img {
+					width: 75%;
+					margin: 0 auto;
+					height: auto;
+				}
+				h2 {
+					font-size: 1.2rem;
+					line-height: 1.4;
+					padding: 0 1rem 0 0;
+					margin-top: 1rem;
+					margin-bottom: 1.5rem;
+				}
+				p {
+					color: $grey;
+					text-align: left;
+					margin-bottom: 1.5rem;
+					font-size: 1rem;
+
+				}
+				.price {
+					font-weight: 700;
+					font-size: 1rem;
+					color: $grey;
+					margin-bottom: 1.5rem;
+					display: block;
+				}
+				.add_to_cart_button {
+					position: absolute;
+					bottom: 0;
+					display: flex;
+					align-items: center;
+					justify-content: center;
+					text-decoration: none;
+					text-align: center;
+					color: inherit;
+					background-color: $black;
+					border-radius: 0;
+					width: 100%;
+					text-transform: none;
+					color: $white;
+					font-size: 1rem;
+					padding: 0.5rem 3rem;
+					cursor: pointer;
+					&:hover {
+						background-color: $cyan;
+						color: $black;
+					}
+				}
+				.added_to_cart {
+					position: absolute;
+					bottom: 0;
+					width: 100%;
+					text-align: center;
+					background: $cyan;
+					padding: 0.5rem;
+					&:hover {
+						background: $cyan;
+					}
+				}
+			}
+		}
+	}
+}
+
+.novon-search {
+	max-width: 960px;
+	margin: 0 auto;
+	padding-bottom: 5rem;
+	.cta-wrapper {
+		display: flex;
+		justify-content: flex-start;
+		padding-top: 2rem;
+		padding-left: 2rem;
+		margin-bottom: 2rem;
+		.cta {
+			max-width: 220px;
+			font-size: 1.25rem;
+			padding: 0.75rem 1.5rem 0.9rem;
+			border-radius: 0;
+			background: transparent;
+			color: $black;
+			border: 1px solid $black;
+			&:hover {
+				background: $black;
+				color: $white;
+			}
+		}
+	}
+	.products {
+			padding: 3rem;
+			.fancy-header {
+				width: 100%;
+				position: relative;
+				text-align: center;
+				margin-bottom: 1rem;
+				h2 {
+					width: auto;
+					display: inline-block;
+					padding: 0 3.5rem;
+					background-color: $white;
+					letter-spacing: 2px;
+					text-align: center;
+					z-index: 1001;
+					&:before {
+						z-index: -1;
+						content: '';
+						position: absolute;
+						width: 100%;
+						height: 4px;
+						background-color: $cyan;
+						top: 54%;
+						transform: translateY(-50%);
+						left: 0;
+					}
+				}	
+			}
+			p {
+				font-size: 1rem;
+				text-align: center;
+				margin: 0 auto;
+				margin-bottom: 1rem;
+				max-width: 600px;
+				color: $grey;
+			}
+			.results {
+				display: flex;
+				flex-wrap: wrap;
+				justify-content: space-around;
+				align-items: stretch;
+				.product {
+					width: 28%;
+					margin-bottom: 2rem;
+					margin-left: 1rem;
+					margin-right: 1rem;
+					padding-bottom: 2.5rem;
+					position: relative;
+					min-height: 520px;
+					&:before {
+					  content: '';
+					  position: absolute;
+					  top: 0;
+					  left: 0;
+					  pointer-events: none;
+					  width: 100%;
+					  height: 100%;
+					  @include white-gradient();
+					}
+					* {
+						&:focus {
+							outline: none;
+						}	
+					}
+					a {
+						text-decoration: none;
+						font-size: 1rem;
+						&:hover {
+							background-color: inherit;
+						}
+					}
+					img {
+						width: 75%;
+						margin: 0 auto;
+						height: auto;
+					}
+					h2 {
+						font-size: 1.2rem;
+						line-height: 1.4;
+						padding: 0 1rem 0 0;
+						margin-top: 1rem;
+						margin-bottom: 1.5rem;
+					}
+					p {
+						color: $grey;
+						text-align: left;
+						margin-bottom: 1.5rem;
+						font-size: 1rem;
+
+					}
+					.price {
+						font-weight: 700;
+						font-size: 1rem;
+						color: $grey;
+						margin-bottom: 1.5rem;
+						display: block;
+					}
+					.add_to_cart_button {
+						position: absolute;
+						bottom: 0;
+						display: flex;
+						align-items: center;
+						justify-content: center;
+						text-decoration: none;
+						text-align: center;
+						color: inherit;
+						background-color: $black;
+						border-radius: 0;
+						width: 100%;
+						text-transform: none;
+						color: $white;
+						font-size: 1rem;
+						padding: 0.5rem 3rem;
+						cursor: pointer;
+						&:hover {
+							background-color: $cyan;
+							color: $black;
+						}
+					}
+					.added_to_cart {
+						position: absolute;
+						bottom: 0;
+						width: 100%;
+						text-align: center;
+						background: $cyan;
+						padding: 0.5rem;
+						&:hover {
+							background: $cyan;
+						}
+					}
+				}
+			}
+		}
+}
+
+@include breakpoint(max-width, 768px) {
+
+	section.originals {
+		a {
+			width: 100%;
+		}
+		flex-wrap: wrap;
+		.category {
+			width: 100%;
+			img {
+				&.desktop {
+					display: none;
+				}
+				&.mobile {
+					display: inline-block;
+				}
+			}
+		}
+	}
+
+
+}
+
+@include breakpoint(max-width, 640px) {
+
+	section.originals {
+		.category {
+			width: 100%;
+			h3 {
+				width: 100%;
+				text-align: center;
+				font-size: 2rem;
+			}
+		}
+	}
+	section.products {
+		.tops, .attachments, .chains {
+			.fancy-header {
+				h2 {
+					padding: 0 0.5rem;
+					font-size: 1.5rem;
+				}
+			}
+			.list {
+				.product { 
+					h2 {
+						font-size: 1.5rem;
+					}
+					p {
+						font-size: 1rem;
+					}
+					.price {
+						font-size: 1rem;
+					}
+					.add_to_cart_button {
+						font-size: 1rem;
+					}
+					.added_to_cart {
+						font-size: 1rem;
+					}
+				}
+			}
+		}
+	}
+
+	.novon-search {
+		section.products {
+			.results {
+				.product {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
