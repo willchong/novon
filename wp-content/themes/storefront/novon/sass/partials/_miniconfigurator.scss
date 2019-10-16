@@ -169,7 +169,7 @@ section.miniconfigurator {
 				}
 			}
 		}
-		.earring-clone {
+		.secondpiece-clone {
 			pointer-events: none;
 			position: absolute;
 			// transform: translateX(-15%);
@@ -299,9 +299,11 @@ section.miniconfigurator {
 			}
 		}
 	}
-	.selections {
+	.selections, .second-selections {
 		width: calc(100% - 470px);
 		font-size: 1rem;
+		display: flex;
+		flex-direction: column;
 		.tops, .attachments {
 			.header {
 				width: 100%;
@@ -431,6 +433,28 @@ section.miniconfigurator {
 				margin-top: 1rem;
 			}
 		}
+		button {
+			max-width: 240px;
+			width: 100%;
+			margin: 1rem auto;
+			padding: 0.75rem;
+			font-size: 1rem;
+			background-color: $black;
+			color: $white;
+			font-family: $barlow;
+			transition: 0.33s all;
+			&:hover {
+				color: $black;
+				background-color: $cyan;
+			}
+		}
+	}
+	.second-selections {
+		display: none;
+		&.js-active {
+			display: block;
+    		margin-left: 470px;
+		}
 	}
 
 	//COMBOS
@@ -440,383 +464,57 @@ section.miniconfigurator {
 				margin-top: -14%;
 			}
 		}
-		.phase-3 {
-			.piece {
-				margin-top: -10%;
+		&.twopieces {
+			.firstpiece {
+				transform: rotate(10deg) translate(-5%, 0);
 			}
-		}
-		&.js--pendants, &.js--earrings {	
-			&.js-double-sphere {
-				.phase-2 {
-					.piece {
-						margin-left: 2.5%;
-					}
-				}
-				&.js-single-sphere {
-					.phase-3 {
-						.piece {
-							margin-top: -11%;
-						}
-					}
-				}
-				&.js-single-oval {
-					.phase-3 {
-						.piece {
-							margin-left: -2%;
-						}
-					}
-				}
+			.secondpiece {
+				position: absolute;
+				margin-top: -56%;
+				width: calc(100% - 6rem);
+				left: 50%;
+				transform: rotate(-10deg) translate(-47%, 0);
 			}
-			&.js-single-sphere {
-				.phase-2 {
-					.piece {
-						margin-left: 3.5%;
-					}
-				}
-			}
-			&.js-single-cabochon {
-				.phase-3 {
-					.piece {
-						margin-left: -3%;
-					}
-				}
-			}
-			&.js-double-oval {
-				.phase-2 {
-					.piece {
-						margin-left: 0;
-					}
-				}
-				&.js-single-oval {
-					.phase-3 {
-						.piece {
-							margin-left: 0%;
-						}
-					}
-				}
-				&.js-single-sphere {
-					.phase-3 {
-						.piece {
-							margin-left: 0.75%;
-						}
-					}
-				}
-			}
-			&.js-double-cabochon {
-				.phase-2 {
-					.piece {
-						margin-left: 0;
-					}		
-				}
-					
-			}
-
-		}
-		&.js--earrings {
-			.phase-2, .phase-3, .phase-4 {
-				.piece {
-					transform: translateX(36.5%);
-				}
-			}
-			&.js-double-sphere {
-				.phase-2 {
-					.piece {
-						margin-left: 4.5%;
-					}
-				}
-				&.js-single-sphere {
-					.phase-3 {
-						.piece {
-							margin-left: 1.25%;
-						}
-					}
-				}
-				&.js-single-oval {
-					.phase-3 {
-						.piece {
-							margin-left: 0%;
-						}
-					}
+			&.js-fs--coins {
+				.secondpiece {
+					margin-top: -63.5%;
 				}
 			}
 		}
-		&.js--chains {
-			&.js-double-coin, .js-double-sphere {
-				.phase-1 {
-					position: relative;
-					z-index: 2;
-				}
-				.phase-2 {
-					position: relative;
-					z-index: 1;
-					.piece {
-						transform: rotate(0deg);
-						margin-top: 3%;
-						margin-left: -4%;
+	}
+	.configurator-modal {
+		.content {
+			.miniconfigurator {
+				position: absolute;
+				display: block;
+				transform: scale(0.5) translate(0,10%);
+				.preview {
+					.summary, .buttons {
+						display: none;
 					}
-				}
-				.phase-3 {
-					position: relative;
-					z-index: 2;
-					.piece {
-						margin-top: 3%;
-						margin-left: -4%;
+					.mini-configurator-bg.js-active {
+						margin-top: 0;
 					}
-				}
-				.phase-4 {
-					position: relative;
-					z-index: 3;
-					.piece {
-						margin-top: -11%;
-						margin-left: -4%;
-					}
-				}
-			}
-			&.js-double-coin {
-				.phase-2 {
-					.piece {
-						transform: rotate(90deg);
-					}
-				}
-			}
-			&.js-double-sphere {
-				.phase-1 {
-					position: relative;
-					z-index: 2;
-				}
-				.phase-2 {
-					position: relative;
-					z-index: 1;
-					.piece {
-						transform: rotate(0deg);
-						margin-top: 3%;
-						margin-left: -4%;
-					}
-				}
-				.phase-3 {
-					position: relative;
-					z-index: 2;
-					.piece {
-						margin-top: 3%;
-						margin-left: -1%;
-					}
-				}
-				.phase-4 {
-					position: relative;
-					z-index: 3;
-					.piece {
-						margin-top: -11%;
-						margin-left: -4%;
-					}
-				}
-				&.js-double-coin {
-					.phase-2 {
-						.piece {
-							transform: rotate(90deg);
-						}
-					}
-				}
-			}
-			&.js-chain-override {
-				&.sphere-sphere {
 					.phase-1 {
-						position: relative;
-						z-index: 2;
+						margin-top: 40%;
 					}
-					.phase-2 {
-						position: relative;
-						z-index: 1;
-						.piece {
-							transform: rotate(0deg);
-							margin-top: -11%;
-							margin-left: 0%;
+					.phase {
+						label {
+							display: none;
 						}
 					}
-					.phase-3 {
-						position: relative;
-						z-index: 2;
-						.piece {
-							margin-top: -12%;
-							margin-left: -1%;
+					&.twopieces {
+						.secondpiece {
+							margin-top: -66.5%;
+							transform: rotate(-10deg) translate(-49%, 0);
+						}
+						&.js-fs--coins {
+							.secondpiece {
+								margin-top: -74.5%;
+							}
 						}
 					}
-					.phase-4 {
-						position: relative;
-						z-index: 3;
-						.piece {
-							margin-top: -11%;
-							margin-left: -4%;
-						}
-					}
-				}
-				&.cabochon-sphere {
-					.phase-1 {
-						position: relative;
-						z-index: 2;
-					}
-					.phase-2 {
-						position: relative;
-						z-index: 1;
-						.piece {
-							transform: rotate(0deg);
-							margin-top: -11%;
-							margin-left: -3%;
-						}
-					}
-					.phase-3 {
-						position: relative;
-						z-index: 2;
-						.piece {
-							margin-top: -12.5%;
-							margin-left: -1%;
-						}
-					}
-					.phase-4 {
-						position: relative;
-						z-index: 3;
-						.piece {
-							margin-top: -11%;
-							margin-left: -4.5%;
-						}
-					}
-				}
-				&.oval-oval {
-					.phase-1 {
-						position: relative;
-						z-index: 2;
-					}
-					.phase-2 {
-						position: relative;
-						z-index: 1;
-						.piece {
-							transform: rotate(0deg);
-							margin-top: -11%;
-							margin-left: 0%;
-						}
-					}
-					.phase-3 {
-						position: relative;
-						z-index: 2;
-						.piece {
-							margin-top: -10.5%;
-							margin-left: -4%;
-						}
-					}
-					.phase-4 {
-						position: relative;
-						z-index: 3;
-						.piece {
-							margin-top: -11%;
-							margin-left: -4%;
-						}
-					}
-				}
-				&.oval-sphere {
-					.phase-1 {
-						position: relative;
-						z-index: 2;
-					}
-					.phase-2 {
-						position: relative;
-						z-index: 1;
-						.piece {
-							transform: rotate(0deg);
-							margin-top: -10%;
-							margin-left: -1%;
-						}
-					}
-					.phase-3 {
-						position: relative;
-						z-index: 2;
-						.piece {
-							margin-top: -11%;
-							margin-left: 0%;
-						}
-					}
-					.phase-4 {
-						position: relative;
-						z-index: 3;
-						.piece {
-							margin-top: -11%;
-							margin-left: -4.5%;
-						}
-					}
-				}
-				&.cabochon-cabochon {
-					.phase-1 {
-						position: relative;
-						z-index: 2;
-					}
-					.phase-2 {
-						position: relative;
-						z-index: 1;
-						.piece {
-							transform: rotate(0deg);
-							margin-top: -11%;
-							margin-left: -3%;
-						}
-					}
-					.phase-3 {
-						position: relative;
-						z-index: 2;
-						.piece {
-							margin-top: -12.5%;
-							margin-left: -3%;
-						}
-					}
-					.phase-4 {
-						position: relative;
-						z-index: 3;
-						.piece {
-							margin-top: -11%;
-							margin-left: -4.5%;
-						}
-					}
-				}
-				&.cabochon-oval {
-					.phase-1 {
-						position: relative;
-						z-index: 2;
-					}
-					.phase-2 {
-						position: relative;
-						z-index: 1;
-						.piece {
-							transform: rotate(0deg);
-							margin-top: -11%;
-							margin-left: -3%;
-						}
-					}
-					.phase-3 {
-						position: relative;
-						z-index: 2;
-						.piece {
-							margin-top: -12.5%;
-							margin-left: -4%;
-						}
-					}
-					.phase-4 {
-						position: relative;
-						z-index: 3;
-						.piece {
-							margin-top: -11%;
-							margin-left: -4.5%;
-						}
-					}
-				}
-			}
-			&.js-incomplete {
-				.phase {
-					.piece {
-						// margin: 0 !important;
-						margin: 1rem !important;
-					}
-				}
-				.phase-2 {
-					.piece {
-						margin: 1.5rem !important;
-					}
-				}
+				}	
 			}
 		}
 	}
@@ -891,7 +589,7 @@ section.miniconfigurator {
 					padding: 0.5rem;
 				}
 			}
-			.earring-clone {
+			.secondpiece-clone {
 				width: 100%;
 				padding: 0 0.5rem 1rem 0.5rem;
 				// transform: translateX(-17%);

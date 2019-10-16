@@ -4595,7 +4595,7 @@ section.miniconfigurator {
         display: inline-block; }
         section.miniconfigurator .preview .phase img[src=""] {
           display: none !important; }
-    section.miniconfigurator .preview .earring-clone {
+    section.miniconfigurator .preview .secondpiece-clone {
       pointer-events: none;
       position: absolute;
       margin-left: -67px;
@@ -4604,11 +4604,11 @@ section.miniconfigurator {
       top: 0;
       left: 0;
       display: none; }
-      section.miniconfigurator .preview .earring-clone.js-active {
+      section.miniconfigurator .preview .secondpiece-clone.js-active {
         display: block; }
-      section.miniconfigurator .preview .earring-clone .phase.phase-1 {
+      section.miniconfigurator .preview .secondpiece-clone .phase.phase-1 {
         opacity: 0; }
-      section.miniconfigurator .preview .earring-clone .phase .piece {
+      section.miniconfigurator .preview .secondpiece-clone .phase .piece {
         transform: none !important; }
     section.miniconfigurator .preview .summary {
       margin-top: 1rem;
@@ -4690,10 +4690,12 @@ section.miniconfigurator {
       display: none; }
       section.miniconfigurator .preview .mini-configurator-bg.js-active {
         display: block; }
-  section.miniconfigurator .selections {
+  section.miniconfigurator .selections, section.miniconfigurator .second-selections {
     width: calc(100% - 470px);
-    font-size: 1rem; }
-    section.miniconfigurator .selections .tops .header, section.miniconfigurator .selections .attachments .header {
+    font-size: 1rem;
+    display: flex;
+    flex-direction: column; }
+    section.miniconfigurator .selections .tops .header, section.miniconfigurator .selections .attachments .header, section.miniconfigurator .second-selections .tops .header, section.miniconfigurator .second-selections .attachments .header {
       width: 100%;
       padding: 1rem;
       text-align: center;
@@ -4706,7 +4708,7 @@ section.miniconfigurator {
       position: relative;
       cursor: pointer;
       transition: all 0.5s; }
-      section.miniconfigurator .selections .tops .header:after, section.miniconfigurator .selections .attachments .header:after {
+      section.miniconfigurator .selections .tops .header:after, section.miniconfigurator .selections .attachments .header:after, section.miniconfigurator .second-selections .tops .header:after, section.miniconfigurator .second-selections .attachments .header:after {
         content: '';
         background: url("../images/triangle.svg") no-repeat;
         background-size: cover;
@@ -4716,33 +4718,33 @@ section.miniconfigurator {
         right: 1rem;
         top: 50%;
         transform: translateY(-50%) rotate(180deg); }
-      section.miniconfigurator .selections .tops .header.js-active, section.miniconfigurator .selections .attachments .header.js-active {
+      section.miniconfigurator .selections .tops .header.js-active, section.miniconfigurator .selections .attachments .header.js-active, section.miniconfigurator .second-selections .tops .header.js-active, section.miniconfigurator .second-selections .attachments .header.js-active {
         background-color: #696969; }
-        section.miniconfigurator .selections .tops .header.js-active:after, section.miniconfigurator .selections .attachments .header.js-active:after {
+        section.miniconfigurator .selections .tops .header.js-active:after, section.miniconfigurator .selections .attachments .header.js-active:after, section.miniconfigurator .second-selections .tops .header.js-active:after, section.miniconfigurator .second-selections .attachments .header.js-active:after {
           transform: translateY(-50%) rotate(0deg); }
-    section.miniconfigurator .selections .tops .thumbnails, section.miniconfigurator .selections .attachments .thumbnails {
+    section.miniconfigurator .selections .tops .thumbnails, section.miniconfigurator .selections .attachments .thumbnails, section.miniconfigurator .second-selections .tops .thumbnails, section.miniconfigurator .second-selections .attachments .thumbnails {
       display: none;
       flex-direction: row;
       flex-wrap: wrap; }
-      section.miniconfigurator .selections .tops .thumbnails.js-active, section.miniconfigurator .selections .attachments .thumbnails.js-active {
+      section.miniconfigurator .selections .tops .thumbnails.js-active, section.miniconfigurator .selections .attachments .thumbnails.js-active, section.miniconfigurator .second-selections .tops .thumbnails.js-active, section.miniconfigurator .second-selections .attachments .thumbnails.js-active {
         display: flex; }
-      section.miniconfigurator .selections .tops .thumbnails:after, section.miniconfigurator .selections .attachments .thumbnails:after {
+      section.miniconfigurator .selections .tops .thumbnails:after, section.miniconfigurator .selections .attachments .thumbnails:after, section.miniconfigurator .second-selections .tops .thumbnails:after, section.miniconfigurator .second-selections .attachments .thumbnails:after {
         content: "";
         flex: auto; }
-      section.miniconfigurator .selections .tops .thumbnails .thumbnail, section.miniconfigurator .selections .attachments .thumbnails .thumbnail {
+      section.miniconfigurator .selections .tops .thumbnails .thumbnail, section.miniconfigurator .selections .attachments .thumbnails .thumbnail, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail {
         width: 18%;
         margin: 1%;
         border: 3px solid #D1D1D1;
         cursor: pointer;
         position: relative;
         overflow: hidden; }
-        section.miniconfigurator .selections .tops .thumbnails .thumbnail .mobile-only, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .mobile-only {
+        section.miniconfigurator .selections .tops .thumbnails .thumbnail .mobile-only, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .mobile-only, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail .mobile-only, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail .mobile-only {
           display: none; }
-        section.miniconfigurator .selections .tops .thumbnails .thumbnail .image, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image {
+        section.miniconfigurator .selections .tops .thumbnails .thumbnail .image, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail .image, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail .image {
           width: 100%;
           padding-bottom: 100%;
           position: relative; }
-          section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img {
+          section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail .image img, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail .image img {
             position: absolute;
             height: auto;
             max-width: none;
@@ -4750,249 +4752,82 @@ section.miniconfigurator {
             top: 50%;
             transform: translate(-50%, -50%);
             width: 140%; }
-            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.chains, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.chains {
+            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.chains, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.chains, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail .image img.chains, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail .image img.chains {
               width: 100%; }
-            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.earrings, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.earrings {
+            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.earrings, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.earrings, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail .image img.earrings, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail .image img.earrings {
               width: 165%;
               left: 54%;
               top: 58%; }
-            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.pendants, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.pendants {
+            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.pendants, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.pendants, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail .image img.pendants, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail .image img.pendants {
               width: 182%;
               top: 60%; }
-            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.coin.single, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.coin.single {
+            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.coin.single, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.coin.single, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail .image img.coin.single, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail .image img.coin.single {
               left: 54%; }
-            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.oval.double, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.oval.double {
+            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.oval.double, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.oval.double, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail .image img.oval.double, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail .image img.oval.double {
               left: 51%;
               top: 46%; }
-            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.coin.double, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.coin.double {
+            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.coin.double, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.coin.double, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail .image img.coin.double, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail .image img.coin.double {
               left: 54%;
               top: 50%;
               width: 120%; }
-            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.cabochon.double, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.cabochon.double {
+            section.miniconfigurator .selections .tops .thumbnails .thumbnail .image img.cabochon.double, section.miniconfigurator .selections .attachments .thumbnails .thumbnail .image img.cabochon.double, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail .image img.cabochon.double, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail .image img.cabochon.double {
               top: 56%; }
-        section.miniconfigurator .selections .tops .thumbnails .thumbnail:hover, section.miniconfigurator .selections .attachments .thumbnails .thumbnail:hover {
+        section.miniconfigurator .selections .tops .thumbnails .thumbnail:hover, section.miniconfigurator .selections .attachments .thumbnails .thumbnail:hover, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail:hover, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail:hover {
           border: 3px solid #696969; }
-        section.miniconfigurator .selections .tops .thumbnails .thumbnail.js-active, section.miniconfigurator .selections .attachments .thumbnails .thumbnail.js-active {
+        section.miniconfigurator .selections .tops .thumbnails .thumbnail.js-active, section.miniconfigurator .selections .attachments .thumbnails .thumbnail.js-active, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail.js-active, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail.js-active {
           border: 3px solid #BBF1F1; }
-        section.miniconfigurator .selections .tops .thumbnails .thumbnail.js-disabled, section.miniconfigurator .selections .attachments .thumbnails .thumbnail.js-disabled {
+        section.miniconfigurator .selections .tops .thumbnails .thumbnail.js-disabled, section.miniconfigurator .selections .attachments .thumbnails .thumbnail.js-disabled, section.miniconfigurator .second-selections .tops .thumbnails .thumbnail.js-disabled, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail.js-disabled {
           display: none;
           pointer-events: none; }
-    section.miniconfigurator .selections .attachments .header {
+    section.miniconfigurator .selections .attachments .header, section.miniconfigurator .second-selections .attachments .header {
       margin-top: 1rem; }
+    section.miniconfigurator .selections button, section.miniconfigurator .second-selections button {
+      max-width: 240px;
+      width: 100%;
+      margin: 1rem auto;
+      padding: 0.75rem;
+      font-size: 1rem;
+      background-color: #000000;
+      color: #ffffff;
+      font-family: "Barlow Semi Condensed", sans-serif;
+      transition: 0.33s all; }
+      section.miniconfigurator .selections button:hover, section.miniconfigurator .second-selections button:hover {
+        color: #000000;
+        background-color: #BBF1F1; }
+  section.miniconfigurator .second-selections {
+    display: none; }
+    section.miniconfigurator .second-selections.js-active {
+      display: block;
+      margin-left: 470px; }
   section.miniconfigurator .preview .phase-2 .piece {
     margin-top: -14%; }
-  section.miniconfigurator .preview .phase-3 .piece {
-    margin-top: -10%; }
-  section.miniconfigurator .preview.js--pendants.js-double-sphere .phase-2 .piece, section.miniconfigurator .preview.js--earrings.js-double-sphere .phase-2 .piece {
-    margin-left: 2.5%; }
-  section.miniconfigurator .preview.js--pendants.js-double-sphere.js-single-sphere .phase-3 .piece, section.miniconfigurator .preview.js--earrings.js-double-sphere.js-single-sphere .phase-3 .piece {
-    margin-top: -11%; }
-  section.miniconfigurator .preview.js--pendants.js-double-sphere.js-single-oval .phase-3 .piece, section.miniconfigurator .preview.js--earrings.js-double-sphere.js-single-oval .phase-3 .piece {
-    margin-left: -2%; }
-  section.miniconfigurator .preview.js--pendants.js-single-sphere .phase-2 .piece, section.miniconfigurator .preview.js--earrings.js-single-sphere .phase-2 .piece {
-    margin-left: 3.5%; }
-  section.miniconfigurator .preview.js--pendants.js-single-cabochon .phase-3 .piece, section.miniconfigurator .preview.js--earrings.js-single-cabochon .phase-3 .piece {
-    margin-left: -3%; }
-  section.miniconfigurator .preview.js--pendants.js-double-oval .phase-2 .piece, section.miniconfigurator .preview.js--earrings.js-double-oval .phase-2 .piece {
-    margin-left: 0; }
-  section.miniconfigurator .preview.js--pendants.js-double-oval.js-single-oval .phase-3 .piece, section.miniconfigurator .preview.js--earrings.js-double-oval.js-single-oval .phase-3 .piece {
-    margin-left: 0%; }
-  section.miniconfigurator .preview.js--pendants.js-double-oval.js-single-sphere .phase-3 .piece, section.miniconfigurator .preview.js--earrings.js-double-oval.js-single-sphere .phase-3 .piece {
-    margin-left: 0.75%; }
-  section.miniconfigurator .preview.js--pendants.js-double-cabochon .phase-2 .piece, section.miniconfigurator .preview.js--earrings.js-double-cabochon .phase-2 .piece {
-    margin-left: 0; }
-  section.miniconfigurator .preview.js--earrings .phase-2 .piece, section.miniconfigurator .preview.js--earrings .phase-3 .piece, section.miniconfigurator .preview.js--earrings .phase-4 .piece {
-    transform: translateX(36.5%); }
-  section.miniconfigurator .preview.js--earrings.js-double-sphere .phase-2 .piece {
-    margin-left: 4.5%; }
-  section.miniconfigurator .preview.js--earrings.js-double-sphere.js-single-sphere .phase-3 .piece {
-    margin-left: 1.25%; }
-  section.miniconfigurator .preview.js--earrings.js-double-sphere.js-single-oval .phase-3 .piece {
-    margin-left: 0%; }
-  section.miniconfigurator .preview.js--chains.js-double-coin .phase-1, section.miniconfigurator .preview.js--chains .js-double-sphere .phase-1 {
-    position: relative;
-    z-index: 2; }
-  section.miniconfigurator .preview.js--chains.js-double-coin .phase-2, section.miniconfigurator .preview.js--chains .js-double-sphere .phase-2 {
-    position: relative;
-    z-index: 1; }
-    section.miniconfigurator .preview.js--chains.js-double-coin .phase-2 .piece, section.miniconfigurator .preview.js--chains .js-double-sphere .phase-2 .piece {
-      transform: rotate(0deg);
-      margin-top: 3%;
-      margin-left: -4%; }
-  section.miniconfigurator .preview.js--chains.js-double-coin .phase-3, section.miniconfigurator .preview.js--chains .js-double-sphere .phase-3 {
-    position: relative;
-    z-index: 2; }
-    section.miniconfigurator .preview.js--chains.js-double-coin .phase-3 .piece, section.miniconfigurator .preview.js--chains .js-double-sphere .phase-3 .piece {
-      margin-top: 3%;
-      margin-left: -4%; }
-  section.miniconfigurator .preview.js--chains.js-double-coin .phase-4, section.miniconfigurator .preview.js--chains .js-double-sphere .phase-4 {
-    position: relative;
-    z-index: 3; }
-    section.miniconfigurator .preview.js--chains.js-double-coin .phase-4 .piece, section.miniconfigurator .preview.js--chains .js-double-sphere .phase-4 .piece {
-      margin-top: -11%;
-      margin-left: -4%; }
-  section.miniconfigurator .preview.js--chains.js-double-coin .phase-2 .piece {
-    transform: rotate(90deg); }
-  section.miniconfigurator .preview.js--chains.js-double-sphere .phase-1 {
-    position: relative;
-    z-index: 2; }
-  section.miniconfigurator .preview.js--chains.js-double-sphere .phase-2 {
-    position: relative;
-    z-index: 1; }
-    section.miniconfigurator .preview.js--chains.js-double-sphere .phase-2 .piece {
-      transform: rotate(0deg);
-      margin-top: 3%;
-      margin-left: -4%; }
-  section.miniconfigurator .preview.js--chains.js-double-sphere .phase-3 {
-    position: relative;
-    z-index: 2; }
-    section.miniconfigurator .preview.js--chains.js-double-sphere .phase-3 .piece {
-      margin-top: 3%;
-      margin-left: -1%; }
-  section.miniconfigurator .preview.js--chains.js-double-sphere .phase-4 {
-    position: relative;
-    z-index: 3; }
-    section.miniconfigurator .preview.js--chains.js-double-sphere .phase-4 .piece {
-      margin-top: -11%;
-      margin-left: -4%; }
-  section.miniconfigurator .preview.js--chains.js-double-sphere.js-double-coin .phase-2 .piece {
-    transform: rotate(90deg); }
-  section.miniconfigurator .preview.js--chains.js-chain-override.sphere-sphere .phase-1 {
-    position: relative;
-    z-index: 2; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.sphere-sphere .phase-2 {
-    position: relative;
-    z-index: 1; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.sphere-sphere .phase-2 .piece {
-      transform: rotate(0deg);
-      margin-top: -11%;
-      margin-left: 0%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.sphere-sphere .phase-3 {
-    position: relative;
-    z-index: 2; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.sphere-sphere .phase-3 .piece {
-      margin-top: -12%;
-      margin-left: -1%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.sphere-sphere .phase-4 {
-    position: relative;
-    z-index: 3; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.sphere-sphere .phase-4 .piece {
-      margin-top: -11%;
-      margin-left: -4%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-1 {
-    position: relative;
-    z-index: 2; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-2 {
-    position: relative;
-    z-index: 1; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-2 .piece {
-      transform: rotate(0deg);
-      margin-top: -11%;
-      margin-left: -3%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-3 {
-    position: relative;
-    z-index: 2; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-3 .piece {
-      margin-top: -12.5%;
-      margin-left: -1%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-4 {
-    position: relative;
-    z-index: 3; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-sphere .phase-4 .piece {
-      margin-top: -11%;
-      margin-left: -4.5%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.oval-oval .phase-1 {
-    position: relative;
-    z-index: 2; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.oval-oval .phase-2 {
-    position: relative;
-    z-index: 1; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.oval-oval .phase-2 .piece {
-      transform: rotate(0deg);
-      margin-top: -11%;
-      margin-left: 0%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.oval-oval .phase-3 {
-    position: relative;
-    z-index: 2; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.oval-oval .phase-3 .piece {
-      margin-top: -10.5%;
-      margin-left: -4%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.oval-oval .phase-4 {
-    position: relative;
-    z-index: 3; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.oval-oval .phase-4 .piece {
-      margin-top: -11%;
-      margin-left: -4%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.oval-sphere .phase-1 {
-    position: relative;
-    z-index: 2; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.oval-sphere .phase-2 {
-    position: relative;
-    z-index: 1; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.oval-sphere .phase-2 .piece {
-      transform: rotate(0deg);
-      margin-top: -10%;
-      margin-left: -1%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.oval-sphere .phase-3 {
-    position: relative;
-    z-index: 2; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.oval-sphere .phase-3 .piece {
-      margin-top: -11%;
-      margin-left: 0%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.oval-sphere .phase-4 {
-    position: relative;
-    z-index: 3; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.oval-sphere .phase-4 .piece {
-      margin-top: -11%;
-      margin-left: -4.5%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-1 {
-    position: relative;
-    z-index: 2; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-2 {
-    position: relative;
-    z-index: 1; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-2 .piece {
-      transform: rotate(0deg);
-      margin-top: -11%;
-      margin-left: -3%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-3 {
-    position: relative;
-    z-index: 2; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-3 .piece {
-      margin-top: -12.5%;
-      margin-left: -3%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-4 {
-    position: relative;
-    z-index: 3; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-cabochon .phase-4 .piece {
-      margin-top: -11%;
-      margin-left: -4.5%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-oval .phase-1 {
-    position: relative;
-    z-index: 2; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-oval .phase-2 {
-    position: relative;
-    z-index: 1; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-oval .phase-2 .piece {
-      transform: rotate(0deg);
-      margin-top: -11%;
-      margin-left: -3%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-oval .phase-3 {
-    position: relative;
-    z-index: 2; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-oval .phase-3 .piece {
-      margin-top: -12.5%;
-      margin-left: -4%; }
-  section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-oval .phase-4 {
-    position: relative;
-    z-index: 3; }
-    section.miniconfigurator .preview.js--chains.js-chain-override.cabochon-oval .phase-4 .piece {
-      margin-top: -11%;
-      margin-left: -4.5%; }
-  section.miniconfigurator .preview.js--chains.js-incomplete .phase .piece {
-    margin: 1rem !important; }
-  section.miniconfigurator .preview.js--chains.js-incomplete .phase-2 .piece {
-    margin: 1.5rem !important; }
+  section.miniconfigurator .preview.twopieces .firstpiece {
+    transform: rotate(10deg) translate(-5%, 0); }
+  section.miniconfigurator .preview.twopieces .secondpiece {
+    position: absolute;
+    margin-top: -56%;
+    width: calc(100% - 6rem);
+    left: 50%;
+    transform: rotate(-10deg) translate(-47%, 0); }
+  section.miniconfigurator .preview.twopieces.js-fs--coins .secondpiece {
+    margin-top: -63.5%; }
+  section.miniconfigurator .configurator-modal .content .miniconfigurator {
+    position: absolute;
+    display: block;
+    transform: scale(0.5) translate(0, 10%); }
+    section.miniconfigurator .configurator-modal .content .miniconfigurator .preview .summary, section.miniconfigurator .configurator-modal .content .miniconfigurator .preview .buttons {
+      display: none; }
+    section.miniconfigurator .configurator-modal .content .miniconfigurator .preview .mini-configurator-bg.js-active {
+      margin-top: 0; }
+    section.miniconfigurator .configurator-modal .content .miniconfigurator .preview .phase-1 {
+      margin-top: 40%; }
+    section.miniconfigurator .configurator-modal .content .miniconfigurator .preview .phase label {
+      display: none; }
+    section.miniconfigurator .configurator-modal .content .miniconfigurator .preview.twopieces .secondpiece {
+      margin-top: -66.5%;
+      transform: rotate(-10deg) translate(-49%, 0); }
+    section.miniconfigurator .configurator-modal .content .miniconfigurator .preview.twopieces.js-fs--coins .secondpiece {
+      margin-top: -74.5%; }
 
 @media (max-width: 960px) {
   section.miniconfigurator .selections .tops .thumbnails .thumbnail, section.miniconfigurator .selections .attachments .thumbnails .thumbnail {
@@ -5025,7 +4860,7 @@ section.miniconfigurator {
           width: 69%;
           margin-bottom: 0.5rem;
           padding: 0.5rem; }
-      section.miniconfigurator .preview .earring-clone {
+      section.miniconfigurator .preview .secondpiece-clone {
         width: 100%;
         padding: 0 0.5rem 1rem 0.5rem;
         margin-left: -14.75%; }
