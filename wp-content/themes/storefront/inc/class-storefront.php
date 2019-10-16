@@ -266,7 +266,7 @@ if ( ! class_exists( 'Storefront' ) ) :
 			//after wp_enqueue_script
 			wp_localize_script( 'my-script', 'CORE', $translation_array );
 			
-			wp_enqueue_script( 'novon-configurator2', get_template_directory_uri() . '/novon/js/configurator2.js', array( 'jquery' ), '20120206', true );
+			wp_enqueue_script( 'novon-configurator', get_template_directory_uri() . '/novon/js/configurator.js', array( 'jquery' ), '20120206', true );
 		    wp_enqueue_script( 'novon-miniconfigurator', get_template_directory_uri() . '/novon/js/miniconfigurator.js', array( 'jquery' ), '20120206', true );
 
 
