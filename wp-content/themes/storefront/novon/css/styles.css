@@ -4849,6 +4849,12 @@ section.miniconfigurator {
       margin: 0 auto;
       width: 100%;
       padding: 0 0.5rem 1rem 0.5rem; }
+      section.miniconfigurator .preview .mini-configurator-bg {
+        width: 92.5%; } }
+      @media (max-width: 640px) and (max-width: 320px) {
+        section.miniconfigurator .preview .mini-configurator-bg {
+          width: 91%; } }
+@media (max-width: 640px) {
       section.miniconfigurator .preview .buttons {
         flex-direction: row;
         justify-content: space-between; }
@@ -4860,14 +4866,17 @@ section.miniconfigurator {
           width: 69%;
           margin-bottom: 0.5rem;
           padding: 0.5rem; }
-      section.miniconfigurator .preview .secondpiece-clone {
+      section.miniconfigurator .preview.twopieces .secondpiece {
         width: 100%;
         padding: 0 0.5rem 1rem 0.5rem;
-        margin-left: -14.75%; }
+        margin-top: -63.25%; }
+      section.miniconfigurator .preview.twopieces.js-fs--coins .secondpiece {
+        margin-top: -71%; }
       section.miniconfigurator .preview .phase {
         width: 55%; }
       section.miniconfigurator .preview .summary {
         margin: 0;
+        margin-top: 50px;
         padding: 0;
         padding-bottom: 1rem; }
     section.miniconfigurator .selections {
@@ -4888,7 +4897,28 @@ section.miniconfigurator {
           padding: 0.5rem 0.25rem;
           text-align: center;
           background-color: #D1D1D1;
-          height: 60px; } }
+          height: 60px; }
+    section.miniconfigurator .second-selections.js-active {
+      width: 100%;
+      margin: 0 auto;
+      margin-top: 2rem; }
+    section.miniconfigurator .second-selections .tops .thumbnails .thumbnail, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail {
+      width: 31%;
+      margin: 1%;
+      padding-bottom: 60px; }
+      section.miniconfigurator .second-selections .tops .thumbnails .thumbnail .mobile-only, section.miniconfigurator .second-selections .attachments .thumbnails .thumbnail .mobile-only {
+        position: absolute;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        line-height: 1.3;
+        bottom: 0;
+        padding: 0.5rem 0.25rem;
+        text-align: center;
+        background-color: #D1D1D1;
+        height: 60px; } }
 .woo-contact-form {
   max-width: 960px;
   width: 100%;

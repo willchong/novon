@@ -575,6 +575,12 @@ section.miniconfigurator {
 			// 	background-color: rgba(255,255,255,0.75);
 			// 	border: 1px solid $grey;
 			// }
+			.mini-configurator-bg {
+				width: 92.5%;
+				@include breakpoint(max-width, 320px) {
+					width: 91%;
+				}
+			}
 			.buttons {
 				flex-direction: row;
 				justify-content: space-between;
@@ -589,23 +595,62 @@ section.miniconfigurator {
 					padding: 0.5rem;
 				}
 			}
-			.secondpiece-clone {
-				width: 100%;
-				padding: 0 0.5rem 1rem 0.5rem;
-				// transform: translateX(-17%);
-				margin-left: -14.75%;
+			&.twopieces {
+				.secondpiece {
+					width: 100%;
+					padding: 0 0.5rem 1rem 0.5rem;
+					margin-top: -63.25%;
+					// transform: translateX(-17%);
+					// margin-left: -14.75%;
+				}
+				&.js-fs--coins {
+					.secondpiece {
+						margin-top: -71%;
+					}
+				}
 			}
 			.phase {
 				width: 55%;
 			}
 			.summary {
 				margin: 0;
+				margin-top: 50px;
 				padding: 0;
 				padding-bottom: 1rem;
 			}
 		}
 		.selections {
 			margin-top: 2rem;
+			.tops, .attachments {
+				.thumbnails {
+					.thumbnail {
+						width: 31%;
+						margin: 1%;
+						padding-bottom: 60px;
+						.mobile-only {
+							position: absolute;
+							width: 100%;
+							display: flex;
+							align-items: center;
+							justify-content: center;
+							font-size: 12px;
+							line-height: 1.3;
+							bottom: 0;
+							padding: 0.5rem 0.25rem;
+							text-align: center;
+							background-color: $light-grey;
+							height: 60px;
+						}
+					}
+				}
+			}
+		}
+		.second-selections {
+			&.js-active {
+				width: 100%;
+				margin: 0 auto;
+				margin-top: 2rem;
+			}
 			.tops, .attachments {
 				.thumbnails {
 					.thumbnail {
